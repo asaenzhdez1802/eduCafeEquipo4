@@ -63,6 +63,16 @@ namespace eduCafeEquipo4.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EDU_CAFÉ__1___1___2_ {
+            get {
+                object obj = ResourceManager.GetObject("EDU CAFÉ (1) (1) (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imicio_admin_verde {
             get {
                 object obj = ResourceManager.GetObject("imicio admin_verde", resourceCulture);

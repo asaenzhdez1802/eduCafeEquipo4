@@ -121,6 +121,9 @@
   <data name="MenuAdminProovedoresB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuAdminProovedoresB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MenuAdminSalirB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuAdminSalirB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imicio admin_verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imicio admin_verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,7 +142,7 @@
   <data name="MenuAdminUsersB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuAdminUsersB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MenuAdminSalirB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuAdminSalirB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EDU CAFÉ (1) (1) (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EDU CAFÉ (1) (1) (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
