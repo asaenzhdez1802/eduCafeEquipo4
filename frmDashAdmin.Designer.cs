@@ -451,6 +451,7 @@
             this.btnCerrarSesion.Image = global::eduCafeEquipo4.Properties.Resources.MenuAdminSalirB;
             this.btnCerrarSesion.Location = new System.Drawing.Point(0, 667);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.btnCerrarSesion.Size = new System.Drawing.Size(230, 40);
             this.btnCerrarSesion.TabIndex = 11;
             this.btnCerrarSesion.Text = "  Cerrar sesión";
@@ -568,6 +569,7 @@
             // picLogo
             // 
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Image = global::eduCafeEquipo4.Properties.Resources.EDU_CAFÉ__1___1___2_;
             this.picLogo.Location = new System.Drawing.Point(65, 25);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(100, 100);
