@@ -83,6 +83,26 @@ namespace eduCafeEquipo4.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap inicio {
+            get {
+                object obj = ResourceManager.GetObject("inicio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MenuAdminInicioB {
+            get {
+                object obj = ResourceManager.GetObject("MenuAdminInicioB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MenuAdminInventarioB {
             get {
                 object obj = ResourceManager.GetObject("MenuAdminInventarioB", resourceCulture);
@@ -143,9 +163,39 @@ namespace eduCafeEquipo4.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MenuProductv {
+            get {
+                object obj = ResourceManager.GetObject("MenuProductv", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap productos_admin_verde {
             get {
                 object obj = ResourceManager.GetObject("productos admin_verde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap proveedores_admin_verde {
+            get {
+                object obj = ResourceManager.GetObject("proveedores admin_verde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap proveedores_admin_verde1 {
+            get {
+                object obj = ResourceManager.GetObject("proveedores admin_verde1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

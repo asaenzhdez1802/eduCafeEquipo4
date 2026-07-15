@@ -52,11 +52,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProveedoresAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProveedoresAdmin.Designer.cs">
+      <DependentUpon>frmProveedoresAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDashAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDashAdmin.Designer.cs">
       <DependentUpon>frmDashAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductosAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductosAdmin.Designer.cs">
+      <DependentUpon>frmProductosAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuarioscs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarioscs.Designer.cs">
+      <DependentUpon>frmUsuarioscs.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -71,6 +89,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashAdmin.resx">
       <DependentUpon>frmDashAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductosAdmin.resx">
+      <DependentUpon>frmProductosAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProveedoresAdmin.resx">
+      <DependentUpon>frmProveedoresAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarioscs.resx">
+      <DependentUpon>frmUsuarioscs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,6 +148,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EDU CAFÉ %281%29 %281%29 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedores admin_verde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedores admin_verde1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuAdminInicioB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuProductv.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
