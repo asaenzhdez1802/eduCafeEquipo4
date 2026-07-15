@@ -278,7 +278,7 @@
             this.colCategoria.ReadOnly = true;
             // 
             // colPrecioVenta
-            //
+            // 
             this.colPrecioVenta.FillWeight = 85F;
             this.colPrecioVenta.HeaderText = "Precio venta";
             this.colPrecioVenta.MinimumWidth = 6;
