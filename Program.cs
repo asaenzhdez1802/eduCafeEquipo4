@@ -16,7 +16,7 @@ namespace eduCafeEquipo4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmInventarioAdmin());
+            Application.Run(new Form1());
         }
     }
 }
