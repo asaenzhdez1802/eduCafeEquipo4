@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace eduCafeEquipo4
 {
-    public partial class frmProveedoresAdmin : Form
+    public partial class frmReportes : Form
     {
-        public frmProveedoresAdmin()
+        public frmReportes()
         {
             InitializeComponent();
         }
