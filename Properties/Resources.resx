@@ -118,31 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MenuAdminProovedoresB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuAdminProovedoresB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MenuAdminSalirB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuAdminSalirB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imicio admin_verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imicio admin_verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MenuAdminProductosB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuAdminProductosB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="proveedores admin_verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\proveedores admin_verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MenuAdminInventarioB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuAdminInventarioB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="productos admin_verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\productos admin_verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EDU CAFÉ (1) (1) (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EDU CAFÉ (1) (1) (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MenuAdminReportesB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuAdminReportesB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="proveedores admin_verde1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\proveedores admin_verde1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuAdminSalirB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuAdminSalirB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inicio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuAdminProductosB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuAdminProductosB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MenuAdminUsersB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuAdminUsersB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EDU CAFÉ (1) (1) (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EDU CAFÉ (1) (1) (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MenuAdminProovedoresB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuAdminProovedoresB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imicio admin_verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imicio admin_verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuAdminReportesB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuAdminReportesB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="productos admin_verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\productos admin_verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuAdminInicioB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuAdminInicioB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuProductv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuProductv.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
