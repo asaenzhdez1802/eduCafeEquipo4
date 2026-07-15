@@ -70,6 +70,12 @@
     <Compile Include="frmProductosAdmin.Designer.cs">
       <DependentUpon>frmProductosAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUsuarioscs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarioscs.Designer.cs">
+      <DependentUpon>frmUsuarioscs.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProveedoresAdmin.resx">
       <DependentUpon>frmProveedoresAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarioscs.resx">
+      <DependentUpon>frmUsuarioscs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -148,6 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\proveedores admin_verde1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuAdminInicioB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuProductv.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
