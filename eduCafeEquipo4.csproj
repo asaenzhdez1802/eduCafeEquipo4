@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DC62CD08-C572-5761-AEDB-ECA9A79D25E0}</ProjectGuid>
+    <ProjectGuid>{7C5AEE98-B62F-4559-A527-75BB1E529FCE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>eduCafeEquipo4</RootNamespace>
     <AssemblyName>eduCafeEquipo4</AssemblyName>
@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProveedoresAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProveedoresAdmin.Designer.cs">
+      <DependentUpon>frmProveedoresAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDashAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductosAdmin.resx">
       <DependentUpon>frmProductosAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProveedoresAdmin.resx">
+      <DependentUpon>frmProveedoresAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,6 +139,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EDU CAFÉ %281%29 %281%29 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedores admin_verde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedores admin_verde1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
