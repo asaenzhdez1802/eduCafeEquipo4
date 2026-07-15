@@ -1,25 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace eduCafeEquipo4
+﻿namespace eduCafeEquipo4
 {
-    internal static class Program
+    partial class inventario
     {
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
+        /// Required designer variable.
         /// </summary>
-        [STAThread]
-        static void Main()
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
         }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInventarioAdmin));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -618,10 +627,6 @@ namespace eduCafeEquipo4
             this.PerformLayout();
 
         }
-
-
-
-
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Label lblEduCafe;
@@ -673,4 +678,6 @@ namespace eduCafeEquipo4
         private System.Windows.Forms.Label lblNota;
 
     }
+
+       
 }
