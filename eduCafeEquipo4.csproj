@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInventarioAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventarioAdmin.Designer.cs">
+      <DependentUpon>frmInventarioAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProveedoresAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashAdmin.resx">
       <DependentUpon>frmDashAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventarioAdmin.resx">
+      <DependentUpon>frmInventarioAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductosAdmin.resx">
       <DependentUpon>frmProductosAdmin.cs</DependentUpon>
