@@ -16,5 +16,19 @@ namespace eduCafeEquipo4
         {
             InitializeComponent();
         }
+
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            frmDashAdmin frm = new frmDashAdmin();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

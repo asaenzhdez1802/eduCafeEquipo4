@@ -16,5 +16,56 @@ namespace eduCafeEquipo4
         {
             InitializeComponent();
         }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            frmInventarioAdmin frm = new frmInventarioAdmin();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            frmProductosAdmin frm = new frmProductosAdmin();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            frmProveedoresAdmin frm = new frmProveedoresAdmin();
+
+            frm.Show();
+
+            this.Hide();
+
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frm = new frmUsuarios();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            frmReportes frm = new frmReportes();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
