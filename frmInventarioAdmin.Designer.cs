@@ -233,9 +233,9 @@
             // 
             this.lblSistema.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSistema.ForeColor = System.Drawing.Color.White;
-            this.lblSistema.Location = new System.Drawing.Point(10, 165);
+            this.lblSistema.Location = new System.Drawing.Point(-2, 165);
             this.lblSistema.Name = "lblSistema";
-            this.lblSistema.Size = new System.Drawing.Size(210, 25);
+            this.lblSistema.Size = new System.Drawing.Size(200, 25);
             this.lblSistema.TabIndex = 2;
             this.lblSistema.Text = "Sistema de control de ventas";
             this.lblSistema.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -244,7 +244,7 @@
             // 
             this.lblEduCafe.Font = new System.Drawing.Font("Roboto Cn", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEduCafe.ForeColor = System.Drawing.Color.White;
-            this.lblEduCafe.Location = new System.Drawing.Point(15, 130);
+            this.lblEduCafe.Location = new System.Drawing.Point(-2, 129);
             this.lblEduCafe.Name = "lblEduCafe";
             this.lblEduCafe.Size = new System.Drawing.Size(200, 35);
             this.lblEduCafe.TabIndex = 1;
@@ -255,7 +255,7 @@
             // 
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
             this.picLogo.Image = global::eduCafeEquipo4.Properties.Resources.EDU_CAFÉ__1___1___2_;
-            this.picLogo.Location = new System.Drawing.Point(65, 25);
+            this.picLogo.Location = new System.Drawing.Point(46, 25);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(100, 100);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
