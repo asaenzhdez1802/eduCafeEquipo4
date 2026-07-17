@@ -110,20 +110,9 @@ namespace eduCafeEquipo4
 
         }
 
-                }
-            }
-
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al conectarse a la base de datos: " + ex.Message, "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
     }
 }
