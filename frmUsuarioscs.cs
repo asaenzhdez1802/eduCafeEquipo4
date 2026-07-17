@@ -64,7 +64,14 @@ namespace eduCafeEquipo4
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("¿En realidad quiere cerrar sesión?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                login frm = new login();
+
+                frm.Show();
+
+                this.Hide();
+            }
         }
     }
 }
