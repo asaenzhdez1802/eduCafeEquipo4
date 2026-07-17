@@ -65,14 +65,12 @@ namespace eduCafeEquipo4
                                                     "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                                     txtContrasena.Clear();
-                                    txtContrasena.Focus();
+                                    txtContrasena.Clear();
                                     return;
                                 }
 
-                                // 5. BIENVENIDA: Si está activo, le damos paso con el nombre que unimos en C#
                                 MessageBox.Show($"¡Bienvenido al Sistema, {nombreCompleto}!", "Acceso Concedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                // 6. REGLA DE ROL: Redirigir según sea Administrador o Cajero
                                 if (rol.Equals("Administrador", StringComparison.OrdinalIgnoreCase))
                                 {
                                     frmDashAdmin formularioPrincipal = new frmDashAdmin();
@@ -80,7 +78,7 @@ namespace eduCafeEquipo4
                                 }
                                 else if (rol.Equals("Cajero", StringComparison.OrdinalIgnoreCase))
                                 {
-                                    Form1 formularioCajero = new Form1();
+                                    frmPuntodeVentaCajero formularioCajero = new frmPuntodeVentaCajero();
                                     formularioCajero.Show();
                                 }
                                 else
@@ -96,7 +94,7 @@ namespace eduCafeEquipo4
                                 MessageBox.Show("Los datos son incorrectos. Intente de nuevo.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                                 txtContrasena.Clear();
-                                txtUsuario.Focus();
+                                txtUsuario.Clear();
                             }
                         }
                     }
