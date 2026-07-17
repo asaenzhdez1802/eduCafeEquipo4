@@ -65,7 +65,7 @@ namespace eduCafeEquipo4
                                                     "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                                     txtContrasena.Clear();
-                                    txtContrasena.Clear();
+                                    txtUsuario.Clear();
                                     return;
                                 }
 
