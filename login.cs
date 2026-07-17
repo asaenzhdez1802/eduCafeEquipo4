@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,15 +16,22 @@ namespace eduCafeEquipo4
         public login()
         {
             InitializeComponent();
+            Conexion coneccion = new Conexion();
+            MySqlConnection Conex = coneccion.GetConexion();
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            frmDashAdmin frm = new frmDashAdmin();
+            string usuario = txtUsuario.Text.Trim();
+            string contra = txtContrasena.Text.Trim();
 
-            frm.Show();
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contra))
+            {
+                MessageBox.Show("Por favor, llena todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            this.Hide();
+            Conexion con = new Conexion();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
