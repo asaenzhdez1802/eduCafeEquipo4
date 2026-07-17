@@ -232,7 +232,7 @@
             this.btnInicio.Location = new System.Drawing.Point(0, 214);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Padding = new System.Windows.Forms.Padding(23, 0, 0, 0);
-            this.btnInicio.Size = new System.Drawing.Size(230, 38);
+            this.btnInicio.Size = new System.Drawing.Size(200, 38);
             this.btnInicio.TabIndex = 3;
             this.btnInicio.Text = "  Inicio";
             this.btnInicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
