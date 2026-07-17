@@ -69,10 +69,8 @@ namespace eduCafeEquipo4
                                     return;
                                 }
 
-                                // 5. BIENVENIDA: Si está activo, le damos paso con el nombre que unimos en C#
                                 MessageBox.Show($"¡Bienvenido al Sistema, {nombreCompleto}!", "Acceso Concedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                // 6. REGLA DE ROL: Redirigir según sea Administrador o Cajero
                                 if (rol.Equals("Administrador", StringComparison.OrdinalIgnoreCase))
                                 {
                                     frmDashAdmin formularioPrincipal = new frmDashAdmin();
@@ -111,6 +109,10 @@ namespace eduCafeEquipo4
             }
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
     }
 }
