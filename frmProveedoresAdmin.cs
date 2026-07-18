@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -76,6 +77,44 @@ namespace eduCafeEquipo4
                 frm.Show();
 
                 this.Hide();
+            }
+        }
+
+        private void frmProveedoresAdmin_Load(object sender, EventArgs e)
+        {
+            CargarProveedores();
+        }
+
+        private void CargarProveedores()
+        {
+            Conexion Conclase = new Conexion();
+
+            try
+            {
+                using (MySqlConnection conexion = Conclase.GetConexion())
+                {
+                    if (conexion.State == ConnectionState.Closed)
+                    {
+                        conexion.Open();
+                    }
+
+                    string query = "SELECT id_proveedor, nombre_proveedor, empresa, correo, telefono, calle, colonia, ciudad, codigo_postal FROM proveedor";
+
+                    using (MySqlCommand comando = new MySqlCommand(query, conexion))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(comando))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            dgvProveedores.DataSource = dt;
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al conectar con la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
