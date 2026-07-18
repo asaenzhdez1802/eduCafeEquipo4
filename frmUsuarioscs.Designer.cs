@@ -151,12 +151,12 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.btnUsuarios.BackColor = System.Drawing.Color.White;
             this.btnUsuarios.FlatAppearance.BorderSize = 0;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Image = global::eduCafeEquipo4.Properties.Resources.MenuAdminUsersB;
+            this.btnUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.btnUsuarios.Image = global::eduCafeEquipo4.Properties.Resources.usuarios_admin_verde;
             this.btnUsuarios.Location = new System.Drawing.Point(0, 367);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
@@ -209,12 +209,12 @@
             // 
             // btnProductos
             // 
-            this.btnProductos.BackColor = System.Drawing.Color.White;
+            this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
             this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
-            this.btnProductos.Image = global::eduCafeEquipo4.Properties.Resources.MenuProductv;
+            this.btnProductos.ForeColor = System.Drawing.Color.White;
+            this.btnProductos.Image = global::eduCafeEquipo4.Properties.Resources.MenuAdminProductosB;
             this.btnProductos.Location = new System.Drawing.Point(0, 253);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(230, 38);
@@ -256,7 +256,7 @@
             // 
             // lblEduCafe
             // 
-            this.lblEduCafe.Font = new System.Drawing.Font("Roboto Cn", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEduCafe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEduCafe.ForeColor = System.Drawing.Color.White;
             this.lblEduCafe.Location = new System.Drawing.Point(-2, 130);
             this.lblEduCafe.Name = "lblEduCafe";
@@ -294,7 +294,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(248, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(375, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(365, 18);
             this.lblSubtitulo.TabIndex = 2;
             this.lblSubtitulo.Text = "Administra los usuarios que tienen acceso al sistema";
             // 
@@ -305,7 +305,7 @@
             this.lblBuscarNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarNombre.Location = new System.Drawing.Point(244, 103);
             this.lblBuscarNombre.Name = "lblBuscarNombre";
-            this.lblBuscarNombre.Size = new System.Drawing.Size(63, 18);
+            this.lblBuscarNombre.Size = new System.Drawing.Size(61, 18);
             this.lblBuscarNombre.TabIndex = 3;
             this.lblBuscarNombre.Text = "Nombre";
             // 
@@ -549,7 +549,7 @@
             this.lblEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblEstado.Location = new System.Drawing.Point(20, 365);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(55, 18);
+            this.lblEstado.Size = new System.Drawing.Size(53, 18);
             this.lblEstado.TabIndex = 13;
             this.lblEstado.Text = "Estado";
             // 
@@ -570,7 +570,7 @@
             this.lblRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblRol.Location = new System.Drawing.Point(20, 302);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(31, 18);
+            this.lblRol.Size = new System.Drawing.Size(30, 18);
             this.lblRol.TabIndex = 11;
             this.lblRol.Text = "Rol";
             // 
@@ -590,7 +590,7 @@
             this.lblContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblContrasena.Location = new System.Drawing.Point(20, 239);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(86, 18);
+            this.lblContrasena.Size = new System.Drawing.Size(84, 18);
             this.lblContrasena.TabIndex = 9;
             this.lblContrasena.Text = "Contraseña";
             // 
@@ -610,7 +610,7 @@
             this.lblSegundoApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblSegundoApellido.Location = new System.Drawing.Point(185, 177);
             this.lblSegundoApellido.Name = "lblSegundoApellido";
-            this.lblSegundoApellido.Size = new System.Drawing.Size(129, 18);
+            this.lblSegundoApellido.Size = new System.Drawing.Size(121, 18);
             this.lblSegundoApellido.TabIndex = 7;
             this.lblSegundoApellido.Text = "Segundo apellido";
             // 
@@ -630,7 +630,7 @@
             this.lblPrimerApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblPrimerApellido.Location = new System.Drawing.Point(20, 177);
             this.lblPrimerApellido.Name = "lblPrimerApellido";
-            this.lblPrimerApellido.Size = new System.Drawing.Size(112, 18);
+            this.lblPrimerApellido.Size = new System.Drawing.Size(109, 18);
             this.lblPrimerApellido.TabIndex = 5;
             this.lblPrimerApellido.Text = "Primer apellido";
             // 
@@ -650,7 +650,7 @@
             this.lblNombresReales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblNombresReales.Location = new System.Drawing.Point(20, 117);
             this.lblNombresReales.Name = "lblNombresReales";
-            this.lblNombresReales.Size = new System.Drawing.Size(116, 18);
+            this.lblNombresReales.Size = new System.Drawing.Size(114, 18);
             this.lblNombresReales.TabIndex = 3;
             this.lblNombresReales.Text = "Nombres reales";
             // 
@@ -670,7 +670,7 @@
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblNombreUsuario.Location = new System.Drawing.Point(20, 57);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(140, 18);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(134, 18);
             this.lblNombreUsuario.TabIndex = 1;
             this.lblNombreUsuario.Text = "Nombre de usuario";
             // 
