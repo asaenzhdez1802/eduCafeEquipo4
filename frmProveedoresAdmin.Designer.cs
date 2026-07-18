@@ -37,11 +37,6 @@
             this.txtBuscarProveedor = new System.Windows.Forms.TextBox();
             this.btnNuevoProveedor = new System.Windows.Forms.Button();
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelInformacionProveedor = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
@@ -282,7 +277,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(172, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(167, 18);
             this.lblSubtitulo.TabIndex = 2;
             this.lblSubtitulo.Text = "Administra proveedores";
             // 
@@ -293,7 +288,7 @@
             this.lblBuscarProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarProveedor.Location = new System.Drawing.Point(270, 103);
             this.lblBuscarProveedor.Name = "lblBuscarProveedor";
-            this.lblBuscarProveedor.Size = new System.Drawing.Size(79, 18);
+            this.lblBuscarProveedor.Size = new System.Drawing.Size(76, 18);
             this.lblBuscarProveedor.TabIndex = 3;
             this.lblBuscarProveedor.Text = "Proveedor";
             // 
@@ -339,12 +334,6 @@
             this.dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProveedores.ColumnHeadersHeight = 38;
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.colEmpresa,
-            this.colCategoria,
-            this.colCorreo,
-            this.colAcciones});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -365,45 +354,6 @@
             this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProveedores.Size = new System.Drawing.Size(515, 470);
             this.dgvProveedores.TabIndex = 6;
-            // 
-            // colId
-            // 
-            this.colId.FillWeight = 65F;
-            this.colId.HeaderText = "ID";
-            this.colId.MinimumWidth = 6;
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            // 
-            // colEmpresa
-            // 
-            this.colEmpresa.FillWeight = 110F;
-            this.colEmpresa.HeaderText = "Empresa";
-            this.colEmpresa.MinimumWidth = 6;
-            this.colEmpresa.Name = "colEmpresa";
-            this.colEmpresa.ReadOnly = true;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.HeaderText = "Categoría";
-            this.colCategoria.MinimumWidth = 6;
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
-            // 
-            // colCorreo
-            // 
-            this.colCorreo.FillWeight = 155F;
-            this.colCorreo.HeaderText = "Correo electrónico";
-            this.colCorreo.MinimumWidth = 6;
-            this.colCorreo.Name = "colCorreo";
-            this.colCorreo.ReadOnly = true;
-            // 
-            // colAcciones
-            // 
-            this.colAcciones.FillWeight = 80F;
-            this.colAcciones.HeaderText = "Acciones";
-            this.colAcciones.MinimumWidth = 6;
-            this.colAcciones.Name = "colAcciones";
-            this.colAcciones.ReadOnly = true;
             // 
             // panelInformacionProveedor
             // 
@@ -464,7 +414,7 @@
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblStatus.Location = new System.Drawing.Point(185, 365);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(52, 18);
+            this.lblStatus.Size = new System.Drawing.Size(51, 18);
             this.lblStatus.TabIndex = 17;
             this.lblStatus.Text = "Status";
             // 
@@ -484,7 +434,7 @@
             this.lblCodigoPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCodigoPostal.Location = new System.Drawing.Point(20, 365);
             this.lblCodigoPostal.Name = "lblCodigoPostal";
-            this.lblCodigoPostal.Size = new System.Drawing.Size(104, 18);
+            this.lblCodigoPostal.Size = new System.Drawing.Size(99, 18);
             this.lblCodigoPostal.TabIndex = 15;
             this.lblCodigoPostal.Text = "Código postal";
             // 
@@ -504,7 +454,7 @@
             this.lblCiudad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCiudad.Location = new System.Drawing.Point(185, 302);
             this.lblCiudad.Name = "lblCiudad";
-            this.lblCiudad.Size = new System.Drawing.Size(56, 18);
+            this.lblCiudad.Size = new System.Drawing.Size(54, 18);
             this.lblCiudad.TabIndex = 13;
             this.lblCiudad.Text = "Ciudad";
             // 
@@ -524,7 +474,7 @@
             this.lblColonia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblColonia.Location = new System.Drawing.Point(20, 302);
             this.lblColonia.Name = "lblColonia";
-            this.lblColonia.Size = new System.Drawing.Size(60, 18);
+            this.lblColonia.Size = new System.Drawing.Size(58, 18);
             this.lblColonia.TabIndex = 11;
             this.lblColonia.Text = "Colonia";
             // 
@@ -544,7 +494,7 @@
             this.lblCalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCalle.Location = new System.Drawing.Point(185, 239);
             this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(41, 18);
+            this.lblCalle.Size = new System.Drawing.Size(42, 18);
             this.lblCalle.TabIndex = 9;
             this.lblCalle.Text = "Calle";
             // 
@@ -564,7 +514,7 @@
             this.lblEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblEmpresa.Location = new System.Drawing.Point(20, 239);
             this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(67, 18);
+            this.lblEmpresa.Size = new System.Drawing.Size(66, 18);
             this.lblEmpresa.TabIndex = 7;
             this.lblEmpresa.Text = "Empresa";
             // 
@@ -584,7 +534,7 @@
             this.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblTelefono.Location = new System.Drawing.Point(20, 177);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(69, 18);
+            this.lblTelefono.Size = new System.Drawing.Size(66, 18);
             this.lblTelefono.TabIndex = 5;
             this.lblTelefono.Text = "Teléfono";
             // 
@@ -604,7 +554,7 @@
             this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCorreo.Location = new System.Drawing.Point(20, 117);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(134, 18);
+            this.lblCorreo.Size = new System.Drawing.Size(130, 18);
             this.lblCorreo.TabIndex = 3;
             this.lblCorreo.Text = "Correo electrónico";
             // 
@@ -624,7 +574,7 @@
             this.lblNombreProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblNombreProveedor.Location = new System.Drawing.Point(20, 57);
             this.lblNombreProveedor.Name = "lblNombreProveedor";
-            this.lblNombreProveedor.Size = new System.Drawing.Size(162, 18);
+            this.lblNombreProveedor.Size = new System.Drawing.Size(155, 18);
             this.lblNombreProveedor.TabIndex = 1;
             this.lblNombreProveedor.Text = "Nombre del proveedor";
             // 
@@ -671,6 +621,7 @@
             this.Name = "frmProveedoresAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proveedores";
+            this.Load += new System.EventHandler(this.frmProveedoresAdmin_Load);
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
@@ -702,11 +653,6 @@
         private System.Windows.Forms.Button btnNuevoProveedor;
 
         private System.Windows.Forms.DataGridView dgvProveedores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmpresa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCorreo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAcciones;
 
         private System.Windows.Forms.Panel panelInformacionProveedor;
         private System.Windows.Forms.Label lblTituloInformacion;
