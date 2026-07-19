@@ -17,8 +17,8 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lineaMenu = new System.Windows.Forms.Panel();
@@ -39,7 +39,7 @@
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
             this.panelInformacionProveedor = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.txtEstado = new System.Windows.Forms.ComboBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.txtCodigoPostal = new System.Windows.Forms.TextBox();
             this.lblCodigoPostal = new System.Windows.Forms.Label();
@@ -59,6 +59,7 @@
             this.lblNombreProveedor = new System.Windows.Forms.Label();
             this.lblTituloInformacion = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
@@ -324,24 +325,24 @@
             this.dgvProveedores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             this.dgvProveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProveedores.ColumnHeadersHeight = 38;
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProveedores.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProveedores.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProveedores.EnableHeadersVisualStyles = false;
             this.dgvProveedores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(220)))), ((int)(((byte)(210)))));
             this.dgvProveedores.Location = new System.Drawing.Point(270, 165);
@@ -358,8 +359,9 @@
             // panelInformacionProveedor
             // 
             this.panelInformacionProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(224)))), ((int)(((byte)(204)))));
+            this.panelInformacionProveedor.Controls.Add(this.button1);
             this.panelInformacionProveedor.Controls.Add(this.btnGuardar);
-            this.panelInformacionProveedor.Controls.Add(this.cmbStatus);
+            this.panelInformacionProveedor.Controls.Add(this.txtEstado);
             this.panelInformacionProveedor.Controls.Add(this.lblStatus);
             this.panelInformacionProveedor.Controls.Add(this.txtCodigoPostal);
             this.panelInformacionProveedor.Controls.Add(this.lblCodigoPostal);
@@ -390,22 +392,25 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(115, 449);
+            this.btnGuardar.Location = new System.Drawing.Point(20, 450);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(120, 43);
             this.btnGuardar.TabIndex = 19;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
-            // cmbStatus
+            // txtEstado
             // 
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.Font = new System.Drawing.Font("Roboto", 9F);
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(185, 386);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(145, 26);
-            this.cmbStatus.TabIndex = 18;
+            this.txtEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtEstado.Font = new System.Drawing.Font("Roboto", 9F);
+            this.txtEstado.FormattingEnabled = true;
+            this.txtEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.txtEstado.Location = new System.Drawing.Point(185, 386);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(145, 26);
+            this.txtEstado.TabIndex = 18;
             // 
             // lblStatus
             // 
@@ -414,9 +419,9 @@
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblStatus.Location = new System.Drawing.Point(185, 365);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(51, 18);
+            this.lblStatus.Size = new System.Drawing.Size(53, 18);
             this.lblStatus.TabIndex = 17;
-            this.lblStatus.Text = "Status";
+            this.lblStatus.Text = "Estado";
             // 
             // txtCodigoPostal
             // 
@@ -600,6 +605,20 @@
             this.lblNota.Text = "Desde esta sección puedes agregar, editar, eliminar y consultar los proveedores.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(91)))), ((int)(((byte)(52)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(210, 450);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 43);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // frmProveedoresAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -673,9 +692,10 @@
         private System.Windows.Forms.Label lblCodigoPostal;
         private System.Windows.Forms.TextBox txtCodigoPostal;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.ComboBox txtEstado;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Button btnInicio;
+        private System.Windows.Forms.Button button1;
     }
 }
