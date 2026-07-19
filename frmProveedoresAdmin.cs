@@ -13,6 +13,7 @@ namespace eduCafeEquipo4
 {
     public partial class frmProveedoresAdmin : Form
     {
+        int IdProveedorSeleccionado = 0;
         public frmProveedoresAdmin()
         {
             InitializeComponent();
@@ -98,7 +99,7 @@ namespace eduCafeEquipo4
                         conexion.Open();
                     }
 
-                    string query = "SELECT id_proveedor, nombre_proveedor, empresa, correo, telefono, calle, colonia, ciudad, codigo_postal FROM proveedor";
+                    string query = "SELECT id_proveedor, nombre_proveedor, empresa, correo, telefono, calle, colonia, ciudad, codigo_postal, estado FROM proveedor";
 
                     using (MySqlCommand comando = new MySqlCommand(query, conexion))
                     {
@@ -115,6 +116,25 @@ namespace eduCafeEquipo4
             catch (MySqlException ex)
             {
                 MessageBox.Show("Error al conectar con la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvProveedores.Rows[e.RowIndex];
+                IdProveedorSeleccionado = Convert.ToInt32(fila.Cells["id_proveedor"].Value);
+
+                txtNombreProveedor.Text = fila.Cells["nombre_proveedor"].Value.ToString();
+                txtCorreo.Text = fila.Cells["empresa"].Value.ToString();
+                txtTelefono.Text = fila.Cells["correo"].Value.ToString();
+                txtEmpresa.Text = fila.Cells["telefono"].Value.ToString();
+                txtCalle.Text = fila.Cells["calle"].Value.ToString();
+                txtColonia.Text = fila.Cells["colonia"].Value.ToString();
+                txtCiudad.Text = fila.Cells["ciudad"].Value.ToString();
+                txtCodigoPostal.Text = fila.Cells["codigo_postal"].Value.ToString();
+                txtEstado.Text = fila.Cells["estado"].Value.ToString();
             }
         }
     }
