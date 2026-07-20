@@ -171,6 +171,7 @@
             this.chkMostrarContrasena.TabIndex = 7;
             this.chkMostrarContrasena.Text = "Mostrar contraseña";
             this.chkMostrarContrasena.UseVisualStyleBackColor = true;
+            this.chkMostrarContrasena.CheckedChanged += new System.EventHandler(this.chkMostrarContrasena_CheckedChanged);
             // 
             // btnIniciarSesion
             // 

@@ -14,12 +14,10 @@ namespace eduCafeEquipo4
 {
     public partial class login : Form
     {
-        private readonly SpeechSynthesizer voz =
-            new SpeechSynthesizer();
+        private readonly SpeechSynthesizer voz = new SpeechSynthesizer();
         private bool audioAccesibilidadActivo = false;
         private string ultimoMensaje = "";
         private DateTime ultimaLectura = DateTime.MinValue;
-
         public login()
         {
             InitializeComponent();
@@ -31,22 +29,14 @@ namespace eduCafeEquipo4
             btnAudio.Text = "Audio: Desactivado";
             ConfigurarAudioAccesibilidad();
         }
-
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text.Trim();
             string contra = txtContrasena.Text.Trim();
 
-            if (string.IsNullOrEmpty(usuario) ||
-                string.IsNullOrEmpty(contra))
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contra))
             {
-                MessageBox.Show(
-                    "Por favor, llena todos los campos.",
-                    "Campos vacíos",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
-
+                MessageBox.Show("Por favor, llena todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -56,103 +46,48 @@ namespace eduCafeEquipo4
             {
                 using (var conexion = con.GetConexion())
                 {
-                    if (conexion == null)
-                        return;
+                    if (conexion == null) return;
 
-                    string query =
-                        "SELECT nombres, primer_apellido, segundo_apellido, rol, estado " +
-                        "FROM usuario " +
-                        "WHERE nombre_usuario = @user " +
-                        "AND contrasena = @pass";
+                    string query = "SELECT nombres, primer_apellido, segundo_apellido, rol, estado " + "FROM usuario " + "WHERE nombre_usuario = @user " + "AND contrasena = @pass";
 
-                    using (MySqlCommand comando =
-                           new MySqlCommand(query, conexion))
+                    using (MySqlCommand comando = new MySqlCommand(query, conexion))
                     {
-                        comando.Parameters.AddWithValue(
-                            "@user",
-                            usuario
-                        );
-
-                        comando.Parameters.AddWithValue(
-                            "@pass",
-                            contra
-                        );
-
-                        using (MySqlDataReader reader =
-                               comando.ExecuteReader())
+                        comando.Parameters.AddWithValue("@user", usuario);
+                        comando.Parameters.AddWithValue("@pass", contra);
+                        using (MySqlDataReader reader = comando.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                string nombres =
-                                    reader["nombres"].ToString();
+                                string nombres = reader["nombres"].ToString();
+                                string primerApellido = reader["primer_apellido"].ToString();
+                                string segundoApellido = reader["segundo_apellido"].ToString();
+                                string nombreCompleto = $"{nombres} {primerApellido} {segundoApellido}".Trim();
+                                string rol = reader["rol"].ToString();
+                                string estado = reader["estado"].ToString();
 
-                                string primerApellido =
-                                    reader["primer_apellido"].ToString();
-
-                                string segundoApellido =
-                                    reader["segundo_apellido"].ToString();
-
-                                string nombreCompleto =
-                                    $"{nombres} {primerApellido} {segundoApellido}"
-                                    .Trim();
-
-                                string rol =
-                                    reader["rol"].ToString();
-
-                                string estado =
-                                    reader["estado"].ToString();
-
-                                if (estado.Equals(
-                                    "Inactivo",
-                                    StringComparison.OrdinalIgnoreCase))
+                                if (estado.Equals("Inactivo", StringComparison.OrdinalIgnoreCase))
                                 {
-                                    MessageBox.Show(
-                                        "Error: Tu cuenta está desactivada. Contacta al administrador.",
-                                        "Acceso Denegado",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error
-                                    );
-
+                                    MessageBox.Show("Error: Tu cuenta está desactivada. Contacta al administrador.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     txtContrasena.Clear();
                                     txtUsuario.Clear();
-
                                     return;
                                 }
 
-                                MessageBox.Show(
-                                    $"¡Bienvenido al Sistema, {nombreCompleto}!",
-                                    "Acceso Concedido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information
-                                );
+                                MessageBox.Show($"¡Bienvenido al Sistema, {nombreCompleto}!", "Acceso Concedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                if (rol.Equals(
-                                    "Administrador",
-                                    StringComparison.OrdinalIgnoreCase))
+                                if (rol.Equals("Administrador", StringComparison.OrdinalIgnoreCase))
                                 {
-                                    frmDashAdmin formularioPrincipal =
-                                        new frmDashAdmin();
-
+                                    frmDashAdmin formularioPrincipal = new frmDashAdmin();
                                     formularioPrincipal.Show();
                                 }
-                                else if (rol.Equals(
-                                    "Cajero",
-                                    StringComparison.OrdinalIgnoreCase))
+                                else if (rol.Equals("Cajero", StringComparison.OrdinalIgnoreCase))
                                 {
-                                    frmPuntodeVentaCajero formularioCajero =
-                                        new frmPuntodeVentaCajero();
-
+                                    frmPuntodeVentaCajero formularioCajero = new frmPuntodeVentaCajero();
                                     formularioCajero.Show();
                                 }
                                 else
                                 {
-                                    MessageBox.Show(
-                                        "Tu rol no está registrado en el sistema.",
-                                        "Error de Permisos",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Warning
-                                    );
-
+                                    MessageBox.Show("Tu rol no está registrado en el sistema.", "Error de Permisos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
 
@@ -160,13 +95,7 @@ namespace eduCafeEquipo4
                             }
                             else
                             {
-                                MessageBox.Show(
-                                    "Los datos son incorrectos. Intente de nuevo.",
-                                    "Acceso Denegado",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error
-                                );
-
+                                MessageBox.Show("Los datos son incorrectos. Intente de nuevo.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txtContrasena.Clear();
                                 txtUsuario.Clear();
                             }
@@ -176,16 +105,9 @@ namespace eduCafeEquipo4
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Error al conectarse a la base de datos: " +
-                    ex.Message,
-                    "Error de Conexión",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageBox.Show("Error al conectarse a la base de datos: " + ex.Message, "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -197,39 +119,14 @@ namespace eduCafeEquipo4
 
         private void ConfigurarAudioAccesibilidad()
         {
-            AgregarLectura(
-                txtUsuario,
-                "Usuario"
-            );
-
-            AgregarLectura(
-                txtContrasena,
-                "Contraseña"
-            );
-
-            AgregarLectura(
-                chkMostrarContrasena,
-                "Mostrar contraseña"
-            );
-
-            AgregarLectura(
-                btnIniciarSesion,
-                "Iniciar sesión"
-            );
-
-            AgregarLectura(
-                btnSalir,
-                "Salir"
-            );
-
-            AgregarLectura(
-                btnAudio,
-                "Activar o desactivar audio"
-            );
+            AgregarLectura(txtUsuario, "Usuario");
+            AgregarLectura(txtContrasena, "Contraseña");
+            AgregarLectura(chkMostrarContrasena, "Mostrar contraseña");
+            AgregarLectura(btnIniciarSesion, "Iniciar sesión");
+            AgregarLectura(btnSalir, "Salir");
+            AgregarLectura(btnAudio, "Activar o desactivar audio");
         }
-        private void AgregarLectura(
-            Control control,
-            string mensaje)
+        private void AgregarLectura(Control control, string mensaje)
         {
             control.AccessibleName = mensaje;
 
@@ -256,66 +153,58 @@ namespace eduCafeEquipo4
                 return;
             }
 
-            bool mensajeRepetido =
-                ultimoMensaje == mensaje;
+            bool mensajeRepetido = ultimoMensaje == mensaje;
+            bool acabaDeReproducirse = (DateTime.Now - ultimaLectura).TotalMilliseconds < 1000;
 
-            bool acabaDeReproducirse =
-                (DateTime.Now - ultimaLectura)
-                .TotalMilliseconds < 1000;
-
-            if (mensajeRepetido &&
-                acabaDeReproducirse)
+            if (mensajeRepetido && acabaDeReproducirse)
             {
                 return;
             }
 
             ultimoMensaje = mensaje;
             ultimaLectura = DateTime.Now;
-
             voz.SpeakAsyncCancelAll();
-
             voz.SpeakAsync(mensaje);
         }
 
         private void btnAudio_Click(object sender, EventArgs e)
         {
             voz.SpeakAsyncCancelAll();
-
             if (!audioAccesibilidadActivo)
             {
                 audioAccesibilidadActivo = true;
-
                 btnAudio.Text = "Audio: Activado";
-
                 ultimoMensaje = "";
                 ultimaLectura = DateTime.MinValue;
-
-                voz.SpeakAsync(
-                    "Asistencia de voz activada"
-                );
+                voz.SpeakAsync("Asistencia de voz activada");
             }
             else
             {
-                voz.SpeakAsync(
-                    "Asistencia de voz desactivada"
-                );
-
+                voz.SpeakAsync("Asistencia de voz desactivada");
                 audioAccesibilidadActivo = false;
-
                 btnAudio.Text = "Audio: Desactivado";
-
                 ultimoMensaje = "";
                 ultimaLectura = DateTime.MinValue;
             }
         }
 
-        protected override void OnFormClosed(
-            FormClosedEventArgs e)
+        protected override void OnFormClosed(FormClosedEventArgs e)
         {
             voz.SpeakAsyncCancelAll();
             voz.Dispose();
-
             base.OnFormClosed(e);
+        }
+
+        private void chkMostrarContrasena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkMostrarContrasena.Checked)
+            {
+                txtContrasena.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtContrasena.UseSystemPasswordChar = true;
+            }
         }
     }
 }
