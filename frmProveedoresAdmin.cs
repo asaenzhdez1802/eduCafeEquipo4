@@ -237,5 +237,40 @@ namespace eduCafeEquipo4
                 return false;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvProveedores.SelectedRows.Count == 0) return;
+
+            int idSeleccionado = Convert.ToInt32(dgvProveedores.SelectedRows[0].Cells["id_proveedor"].Value);
+
+            DialogResult confirm = MessageBox.Show("¿Seguro que deseas eliminar este proveedor?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.No) return;
+
+            Conexion conClase = new Conexion();
+            MySqlConnection conn = conClase.GetConexion();
+            if (conn == null) return;
+
+            string sql = "DELETE FROM proveedor WHERE id_proveedor = @id";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@id", idSeleccionado);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show("Proveedor eliminado con éxito.", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CargarProveedores();
+
+            txtNombreProveedor.Clear();
+            txtEmpresa.Clear();
+            txtCorreo.Clear();
+            txtTelefono.Clear();
+            txtCalle.Clear();
+            txtColonia.Clear();
+            txtCiudad.Clear();
+            txtCodigoPostal.Clear();
+            txtEstado.SelectedIndex = -1;
+
+        }
     }
 }
