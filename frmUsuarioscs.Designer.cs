@@ -48,12 +48,6 @@
             this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.btnNuevoUsuario = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.colIdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelRoles = new System.Windows.Forms.Panel();
             this.lblDescripcionCajero = new System.Windows.Forms.Label();
             this.lblTituloCajero = new System.Windows.Forms.Label();
@@ -78,6 +72,11 @@
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblTituloInformacion = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
+            this.colIdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -356,8 +355,7 @@
             this.colUsuario,
             this.colNombreCompleto,
             this.colRol,
-            this.colEstadoUsuario,
-            this.colAcciones});
+            this.colEstadoUsuario});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -378,54 +376,6 @@
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(515, 330);
             this.dgvUsuarios.TabIndex = 6;
-            // 
-            // colIdUsuario
-            // 
-            this.colIdUsuario.FillWeight = 60F;
-            this.colIdUsuario.HeaderText = "ID";
-            this.colIdUsuario.MinimumWidth = 6;
-            this.colIdUsuario.Name = "colIdUsuario";
-            this.colIdUsuario.ReadOnly = true;
-            // 
-            // colUsuario
-            // 
-            this.colUsuario.FillWeight = 95F;
-            this.colUsuario.HeaderText = "Usuario";
-            this.colUsuario.MinimumWidth = 6;
-            this.colUsuario.Name = "colUsuario";
-            this.colUsuario.ReadOnly = true;
-            // 
-            // colNombreCompleto
-            // 
-            this.colNombreCompleto.FillWeight = 135F;
-            this.colNombreCompleto.HeaderText = "Nombre completo";
-            this.colNombreCompleto.MinimumWidth = 6;
-            this.colNombreCompleto.Name = "colNombreCompleto";
-            this.colNombreCompleto.ReadOnly = true;
-            // 
-            // colRol
-            // 
-            this.colRol.FillWeight = 90F;
-            this.colRol.HeaderText = "Rol";
-            this.colRol.MinimumWidth = 6;
-            this.colRol.Name = "colRol";
-            this.colRol.ReadOnly = true;
-            // 
-            // colEstadoUsuario
-            // 
-            this.colEstadoUsuario.FillWeight = 80F;
-            this.colEstadoUsuario.HeaderText = "Estado";
-            this.colEstadoUsuario.MinimumWidth = 6;
-            this.colEstadoUsuario.Name = "colEstadoUsuario";
-            this.colEstadoUsuario.ReadOnly = true;
-            // 
-            // colAcciones
-            // 
-            this.colAcciones.FillWeight = 80F;
-            this.colAcciones.HeaderText = "Acciones";
-            this.colAcciones.MinimumWidth = 6;
-            this.colAcciones.Name = "colAcciones";
-            this.colAcciones.ReadOnly = true;
             // 
             // panelRoles
             // 
@@ -697,6 +647,46 @@
     "os del sistema.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // colIdUsuario
+            // 
+            this.colIdUsuario.FillWeight = 60F;
+            this.colIdUsuario.HeaderText = "ID";
+            this.colIdUsuario.MinimumWidth = 6;
+            this.colIdUsuario.Name = "colIdUsuario";
+            this.colIdUsuario.ReadOnly = true;
+            // 
+            // colUsuario
+            // 
+            this.colUsuario.FillWeight = 95F;
+            this.colUsuario.HeaderText = "Usuario";
+            this.colUsuario.MinimumWidth = 6;
+            this.colUsuario.Name = "colUsuario";
+            this.colUsuario.ReadOnly = true;
+            // 
+            // colNombreCompleto
+            // 
+            this.colNombreCompleto.FillWeight = 135F;
+            this.colNombreCompleto.HeaderText = "Nombre completo";
+            this.colNombreCompleto.MinimumWidth = 6;
+            this.colNombreCompleto.Name = "colNombreCompleto";
+            this.colNombreCompleto.ReadOnly = true;
+            // 
+            // colRol
+            // 
+            this.colRol.FillWeight = 90F;
+            this.colRol.HeaderText = "Rol";
+            this.colRol.MinimumWidth = 6;
+            this.colRol.Name = "colRol";
+            this.colRol.ReadOnly = true;
+            // 
+            // colEstadoUsuario
+            // 
+            this.colEstadoUsuario.FillWeight = 80F;
+            this.colEstadoUsuario.HeaderText = "Estado";
+            this.colEstadoUsuario.MinimumWidth = 6;
+            this.colEstadoUsuario.Name = "colEstadoUsuario";
+            this.colEstadoUsuario.ReadOnly = true;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -752,12 +742,6 @@
         private System.Windows.Forms.Button btnNuevoUsuario;
 
         private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIdUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNombreCompleto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAcciones;
 
         private System.Windows.Forms.Panel panelRoles;
         private System.Windows.Forms.Label lblTituloRoles;
@@ -784,6 +768,10 @@
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblNota;
-
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombreCompleto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoUsuario;
     }
 }
