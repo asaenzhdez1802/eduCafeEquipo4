@@ -315,6 +315,7 @@
             this.btnNuevoProveedor.TabIndex = 5;
             this.btnNuevoProveedor.Text = "Nuevo proveedor";
             this.btnNuevoProveedor.UseVisualStyleBackColor = false;
+            this.btnNuevoProveedor.Click += new System.EventHandler(this.btnNuevoProveedor_Click);
             // 
             // dgvProveedores
             // 
