@@ -45,6 +45,7 @@
             this.lblO = new System.Windows.Forms.Label();
             this.lineaDerecha = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnAudio = new System.Windows.Forms.Button();
             this.panelIzquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -228,12 +229,24 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnAudio
+            // 
+            this.btnAudio.Location = new System.Drawing.Point(1032, 12);
+            this.btnAudio.Name = "btnAudio";
+            this.btnAudio.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAudio.Size = new System.Drawing.Size(152, 40);
+            this.btnAudio.TabIndex = 13;
+            this.btnAudio.Text = "Audio: Desactivado";
+            this.btnAudio.UseVisualStyleBackColor = true;
+            this.btnAudio.Click += new System.EventHandler(this.btnAudio_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1196, 739);
+            this.Controls.Add(this.btnAudio);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lineaDerecha);
             this.Controls.Add(this.lblO);
@@ -277,5 +290,6 @@
         private System.Windows.Forms.Label lblO;
         private System.Windows.Forms.Panel lineaDerecha;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnAudio;
     }
 }
