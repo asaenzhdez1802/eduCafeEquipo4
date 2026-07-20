@@ -50,12 +50,6 @@
             this.cmbBuscarCategoria = new System.Windows.Forms.ComboBox();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelInformacionProducto = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -290,7 +284,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(358, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(347, 18);
             this.lblSubtitulo.TabIndex = 2;
             this.lblSubtitulo.Text = "Administra el catálogo de productos de la cafetería";
             // 
@@ -301,7 +295,7 @@
             this.lblBuscarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarProducto.Location = new System.Drawing.Point(270, 102);
             this.lblBuscarProducto.Name = "lblBuscarProducto";
-            this.lblBuscarProducto.Size = new System.Drawing.Size(134, 18);
+            this.lblBuscarProducto.Size = new System.Drawing.Size(127, 18);
             this.lblBuscarProducto.TabIndex = 3;
             this.lblBuscarProducto.Text = "Nombre producto:";
             // 
@@ -321,7 +315,7 @@
             this.lblBuscarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarCategoria.Location = new System.Drawing.Point(495, 102);
             this.lblBuscarCategoria.Name = "lblBuscarCategoria";
-            this.lblBuscarCategoria.Size = new System.Drawing.Size(73, 18);
+            this.lblBuscarCategoria.Size = new System.Drawing.Size(72, 18);
             this.lblBuscarCategoria.TabIndex = 5;
             this.lblBuscarCategoria.Text = "Categoría";
             // 
@@ -368,13 +362,6 @@
             this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProductos.ColumnHeadersHeight = 38;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCodigo,
-            this.colProducto,
-            this.colCategoria,
-            this.colPrecioVenta,
-            this.colEstado,
-            this.colAcciones});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -395,53 +382,6 @@
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(512, 470);
             this.dgvProductos.TabIndex = 8;
-            // 
-            // colCodigo
-            // 
-            this.colCodigo.FillWeight = 65F;
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.MinimumWidth = 6;
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.ReadOnly = true;
-            // 
-            // colProducto
-            // 
-            this.colProducto.FillWeight = 145F;
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.MinimumWidth = 6;
-            this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.HeaderText = "Categoría";
-            this.colCategoria.MinimumWidth = 6;
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
-            // 
-            // colPrecioVenta
-            // 
-            this.colPrecioVenta.FillWeight = 85F;
-            this.colPrecioVenta.HeaderText = "Precio venta";
-            this.colPrecioVenta.MinimumWidth = 6;
-            this.colPrecioVenta.Name = "colPrecioVenta";
-            this.colPrecioVenta.ReadOnly = true;
-            // 
-            // colEstado
-            // 
-            this.colEstado.FillWeight = 75F;
-            this.colEstado.HeaderText = "Estado";
-            this.colEstado.MinimumWidth = 6;
-            this.colEstado.Name = "colEstado";
-            this.colEstado.ReadOnly = true;
-            // 
-            // colAcciones
-            // 
-            this.colAcciones.FillWeight = 80F;
-            this.colAcciones.HeaderText = "Acciones";
-            this.colAcciones.MinimumWidth = 6;
-            this.colAcciones.Name = "colAcciones";
-            this.colAcciones.ReadOnly = true;
             // 
             // panelInformacionProducto
             // 
@@ -513,7 +453,7 @@
             this.lblEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblEstado.Location = new System.Drawing.Point(190, 302);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(55, 18);
+            this.lblEstado.Size = new System.Drawing.Size(53, 18);
             this.lblEstado.TabIndex = 13;
             this.lblEstado.Text = "Estado";
             // 
@@ -533,7 +473,7 @@
             this.lblStockMinimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblStockMinimo.Location = new System.Drawing.Point(20, 302);
             this.lblStockMinimo.Name = "lblStockMinimo";
-            this.lblStockMinimo.Size = new System.Drawing.Size(103, 18);
+            this.lblStockMinimo.Size = new System.Drawing.Size(100, 18);
             this.lblStockMinimo.TabIndex = 11;
             this.lblStockMinimo.Text = "Stock mínimo";
             // 
@@ -553,7 +493,7 @@
             this.lblPrecioVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblPrecioVenta.Location = new System.Drawing.Point(190, 239);
             this.lblPrecioVenta.Name = "lblPrecioVenta";
-            this.lblPrecioVenta.Size = new System.Drawing.Size(115, 18);
+            this.lblPrecioVenta.Size = new System.Drawing.Size(112, 18);
             this.lblPrecioVenta.TabIndex = 9;
             this.lblPrecioVenta.Text = "Precio de venta";
             // 
@@ -573,7 +513,7 @@
             this.lblPrecioCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblPrecioCompra.Location = new System.Drawing.Point(20, 239);
             this.lblPrecioCompra.Name = "lblPrecioCompra";
-            this.lblPrecioCompra.Size = new System.Drawing.Size(129, 18);
+            this.lblPrecioCompra.Size = new System.Drawing.Size(125, 18);
             this.lblPrecioCompra.TabIndex = 7;
             this.lblPrecioCompra.Text = "Precio de compra";
             // 
@@ -594,7 +534,7 @@
             this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCategoria.Location = new System.Drawing.Point(20, 177);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(73, 18);
+            this.lblCategoria.Size = new System.Drawing.Size(72, 18);
             this.lblCategoria.TabIndex = 5;
             this.lblCategoria.Text = "Categoría";
             // 
@@ -614,7 +554,7 @@
             this.lblNombreProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblNombreProducto.Location = new System.Drawing.Point(20, 117);
             this.lblNombreProducto.Name = "lblNombreProducto";
-            this.lblNombreProducto.Size = new System.Drawing.Size(155, 18);
+            this.lblNombreProducto.Size = new System.Drawing.Size(147, 18);
             this.lblNombreProducto.TabIndex = 3;
             this.lblNombreProducto.Text = "Nombre del producto";
             // 
@@ -634,7 +574,7 @@
             this.lblCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCodigo.Location = new System.Drawing.Point(20, 57);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(57, 18);
+            this.lblCodigo.Size = new System.Drawing.Size(54, 18);
             this.lblCodigo.TabIndex = 1;
             this.lblCodigo.Text = "Código";
             // 
@@ -719,12 +659,6 @@
         private System.Windows.Forms.Button btnNuevoProducto;
 
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAcciones;
 
         private System.Windows.Forms.Panel panelInformacionProducto;
         private System.Windows.Forms.Label lblTituloInformacion;

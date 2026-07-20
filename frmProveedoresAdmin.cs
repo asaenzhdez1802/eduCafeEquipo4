@@ -118,7 +118,7 @@ namespace eduCafeEquipo4
                 MessageBox.Show("Error al conectar con la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+  
         private void dgvProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -127,90 +127,24 @@ namespace eduCafeEquipo4
                 IdProveedorSeleccionado = Convert.ToInt32(fila.Cells["id_proveedor"].Value);
 
                 txtNombreProveedor.Text = fila.Cells["nombre_proveedor"].Value.ToString();
-                txtCorreo.Text = fila.Cells["empresa"].Value.ToString();
-                txtTelefono.Text = fila.Cells["correo"].Value.ToString();
-                txtEmpresa.Text = fila.Cells["telefono"].Value.ToString();
+                txtEmpresa.Text = fila.Cells["empresa"].Value.ToString();
+                txtCorreo.Text = fila.Cells["correo"].Value.ToString();
+                txtTelefono.Text = fila.Cells["telefono"].Value.ToString();
                 txtCalle.Text = fila.Cells["calle"].Value.ToString();
                 txtColonia.Text = fila.Cells["colonia"].Value.ToString();
                 txtCiudad.Text = fila.Cells["ciudad"].Value.ToString();
                 txtCodigoPostal.Text = fila.Cells["codigo_postal"].Value.ToString();
                 txtEstado.Text = fila.Cells["estado"].Value.ToString();
+
+                ConfigurarInterfaz(esNuevo: false);
             }
         }
-
+  
         private void btnNuevoProveedor_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombreProveedor.Text) |
-              string.IsNullOrWhiteSpace(txtEmpresa.Text) ||
-              string.IsNullOrWhiteSpace(txtCorreo.Text) ||
-              string.IsNullOrWhiteSpace(txtTelefono.Text) ||
-              string.IsNullOrWhiteSpace(txtCalle.Text) ||
-              string.IsNullOrWhiteSpace(txtColonia.Text) ||
-              string.IsNullOrWhiteSpace(txtCiudad.Text) ||
-              string.IsNullOrWhiteSpace(txtCodigoPostal.Text) ||
-              string.IsNullOrWhiteSpace(txtEstado.Text))
-          {
-              MessageBox.Show("Por favor, completa todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-              return;
-          }
-
-          if (ExisteProveedor(txtNombreProveedor.Text.Trim(), txtCorreo.Text.Trim(), txtTelefono.Text.Trim()))
-          {
-              MessageBox.Show("El proveedor ya existe en la base de datos.", "Proveedor existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-              return;
-          }
-
-
-          Conexion conClase = new Conexion();
-          MySqlConnection dbConn = conClase.GetConexion();
-
-          //Si falla la conexion
-          if (dbConn == null) return;
-
-          try
-          {
-              string sql = "INSERT INTO proveedor (nombre_proveedor, empresa, correo, telefono, calle, colonia, ciudad, codigo_postal, estado) VALUES (@nombre_proveedor, @empresa, @correo, @telefono, @calle, @colonia, @ciudad, @codigo_postal, @estado)";
-              MySqlCommand cmd = new MySqlCommand(sql, dbConn);
-
-              cmd.Parameters.AddWithValue("@nombre_proveedor", txtNombreProveedor.Text.Trim());
-              cmd.Parameters.AddWithValue("@empresa", txtEmpresa.Text.Trim());
-              cmd.Parameters.AddWithValue("@correo", txtCorreo.Text.Trim());
-              cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text.Trim());
-              cmd.Parameters.AddWithValue("@calle", txtCalle.Text.Trim());
-              cmd.Parameters.AddWithValue("@colonia", txtColonia.Text.Trim());
-              cmd.Parameters.AddWithValue("@ciudad", txtCiudad.Text.Trim());
-              cmd.Parameters.AddWithValue("@codigo_postal", txtCodigoPostal.Text.Trim());
-              cmd.Parameters.AddWithValue("@estado", txtEstado.Text);
-              int filas = cmd.ExecuteNonQuery();
-              dbConn.Close();
-
-              if (filas > 0)
-              {
-                  MessageBox.Show("Proovedor registrado con éxito.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                  CargarProveedores();
-
-                  txtNombreProveedor.Clear();
-                  txtEmpresa.Clear();
-                  txtCorreo.Clear();
-                  txtTelefono.Clear();
-                  txtCalle.Clear();
-                  txtColonia.Clear();
-                  txtCiudad.Clear();
-                  txtCodigoPostal.Clear();
-                  txtEstado.SelectedIndex = -1;
-              }
-          }
-          catch (Exception ex)
-          {
-              MessageBox.Show("Error al registrar el Proveedor: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              if (dbConn.State == System.Data.ConnectionState.Open)
-              {
-                  dbConn.Close();
-              }
-          }
+            ConfigurarInterfaz(esNuevo: true);
         }
-
+        //Es para identificar que no hayan datos iguales
         private bool ExisteProveedor(string nombre, string correo, string telefono)
         {
             Conexion conClase = new Conexion();
@@ -237,132 +171,98 @@ namespace eduCafeEquipo4
                 return false;
             }
         }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (dgvProveedores.SelectedRows.Count == 0) return;
-
-            int idSeleccionado = Convert.ToInt32(dgvProveedores.SelectedRows[0].Cells["id_proveedor"].Value);
-
-            DialogResult confirm = MessageBox.Show("¿Seguro que deseas eliminar este proveedor?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirm == DialogResult.No) return;
-
-            Conexion conClase = new Conexion();
-            MySqlConnection conn = conClase.GetConexion();
-            if (conn == null) return;
-
-            try
-            {
-                string sql = "DELETE FROM proveedor WHERE id_proveedor = @id";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", idSeleccionado);
-
-                cmd.ExecuteNonQuery();
-                conn.Close();
-
-                MessageBox.Show("Proveedor eliminado con éxito.", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarProveedores();
-
-                // Limpieza de campos
-                txtNombreProveedor.Clear();
-                txtEmpresa.Clear();
-                txtCorreo.Clear();
-                txtTelefono.Clear();
-                txtCalle.Clear();
-                txtColonia.Clear();
-                txtCiudad.Clear();
-                txtCodigoPostal.Clear();
-                txtEstado.SelectedIndex = -1;
-            }
-            catch (MySqlException ex)
-            {
-                if (ex.Number == 1451)
-                {
-                    MessageBox.Show("No se puede eliminar este proveedor porque tiene compras registradas a su nombre.\n\n Sugerencia: En lugar de eliminarlo, usa el botón 'Guardar' para cambiar su Estado a 'Inactivo' o si es proveedor antiguo solo quedara inactivo.", "Imposible Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                else
-                {
-                    MessageBox.Show("Error en la base de datos al intentar eliminar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                if (conn.State == System.Data.ConnectionState.Open) conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrió un error inesperado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (conn.State == System.Data.ConnectionState.Open) conn.Close();
-            }
-
-
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (dgvProveedores.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Por favor, selecciona primero un proveedor de la tabla para poder editarlo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(txtNombreProveedor.Text) || string.IsNullOrWhiteSpace(txtEmpresa.Text) || string.IsNullOrWhiteSpace(txtCorreo.Text) || string.IsNullOrWhiteSpace(txtTelefono.Text) || string.IsNullOrWhiteSpace(txtCalle.Text) || string.IsNullOrWhiteSpace(txtColonia.Text) || string.IsNullOrWhiteSpace(txtCiudad.Text) || string.IsNullOrWhiteSpace(txtCodigoPostal.Text) || txtEstado.SelectedIndex == -1)
             {
-                MessageBox.Show("Por favor, completa todos los campos antes de guardar los cambios.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, completa todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            DataGridViewRow fila = dgvProveedores.SelectedRows[0];
-            int idSeleccionado = Convert.ToInt32(fila.Cells["id_proveedor"].Value);
-
-            if (txtNombreProveedor.Text.Trim() == Convert.ToString(fila.Cells["nombre_proveedor"].Value).Trim() && txtEmpresa.Text.Trim() == Convert.ToString(fila.Cells["empresa"].Value).Trim() && txtCorreo.Text.Trim() == Convert.ToString(fila.Cells["correo"].Value).Trim() && txtTelefono.Text.Trim() == Convert.ToString(fila.Cells["telefono"].Value).Trim() && txtCalle.Text.Trim() == Convert.ToString(fila.Cells["calle"].Value).Trim() && txtColonia.Text.Trim() == Convert.ToString(fila.Cells["colonia"].Value).Trim() && txtCiudad.Text.Trim() == Convert.ToString(fila.Cells["ciudad"].Value).Trim() && txtCodigoPostal.Text.Trim() == Convert.ToString(fila.Cells["codigo_postal"].Value).Trim() && txtEstado.Text.Trim() == Convert.ToString(fila.Cells["estado"].Value).Trim())
-            {
-                MessageBox.Show("No se realizó ningún cambio porque los datos son idénticos a los actuales.", "Sin cambios", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
+                
             Conexion conClase = new Conexion();
-            MySqlConnection conn = conClase.GetConexion();
-            if (conn == null) return;
+            MySqlConnection dbConn = conClase.GetConexion();
+            if (dbConn == null) return;
 
             try
             {
-                string sql = "UPDATE proveedor SET nombre_proveedor = @nombre_proveedor, empresa = @empresa, correo = @correo, telefono = @telefono, calle = @calle, colonia = @colonia, ciudad = @ciudad, codigo_postal = @codigo_postal, estado = @estado WHERE id_proveedor = @id";
+                if (btnGuardar.Text == "Guardar")
+                {
+                    if (ExisteProveedor(txtNombreProveedor.Text.Trim(), txtCorreo.Text.Trim(), txtTelefono.Text.Trim()))
+                    {
+                        MessageBox.Show("El proveedor ya existe en la base de datos.", "Proveedor existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        dbConn.Close();
+                        return;
+                    }
 
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    string sql = "INSERT INTO proveedor (nombre_proveedor, empresa, correo, telefono, calle, colonia, ciudad, codigo_postal, estado) VALUES (@nombre_proveedor, @empresa, @correo, @telefono, @calle, @colonia, @ciudad, @codigo_postal, @estado)";
+                    MySqlCommand cmd = new MySqlCommand(sql, dbConn);
 
-                cmd.Parameters.AddWithValue("@nombre_proveedor", txtNombreProveedor.Text.Trim());
-                cmd.Parameters.AddWithValue("@empresa", txtEmpresa.Text.Trim());
-                cmd.Parameters.AddWithValue("@correo", txtCorreo.Text.Trim());
-                cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text.Trim());
-                cmd.Parameters.AddWithValue("@calle", txtCalle.Text.Trim());
-                cmd.Parameters.AddWithValue("@colonia", txtColonia.Text.Trim());
-                cmd.Parameters.AddWithValue("@ciudad", txtCiudad.Text.Trim());
-                cmd.Parameters.AddWithValue("@codigo_postal", txtCodigoPostal.Text.Trim());
-                cmd.Parameters.AddWithValue("@estado", txtEstado.Text);
-                cmd.Parameters.AddWithValue("@id", idSeleccionado);
+                    cmd.Parameters.AddWithValue("@nombre_proveedor", txtNombreProveedor.Text.Trim());
+                    cmd.Parameters.AddWithValue("@empresa", txtEmpresa.Text.Trim());
+                    cmd.Parameters.AddWithValue("@correo", txtCorreo.Text.Trim());
+                    cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text.Trim());
+                    cmd.Parameters.AddWithValue("@calle", txtCalle.Text.Trim());
+                    cmd.Parameters.AddWithValue("@colonia", txtColonia.Text.Trim());
+                    cmd.Parameters.AddWithValue("@ciudad", txtCiudad.Text.Trim());
+                    cmd.Parameters.AddWithValue("@codigo_postal", txtCodigoPostal.Text.Trim());
+                    cmd.Parameters.AddWithValue("@estado", txtEstado.Text);
 
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                    int filas = cmd.ExecuteNonQuery();
+                    dbConn.Close();
 
-                MessageBox.Show("Datos del proveedor actualizados con éxito.", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarProveedores();
+                    if (filas > 0)
+                    {
+                        MessageBox.Show("Proveedor registrado con éxito.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarProveedores();
+                        ConfigurarInterfaz(esNuevo: true);
+                    }
+                }
+                else if (btnGuardar.Text == "Actualizar")
+                {
+                    if (dgvProveedores.SelectedRows.Count == 0)
+                    {
+                        MessageBox.Show("Por favor, selecciona primero un proveedor de la tabla para poder editarlo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        dbConn.Close();
+                        return;
+                    }
 
-                txtNombreProveedor.Clear();
-                txtEmpresa.Clear();
-                txtCorreo.Clear();
-                txtTelefono.Clear();
-                txtCalle.Clear();
-                txtColonia.Clear();
-                txtCiudad.Clear();
-                txtCodigoPostal.Clear();
-                txtEstado.SelectedIndex = -1;
+                    DataGridViewRow fila = dgvProveedores.SelectedRows[0];
+
+                    if (txtNombreProveedor.Text.Trim() == Convert.ToString(fila.Cells["nombre_proveedor"].Value).Trim() && txtEmpresa.Text.Trim() == Convert.ToString(fila.Cells["empresa"].Value).Trim() && txtCorreo.Text.Trim() == Convert.ToString(fila.Cells["correo"].Value).Trim() && txtTelefono.Text.Trim() == Convert.ToString(fila.Cells["telefono"].Value).Trim() && txtCalle.Text.Trim() == Convert.ToString(fila.Cells["calle"].Value).Trim() && txtColonia.Text.Trim() == Convert.ToString(fila.Cells["colonia"].Value).Trim() && txtCiudad.Text.Trim() == Convert.ToString(fila.Cells["ciudad"].Value).Trim() && txtCodigoPostal.Text.Trim() == Convert.ToString(fila.Cells["codigo_postal"].Value).Trim() && txtEstado.Text.Trim() == Convert.ToString(fila.Cells["estado"].Value).Trim())
+                    {
+                        MessageBox.Show("No se realizó ningún cambio porque los datos son idénticos a los actuales.", "Sin cambios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dbConn.Close();
+                        return;
+                    }
+
+                    string sql = "UPDATE proveedor SET nombre_proveedor = @nombre_proveedor, empresa = @empresa, correo = @correo, telefono = @telefono, calle = @calle, colonia = @colonia, ciudad = @ciudad, codigo_postal = @codigo_postal, estado = @estado WHERE id_proveedor = @id";
+                    MySqlCommand cmd = new MySqlCommand(sql, dbConn);
+
+                    cmd.Parameters.AddWithValue("@nombre_proveedor", txtNombreProveedor.Text.Trim());
+                    cmd.Parameters.AddWithValue("@empresa", txtEmpresa.Text.Trim());
+                    cmd.Parameters.AddWithValue("@correo", txtCorreo.Text.Trim());
+                    cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text.Trim());
+                    cmd.Parameters.AddWithValue("@calle", txtCalle.Text.Trim());
+                    cmd.Parameters.AddWithValue("@colonia", txtColonia.Text.Trim());
+                    cmd.Parameters.AddWithValue("@ciudad", txtCiudad.Text.Trim());
+                    cmd.Parameters.AddWithValue("@codigo_postal", txtCodigoPostal.Text.Trim());
+                    cmd.Parameters.AddWithValue("@estado", txtEstado.Text);
+                    cmd.Parameters.AddWithValue("@id", IdProveedorSeleccionado);
+
+                    cmd.ExecuteNonQuery();
+                    dbConn.Close();
+
+                    MessageBox.Show("Datos del proveedor actualizados con éxito.", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarProveedores();
+                    ConfigurarInterfaz(esNuevo: true);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al actualizar el proveedor: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (conn.State == System.Data.ConnectionState.Open) conn.Close();
+                MessageBox.Show("Error en la operación del Proveedor: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (dbConn.State == System.Data.ConnectionState.Open) dbConn.Close();
             }
         }
-
         private void txtBuscarProveedor_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtBuscarProveedor.Text))
@@ -396,6 +296,34 @@ namespace eduCafeEquipo4
             {
                 MessageBox.Show("Error al buscar por nombre: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (conn.State == System.Data.ConnectionState.Open) conn.Close();
+            }
+        }
+
+        // Método para limpiar todos los campos del formulario
+        private void LimpiarCampos()
+        {
+            txtNombreProveedor.Clear();
+            txtEmpresa.Clear();
+            txtCorreo.Clear();
+            txtTelefono.Clear();
+            txtCalle.Clear();
+            txtColonia.Clear();
+            txtCiudad.Clear();
+            txtCodigoPostal.Clear();
+            txtEstado.SelectedIndex = -1;
+            IdProveedorSeleccionado = 0;
+        }
+        //Configuraciones de los interfaces como también integra limpiar los formularios
+        private void ConfigurarInterfaz(bool esNuevo)
+        {
+            if (esNuevo)
+            {
+                LimpiarCampos();
+                btnGuardar.Text = "Guardar";
+            }
+            else
+            {
+                btnGuardar.Text = "Actualizar";
             }
         }
     }
