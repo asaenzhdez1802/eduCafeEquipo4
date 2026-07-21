@@ -69,5 +69,14 @@ namespace eduCafeEquipo4
                 this.Hide();
             }
         }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            frmCategoriaAdmin frm = new frmCategoriaAdmin();
+
+            frm.Show();
+
+            this.Hide();
+        }
     }
 }

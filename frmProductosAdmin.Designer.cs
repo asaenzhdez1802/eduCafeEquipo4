@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductosAdmin));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lineaMenu = new System.Windows.Forms.Panel();
@@ -69,6 +70,7 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblTituloInformacion = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
+            this.btnCategoria = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -78,6 +80,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.panelMenu.Controls.Add(this.btnCategoria);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.lineaMenu);
             this.panelMenu.Controls.Add(this.btnReportes);
@@ -284,7 +287,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(347, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(358, 18);
             this.lblSubtitulo.TabIndex = 2;
             this.lblSubtitulo.Text = "Administra el catálogo de productos de la cafetería";
             // 
@@ -295,7 +298,7 @@
             this.lblBuscarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarProducto.Location = new System.Drawing.Point(270, 102);
             this.lblBuscarProducto.Name = "lblBuscarProducto";
-            this.lblBuscarProducto.Size = new System.Drawing.Size(127, 18);
+            this.lblBuscarProducto.Size = new System.Drawing.Size(134, 18);
             this.lblBuscarProducto.TabIndex = 3;
             this.lblBuscarProducto.Text = "Nombre producto:";
             // 
@@ -315,7 +318,7 @@
             this.lblBuscarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarCategoria.Location = new System.Drawing.Point(495, 102);
             this.lblBuscarCategoria.Name = "lblBuscarCategoria";
-            this.lblBuscarCategoria.Size = new System.Drawing.Size(72, 18);
+            this.lblBuscarCategoria.Size = new System.Drawing.Size(73, 18);
             this.lblBuscarCategoria.TabIndex = 5;
             this.lblBuscarCategoria.Text = "Categoría";
             // 
@@ -453,7 +456,7 @@
             this.lblEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblEstado.Location = new System.Drawing.Point(190, 302);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(53, 18);
+            this.lblEstado.Size = new System.Drawing.Size(55, 18);
             this.lblEstado.TabIndex = 13;
             this.lblEstado.Text = "Estado";
             // 
@@ -473,7 +476,7 @@
             this.lblStockMinimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblStockMinimo.Location = new System.Drawing.Point(20, 302);
             this.lblStockMinimo.Name = "lblStockMinimo";
-            this.lblStockMinimo.Size = new System.Drawing.Size(100, 18);
+            this.lblStockMinimo.Size = new System.Drawing.Size(103, 18);
             this.lblStockMinimo.TabIndex = 11;
             this.lblStockMinimo.Text = "Stock mínimo";
             // 
@@ -493,7 +496,7 @@
             this.lblPrecioVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblPrecioVenta.Location = new System.Drawing.Point(190, 239);
             this.lblPrecioVenta.Name = "lblPrecioVenta";
-            this.lblPrecioVenta.Size = new System.Drawing.Size(112, 18);
+            this.lblPrecioVenta.Size = new System.Drawing.Size(115, 18);
             this.lblPrecioVenta.TabIndex = 9;
             this.lblPrecioVenta.Text = "Precio de venta";
             // 
@@ -513,7 +516,7 @@
             this.lblPrecioCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblPrecioCompra.Location = new System.Drawing.Point(20, 239);
             this.lblPrecioCompra.Name = "lblPrecioCompra";
-            this.lblPrecioCompra.Size = new System.Drawing.Size(125, 18);
+            this.lblPrecioCompra.Size = new System.Drawing.Size(129, 18);
             this.lblPrecioCompra.TabIndex = 7;
             this.lblPrecioCompra.Text = "Precio de compra";
             // 
@@ -534,7 +537,7 @@
             this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCategoria.Location = new System.Drawing.Point(20, 177);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(72, 18);
+            this.lblCategoria.Size = new System.Drawing.Size(73, 18);
             this.lblCategoria.TabIndex = 5;
             this.lblCategoria.Text = "Categoría";
             // 
@@ -554,7 +557,7 @@
             this.lblNombreProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblNombreProducto.Location = new System.Drawing.Point(20, 117);
             this.lblNombreProducto.Name = "lblNombreProducto";
-            this.lblNombreProducto.Size = new System.Drawing.Size(147, 18);
+            this.lblNombreProducto.Size = new System.Drawing.Size(155, 18);
             this.lblNombreProducto.TabIndex = 3;
             this.lblNombreProducto.Text = "Nombre del producto";
             // 
@@ -574,7 +577,7 @@
             this.lblCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCodigo.Location = new System.Drawing.Point(20, 57);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(54, 18);
+            this.lblCodigo.Size = new System.Drawing.Size(57, 18);
             this.lblCodigo.TabIndex = 1;
             this.lblCodigo.Text = "Código";
             // 
@@ -600,6 +603,24 @@
             this.lblNota.Text = "Desde esta sección puedes agregar, editar, eliminar y consultar los productos del" +
     " catálogo.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnCategoria
+            // 
+            this.btnCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.btnCategoria.FlatAppearance.BorderSize = 0;
+            this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoria.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
+            this.btnCategoria.Location = new System.Drawing.Point(1, 449);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(200, 38);
+            this.btnCategoria.TabIndex = 14;
+            this.btnCategoria.Text = "Categoria";
+            this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategoria.UseVisualStyleBackColor = false;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // frmProductosAdmin
             // 
@@ -687,5 +708,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblNota;
+        private System.Windows.Forms.Button btnCategoria;
     }
 }
