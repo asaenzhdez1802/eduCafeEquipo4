@@ -68,10 +68,18 @@ namespace eduCafeEquipo4
             {
                 dgvCategorias.Rows.Clear();
 
+                if (dgvCategorias.Columns.Count < 4)
+                {
+                    dgvCategorias.Columns.Clear();
+                    dgvCategorias.Columns.Add("id_categoria", "ID");
+                    dgvCategorias.Columns.Add("nombre", "Nombre");
+                    dgvCategorias.Columns.Add("descripcion", "Descripción");
+                    dgvCategorias.Columns.Add("estado", "Estado");
+                }
+
                 using (MySqlConnection conexion = ObtenerConexion())
                 {
-                    string consulta = @" SELECT id_categoria, nombre, descripcion, estado FROM categoria WHERE @filtro = '' OR nombre LIKE @busqueda OR descripcion LIKE @busqueda ORDER BY nombre ASC;";
-
+                    string consulta = @"SELECT id_categoria, nombre, descripcion, estado  FROM categoria WHERE @filtro = '' OR nombre LIKE @busqueda OR descripcion LIKE @busqueda ORDER BY nombre ASC;";
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
                         comando.Parameters.AddWithValue("@filtro", filtro);
@@ -81,17 +89,20 @@ namespace eduCafeEquipo4
                         {
                             while (lector.Read())
                             {
-                                dgvCategorias.Rows.Add(lector["id_categoria"].ToString(), lector["nombre"].ToString(), lector["descripcion"].ToString());
+                                string estadoValor = (lector["estado"] == DBNull.Value || string.IsNullOrWhiteSpace(lector["estado"].ToString())) ? "Activo"  : lector["estado"].ToString();
+                                string descValor = lector["descripcion"] == DBNull.Value  ? "" : lector["descripcion"].ToString();
+                                string descValor = lector["descripcion"] == DBNull.Value  ? "" : lector["descripcion"].ToString();
+                                dgvCategorias.Rows.Add(lector["id_categoria"].ToString(), lector["nombre"].ToString(), descValor, estadoValor);
                             }
                         }
                     }
-                }
 
-                dgvCategorias.ClearSelection();
+                    dgvCategorias.ClearSelection();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show( "No fue posible cargar las categorías.\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No fue posible cargar las categorías.\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -298,8 +309,7 @@ namespace eduCafeEquipo4
         private void AgregarParametrosCategoria(MySqlCommand comando)
         {
             comando.Parameters.AddWithValue("@nombre", txtNombreCategoria.Text.Trim());
-
-            MySqlParameter descripcion = comando.Parameters.Add("@descripcion", MySqlDbType.VarChar, 255);
+            MySqlParameter descripcion = comando.Parameters.Add("@descripcion", MySqlDbType.VarChar,255);
 
             if (string.IsNullOrWhiteSpace(txtDescripcionCategoria.Text))
             {
@@ -307,10 +317,14 @@ namespace eduCafeEquipo4
             }
             else
             {
-                descripcion.Value = txtDescripcionCategoria.Text.Trim();
+                descripcion.Value =
+                    txtDescripcionCategoria.Text.Trim();
             }
 
-            comando.Parameters.AddWithValue("@estado", cmbEstado.SelectedItem.ToString());
+            comando.Parameters.AddWithValue(
+                "@estado",
+                cmbEstado.SelectedItem.ToString()
+            );
         }
 
         private void LimpiarCampos()
@@ -329,7 +343,12 @@ namespace eduCafeEquipo4
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = MessageBox.Show("¿En realidad quiere cerrar sesión?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult respuesta = MessageBox.Show(
+                "¿En realidad quiere cerrar sesión?",
+                "Confirmar",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
 
             if (respuesta == DialogResult.Yes)
             {
