@@ -19,6 +19,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedoresAdmin));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lineaMenu = new System.Windows.Forms.Panel();
@@ -59,6 +60,7 @@
             this.lblNombreProveedor = new System.Windows.Forms.Label();
             this.lblTituloInformacion = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
+            this.btnCategoria = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
@@ -68,6 +70,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.panelMenu.Controls.Add(this.btnCategoria);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.lineaMenu);
             this.panelMenu.Controls.Add(this.btnReportes);
@@ -277,7 +280,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(167, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(172, 18);
             this.lblSubtitulo.TabIndex = 2;
             this.lblSubtitulo.Text = "Administra proveedores";
             // 
@@ -288,7 +291,7 @@
             this.lblBuscarProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarProveedor.Location = new System.Drawing.Point(270, 103);
             this.lblBuscarProveedor.Name = "lblBuscarProveedor";
-            this.lblBuscarProveedor.Size = new System.Drawing.Size(76, 18);
+            this.lblBuscarProveedor.Size = new System.Drawing.Size(79, 18);
             this.lblBuscarProveedor.TabIndex = 3;
             this.lblBuscarProveedor.Text = "Proveedor";
             // 
@@ -421,7 +424,7 @@
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblStatus.Location = new System.Drawing.Point(185, 365);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(53, 18);
+            this.lblStatus.Size = new System.Drawing.Size(55, 18);
             this.lblStatus.TabIndex = 17;
             this.lblStatus.Text = "Estado";
             // 
@@ -441,7 +444,7 @@
             this.lblCodigoPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCodigoPostal.Location = new System.Drawing.Point(20, 365);
             this.lblCodigoPostal.Name = "lblCodigoPostal";
-            this.lblCodigoPostal.Size = new System.Drawing.Size(99, 18);
+            this.lblCodigoPostal.Size = new System.Drawing.Size(104, 18);
             this.lblCodigoPostal.TabIndex = 15;
             this.lblCodigoPostal.Text = "Código postal";
             // 
@@ -461,7 +464,7 @@
             this.lblCiudad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCiudad.Location = new System.Drawing.Point(185, 302);
             this.lblCiudad.Name = "lblCiudad";
-            this.lblCiudad.Size = new System.Drawing.Size(54, 18);
+            this.lblCiudad.Size = new System.Drawing.Size(56, 18);
             this.lblCiudad.TabIndex = 13;
             this.lblCiudad.Text = "Ciudad";
             // 
@@ -481,7 +484,7 @@
             this.lblColonia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblColonia.Location = new System.Drawing.Point(20, 302);
             this.lblColonia.Name = "lblColonia";
-            this.lblColonia.Size = new System.Drawing.Size(58, 18);
+            this.lblColonia.Size = new System.Drawing.Size(60, 18);
             this.lblColonia.TabIndex = 11;
             this.lblColonia.Text = "Colonia";
             // 
@@ -501,7 +504,7 @@
             this.lblCalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCalle.Location = new System.Drawing.Point(185, 239);
             this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(42, 18);
+            this.lblCalle.Size = new System.Drawing.Size(41, 18);
             this.lblCalle.TabIndex = 9;
             this.lblCalle.Text = "Calle";
             // 
@@ -521,7 +524,7 @@
             this.lblEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblEmpresa.Location = new System.Drawing.Point(20, 239);
             this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(66, 18);
+            this.lblEmpresa.Size = new System.Drawing.Size(67, 18);
             this.lblEmpresa.TabIndex = 7;
             this.lblEmpresa.Text = "Empresa";
             // 
@@ -541,7 +544,7 @@
             this.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblTelefono.Location = new System.Drawing.Point(20, 177);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(66, 18);
+            this.lblTelefono.Size = new System.Drawing.Size(69, 18);
             this.lblTelefono.TabIndex = 5;
             this.lblTelefono.Text = "Teléfono";
             // 
@@ -561,7 +564,7 @@
             this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCorreo.Location = new System.Drawing.Point(20, 117);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(130, 18);
+            this.lblCorreo.Size = new System.Drawing.Size(134, 18);
             this.lblCorreo.TabIndex = 3;
             this.lblCorreo.Text = "Correo electrónico";
             // 
@@ -581,7 +584,7 @@
             this.lblNombreProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblNombreProveedor.Location = new System.Drawing.Point(20, 57);
             this.lblNombreProveedor.Name = "lblNombreProveedor";
-            this.lblNombreProveedor.Size = new System.Drawing.Size(155, 18);
+            this.lblNombreProveedor.Size = new System.Drawing.Size(162, 18);
             this.lblNombreProveedor.TabIndex = 1;
             this.lblNombreProveedor.Text = "Nombre del proveedor";
             // 
@@ -606,6 +609,24 @@
             this.lblNota.TabIndex = 8;
             this.lblNota.Text = "Desde esta sección puedes agregar, editar, eliminar y consultar los proveedores.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnCategoria
+            // 
+            this.btnCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.btnCategoria.FlatAppearance.BorderSize = 0;
+            this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoria.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
+            this.btnCategoria.Location = new System.Drawing.Point(2, 449);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(200, 38);
+            this.btnCategoria.TabIndex = 14;
+            this.btnCategoria.Text = "Categoria";
+            this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategoria.UseVisualStyleBackColor = false;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // frmProveedoresAdmin
             // 
@@ -684,5 +705,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Button btnInicio;
+        private System.Windows.Forms.Button btnCategoria;
     }
 }

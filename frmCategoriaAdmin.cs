@@ -10,21 +10,37 @@ using System.Windows.Forms;
 
 namespace eduCafeEquipo4
 {
-    public partial class frmReportes : Form
+    public partial class frmCategoriaAdmin : Form
     {
-        public frmReportes()
+        public frmCategoriaAdmin()
         {
             InitializeComponent();
         }
 
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("¿En realidad quiere cerrar sesión?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                login frm = new login();
 
+                frm.Show();
+
+                this.Hide();
+            }
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
             frmDashAdmin frm = new frmDashAdmin();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            frmProductosAdmin frm = new frmProductosAdmin();
 
             frm.Show();
 
@@ -58,21 +74,9 @@ namespace eduCafeEquipo4
             this.Hide();
         }
 
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        private void btnReportes_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿En realidad quiere cerrar sesión?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                login frm = new login();
-
-                frm.Show();
-
-                this.Hide();
-            }
-        }
-
-        private void btnCategoria_Click(object sender, EventArgs e)
-        {
-            frmCategoriaAdmin frm = new frmCategoriaAdmin();
+            frmReportes frm = new frmReportes();
 
             frm.Show();
 

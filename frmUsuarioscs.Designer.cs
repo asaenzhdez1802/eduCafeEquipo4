@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lineaMenu = new System.Windows.Forms.Panel();
@@ -48,6 +49,11 @@
             this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.btnNuevoUsuario = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.colIdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelRoles = new System.Windows.Forms.Panel();
             this.lblDescripcionCajero = new System.Windows.Forms.Label();
             this.lblTituloCajero = new System.Windows.Forms.Label();
@@ -72,11 +78,7 @@
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblTituloInformacion = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
-            this.colIdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCategoria = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -87,6 +89,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.panelMenu.Controls.Add(this.btnCategoria);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.lineaMenu);
             this.panelMenu.Controls.Add(this.btnReportes);
@@ -293,7 +296,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(248, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(365, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(375, 18);
             this.lblSubtitulo.TabIndex = 2;
             this.lblSubtitulo.Text = "Administra los usuarios que tienen acceso al sistema";
             // 
@@ -304,7 +307,7 @@
             this.lblBuscarNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarNombre.Location = new System.Drawing.Point(244, 103);
             this.lblBuscarNombre.Name = "lblBuscarNombre";
-            this.lblBuscarNombre.Size = new System.Drawing.Size(61, 18);
+            this.lblBuscarNombre.Size = new System.Drawing.Size(63, 18);
             this.lblBuscarNombre.TabIndex = 3;
             this.lblBuscarNombre.Text = "Nombre";
             // 
@@ -376,6 +379,46 @@
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(515, 330);
             this.dgvUsuarios.TabIndex = 6;
+            // 
+            // colIdUsuario
+            // 
+            this.colIdUsuario.FillWeight = 60F;
+            this.colIdUsuario.HeaderText = "ID";
+            this.colIdUsuario.MinimumWidth = 6;
+            this.colIdUsuario.Name = "colIdUsuario";
+            this.colIdUsuario.ReadOnly = true;
+            // 
+            // colUsuario
+            // 
+            this.colUsuario.FillWeight = 95F;
+            this.colUsuario.HeaderText = "Usuario";
+            this.colUsuario.MinimumWidth = 6;
+            this.colUsuario.Name = "colUsuario";
+            this.colUsuario.ReadOnly = true;
+            // 
+            // colNombreCompleto
+            // 
+            this.colNombreCompleto.FillWeight = 135F;
+            this.colNombreCompleto.HeaderText = "Nombre completo";
+            this.colNombreCompleto.MinimumWidth = 6;
+            this.colNombreCompleto.Name = "colNombreCompleto";
+            this.colNombreCompleto.ReadOnly = true;
+            // 
+            // colRol
+            // 
+            this.colRol.FillWeight = 90F;
+            this.colRol.HeaderText = "Rol";
+            this.colRol.MinimumWidth = 6;
+            this.colRol.Name = "colRol";
+            this.colRol.ReadOnly = true;
+            // 
+            // colEstadoUsuario
+            // 
+            this.colEstadoUsuario.FillWeight = 80F;
+            this.colEstadoUsuario.HeaderText = "Estado";
+            this.colEstadoUsuario.MinimumWidth = 6;
+            this.colEstadoUsuario.Name = "colEstadoUsuario";
+            this.colEstadoUsuario.ReadOnly = true;
             // 
             // panelRoles
             // 
@@ -499,7 +542,7 @@
             this.lblEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblEstado.Location = new System.Drawing.Point(20, 365);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(53, 18);
+            this.lblEstado.Size = new System.Drawing.Size(55, 18);
             this.lblEstado.TabIndex = 13;
             this.lblEstado.Text = "Estado";
             // 
@@ -520,7 +563,7 @@
             this.lblRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblRol.Location = new System.Drawing.Point(20, 302);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(30, 18);
+            this.lblRol.Size = new System.Drawing.Size(31, 18);
             this.lblRol.TabIndex = 11;
             this.lblRol.Text = "Rol";
             // 
@@ -540,7 +583,7 @@
             this.lblContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblContrasena.Location = new System.Drawing.Point(20, 239);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(84, 18);
+            this.lblContrasena.Size = new System.Drawing.Size(86, 18);
             this.lblContrasena.TabIndex = 9;
             this.lblContrasena.Text = "Contraseña";
             // 
@@ -560,7 +603,7 @@
             this.lblSegundoApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblSegundoApellido.Location = new System.Drawing.Point(185, 177);
             this.lblSegundoApellido.Name = "lblSegundoApellido";
-            this.lblSegundoApellido.Size = new System.Drawing.Size(121, 18);
+            this.lblSegundoApellido.Size = new System.Drawing.Size(129, 18);
             this.lblSegundoApellido.TabIndex = 7;
             this.lblSegundoApellido.Text = "Segundo apellido";
             // 
@@ -580,7 +623,7 @@
             this.lblPrimerApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblPrimerApellido.Location = new System.Drawing.Point(20, 177);
             this.lblPrimerApellido.Name = "lblPrimerApellido";
-            this.lblPrimerApellido.Size = new System.Drawing.Size(109, 18);
+            this.lblPrimerApellido.Size = new System.Drawing.Size(112, 18);
             this.lblPrimerApellido.TabIndex = 5;
             this.lblPrimerApellido.Text = "Primer apellido";
             // 
@@ -600,7 +643,7 @@
             this.lblNombresReales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblNombresReales.Location = new System.Drawing.Point(20, 117);
             this.lblNombresReales.Name = "lblNombresReales";
-            this.lblNombresReales.Size = new System.Drawing.Size(114, 18);
+            this.lblNombresReales.Size = new System.Drawing.Size(116, 18);
             this.lblNombresReales.TabIndex = 3;
             this.lblNombresReales.Text = "Nombres reales";
             // 
@@ -620,7 +663,7 @@
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblNombreUsuario.Location = new System.Drawing.Point(20, 57);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(134, 18);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(140, 18);
             this.lblNombreUsuario.TabIndex = 1;
             this.lblNombreUsuario.Text = "Nombre de usuario";
             // 
@@ -647,45 +690,23 @@
     "os del sistema.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // colIdUsuario
+            // btnCategoria
             // 
-            this.colIdUsuario.FillWeight = 60F;
-            this.colIdUsuario.HeaderText = "ID";
-            this.colIdUsuario.MinimumWidth = 6;
-            this.colIdUsuario.Name = "colIdUsuario";
-            this.colIdUsuario.ReadOnly = true;
-            // 
-            // colUsuario
-            // 
-            this.colUsuario.FillWeight = 95F;
-            this.colUsuario.HeaderText = "Usuario";
-            this.colUsuario.MinimumWidth = 6;
-            this.colUsuario.Name = "colUsuario";
-            this.colUsuario.ReadOnly = true;
-            // 
-            // colNombreCompleto
-            // 
-            this.colNombreCompleto.FillWeight = 135F;
-            this.colNombreCompleto.HeaderText = "Nombre completo";
-            this.colNombreCompleto.MinimumWidth = 6;
-            this.colNombreCompleto.Name = "colNombreCompleto";
-            this.colNombreCompleto.ReadOnly = true;
-            // 
-            // colRol
-            // 
-            this.colRol.FillWeight = 90F;
-            this.colRol.HeaderText = "Rol";
-            this.colRol.MinimumWidth = 6;
-            this.colRol.Name = "colRol";
-            this.colRol.ReadOnly = true;
-            // 
-            // colEstadoUsuario
-            // 
-            this.colEstadoUsuario.FillWeight = 80F;
-            this.colEstadoUsuario.HeaderText = "Estado";
-            this.colEstadoUsuario.MinimumWidth = 6;
-            this.colEstadoUsuario.Name = "colEstadoUsuario";
-            this.colEstadoUsuario.ReadOnly = true;
+            this.btnCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.btnCategoria.FlatAppearance.BorderSize = 0;
+            this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoria.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
+            this.btnCategoria.Location = new System.Drawing.Point(5, 440);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(200, 38);
+            this.btnCategoria.TabIndex = 14;
+            this.btnCategoria.Text = "Categoria";
+            this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategoria.UseVisualStyleBackColor = false;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // frmUsuarios
             // 
@@ -773,5 +794,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombreCompleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoUsuario;
+        private System.Windows.Forms.Button btnCategoria;
     }
 }
