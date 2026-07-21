@@ -70,17 +70,7 @@ namespace eduCafeEquipo4
 
                 using (MySqlConnection conexion = ObtenerConexion())
                 {
-                    string consulta = @"
-                        SELECT
-                            id_categoria,
-                            nombre,
-                            descripcion
-                            FROM categoria
-                            WHERE
-                            @filtro = ''
-                            OR nombre LIKE @busqueda
-                            OR descripcion LIKE @busqueda
-                            ORDER BY nombre ASC;";
+                    string consulta = @" SELECT id_categoria, nombre, descripcion, estado FROM categoria WHERE @filtro = '' OR nombre LIKE @busqueda OR descripcion LIKE @busqueda ORDER BY nombre ASC;";
 
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
@@ -91,11 +81,7 @@ namespace eduCafeEquipo4
                         {
                             while (lector.Read())
                             {
-                                dgvCategorias.Rows.Add(
-                                    lector["id_categoria"].ToString(),
-                                    lector["nombre"].ToString(),
-                                    lector["descripcion"].ToString()
-                                );
+                                dgvCategorias.Rows.Add(lector["id_categoria"].ToString(), lector["nombre"].ToString(), lector["descripcion"].ToString());
                             }
                         }
                     }
@@ -105,12 +91,7 @@ namespace eduCafeEquipo4
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "No fue posible cargar las categorías.\n\n" + ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageBox.Show( "No fue posible cargar las categorías.\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -158,34 +139,19 @@ namespace eduCafeEquipo4
             {
                 using (MySqlConnection conexion = ObtenerConexion())
                 {
-                    string consulta = @"
-                            SELECT
-                            nombre,
-                            descripcion,
-                            estado
-                            FROM categoria
-                            WHERE id_categoria = @id_categoria;";
+                    string consulta = @"SELECT nombre, descripcion, estado FROM categoria WHERE id_categoria = @id_categoria;";
 
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
-                        comando.Parameters.AddWithValue(
-                            "@id_categoria",
-                            idCategoria
-                        );
+                        comando.Parameters.AddWithValue("@id_categoria", idCategoria);
 
                         using (MySqlDataReader lector = comando.ExecuteReader())
                         {
                             if (lector.Read())
                             {
-                                txtNombreCategoria.Text =
-                                    lector["nombre"].ToString();
-
-                                txtDescripcionCategoria.Text =
-                                    lector["descripcion"].ToString();
-
-                                cmbEstado.SelectedItem =
-                                    lector["estado"].ToString();
-
+                                txtNombreCategoria.Text = lector["nombre"].ToString();
+                                txtDescripcionCategoria.Text = lector["descripcion"].ToString();
+                                cmbEstado.SelectedItem = lector["estado"].ToString();
                                 btnGuardar.Text = "Actualizar";
                             }
                         }
@@ -194,16 +160,9 @@ namespace eduCafeEquipo4
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "No fue posible cargar los datos de la categoría.\n\n" +
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageBox.Show("No fue posible cargar los datos de la categoría.\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!ValidarCampos())
@@ -215,17 +174,9 @@ namespace eduCafeEquipo4
             {
                 string nombreCategoria = txtNombreCategoria.Text.Trim();
 
-                if (ExisteNombreCategoria(
-                    nombreCategoria,
-                    idCategoriaSeleccionada))
+                if (ExisteNombreCategoria(nombreCategoria, idCategoriaSeleccionada))
                 {
-                    MessageBox.Show(
-                        "Ya existe una categoría con ese nombre.",
-                        "Categoría duplicada",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-
+                    MessageBox.Show("Ya existe una categoría con ese nombre.", "Categoría duplicada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtNombreCategoria.Focus();
                     return;
                 }
@@ -246,32 +197,16 @@ namespace eduCafeEquipo4
             {
                 if (ex.Number == 1062)
                 {
-                    MessageBox.Show(
-                        "Ya existe una categoría con ese nombre.",
-                        "Categoría duplicada",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
+                    MessageBox.Show("Ya existe una categoría con ese nombre.", "Categoría duplicada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show(
-                        "Ocurrió un error en la base de datos.\n\n" +
-                        ex.Message,
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
+                    MessageBox.Show("Ocurrió un error en la base de datos.\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Ocurrió un error.\n\n" + ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageBox.Show("Ocurrió un error.\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -279,52 +214,28 @@ namespace eduCafeEquipo4
         {
             if (string.IsNullOrWhiteSpace(txtNombreCategoria.Text))
             {
-                MessageBox.Show(
-                    "Ingresa el nombre de la categoría.",
-                    "Campo obligatorio",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
-
+                MessageBox.Show("Ingresa el nombre de la categoría.", "Campo obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNombreCategoria.Focus();
                 return false;
             }
 
             if (txtNombreCategoria.Text.Trim().Length > 80)
             {
-                MessageBox.Show(
-                    "El nombre de la categoría no puede superar los 80 caracteres.",
-                    "Nombre demasiado largo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
-
+                MessageBox.Show("El nombre de la categoría no puede superar los 80 caracteres.", "Nombre demasiado largo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNombreCategoria.Focus();
                 return false;
             }
 
             if (txtDescripcionCategoria.Text.Trim().Length > 255)
             {
-                MessageBox.Show(
-                    "La descripción no puede superar los 255 caracteres.",
-                    "Descripción demasiado larga",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
-
+                MessageBox.Show("La descripción no puede superar los 255 caracteres.", "Descripción demasiado larga", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtDescripcionCategoria.Focus();
                 return false;
             }
 
             if (cmbEstado.SelectedIndex == -1)
             {
-                MessageBox.Show(
-                    "Selecciona el estado de la categoría.",
-                    "Campo obligatorio",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
-
+                MessageBox.Show("Selecciona el estado de la categoría.", "Campo obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cmbEstado.Focus();
                 return false;
             }
@@ -336,12 +247,7 @@ namespace eduCafeEquipo4
         {
             using (MySqlConnection conexion = ObtenerConexion())
             {
-                string consulta = @"
-                    SELECT COUNT(*)
-                    FROM categoria
-                    WHERE nombre = @nombre
-                    AND id_categoria <> @id_categoria;";
-
+                string consulta = @"SELECT COUNT(*) FROM categoria WHERE nombre = @nombre AND id_categoria <> @id_categoria;";
                 using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                 {
                     comando.Parameters.AddWithValue("@nombre", nombreCategoria);
@@ -357,12 +263,7 @@ namespace eduCafeEquipo4
         {
             using (MySqlConnection conexion = ObtenerConexion())
             {
-                string consulta = @"
-                    INSERT INTO categoria
-                    (nombre, descripcion, estado)
-                    VALUES
-                    (@nombre, @descripcion, @estado);";
-
+                string consulta = @" INSERT INTO categoria (nombre, descripcion, estado) VALUES (@nombre, @descripcion, @estado);";
                 using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                 {
                     AgregarParametrosCategoria(comando);
@@ -382,47 +283,23 @@ namespace eduCafeEquipo4
         {
             using (MySqlConnection conexion = ObtenerConexion())
             {
-                string consulta = @"
-                    UPDATE categoria
-                    SET
-                        nombre = @nombre,
-                        descripcion = @descripcion,
-                        estado = @estado
-                    WHERE id_categoria = @id_categoria;";
-
+                string consulta = @"UPDATE categoria SET nombre = @nombre, descripcion = @descripcion, estado = @estado WHERE id_categoria = @id_categoria;";
                 using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                 {
                     AgregarParametrosCategoria(comando);
 
-                    comando.Parameters.AddWithValue(
-                        "@id_categoria",
-                        idCategoriaSeleccionada
-                    );
-
+                    comando.Parameters.AddWithValue("@id_categoria", idCategoriaSeleccionada);
                     comando.ExecuteNonQuery();
                 }
             }
-
-            MessageBox.Show(
-                "Categoría actualizada correctamente.",
-                "Actualización exitosa",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            MessageBox.Show("Categoría actualizada correctamente.", "Actualización exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AgregarParametrosCategoria(MySqlCommand comando)
         {
-            comando.Parameters.AddWithValue(
-                "@nombre",
-                txtNombreCategoria.Text.Trim()
-            );
+            comando.Parameters.AddWithValue("@nombre", txtNombreCategoria.Text.Trim());
 
-            MySqlParameter descripcion = comando.Parameters.Add(
-                "@descripcion",
-                MySqlDbType.VarChar,
-                255
-            );
+            MySqlParameter descripcion = comando.Parameters.Add("@descripcion", MySqlDbType.VarChar, 255);
 
             if (string.IsNullOrWhiteSpace(txtDescripcionCategoria.Text))
             {
@@ -430,14 +307,10 @@ namespace eduCafeEquipo4
             }
             else
             {
-                descripcion.Value =
-                    txtDescripcionCategoria.Text.Trim();
+                descripcion.Value = txtDescripcionCategoria.Text.Trim();
             }
 
-            comando.Parameters.AddWithValue(
-                "@estado",
-                cmbEstado.SelectedItem.ToString()
-            );
+            comando.Parameters.AddWithValue("@estado", cmbEstado.SelectedItem.ToString());
         }
 
         private void LimpiarCampos()
@@ -456,12 +329,7 @@ namespace eduCafeEquipo4
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = MessageBox.Show(
-                "¿En realidad quiere cerrar sesión?",
-                "Confirmar",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+            DialogResult respuesta = MessageBox.Show("¿En realidad quiere cerrar sesión?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (respuesta == DialogResult.Yes)
             {

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInventarioAdmin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCategoria = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
@@ -58,6 +58,7 @@
             this.colStockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMovimiento = new System.Windows.Forms.Panel();
+            this.txtProducto = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.cmbTipoMovimiento = new System.Windows.Forms.ComboBox();
             this.lblTipoMovimiento = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.lblProducto = new System.Windows.Forms.Label();
             this.lblTituloMovimiento = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
-            this.txtProducto = new System.Windows.Forms.TextBox();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -114,7 +114,7 @@
             this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCategoria.UseVisualStyleBackColor = false;
-           
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // btnCerrarSesion
             // 
@@ -268,7 +268,7 @@
             // 
             // lblEduCafe
             // 
-            this.lblEduCafe.Font = new System.Drawing.Font("Roboto Cn", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEduCafe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEduCafe.ForeColor = System.Drawing.Color.White;
             this.lblEduCafe.Location = new System.Drawing.Point(-2, 129);
             this.lblEduCafe.Name = "lblEduCafe";
@@ -306,7 +306,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(437, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(423, 18);
             this.lblSubtitulo.TabIndex = 7;
             this.lblSubtitulo.Text = "Consulta existencias y registra entradas o salidas de producto";
             // 
@@ -317,7 +317,7 @@
             this.lblBuscarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarProducto.Location = new System.Drawing.Point(270, 103);
             this.lblBuscarProducto.Name = "lblBuscarProducto";
-            this.lblBuscarProducto.Size = new System.Drawing.Size(134, 18);
+            this.lblBuscarProducto.Size = new System.Drawing.Size(127, 18);
             this.lblBuscarProducto.TabIndex = 6;
             this.lblBuscarProducto.Text = "Nombre producto:";
             // 
@@ -338,7 +338,7 @@
             this.lblBuscarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarCategoria.Location = new System.Drawing.Point(495, 103);
             this.lblBuscarCategoria.Name = "lblBuscarCategoria";
-            this.lblBuscarCategoria.Size = new System.Drawing.Size(73, 18);
+            this.lblBuscarCategoria.Size = new System.Drawing.Size(72, 18);
             this.lblBuscarCategoria.TabIndex = 4;
             this.lblBuscarCategoria.Text = "Categoría";
             // 
@@ -360,12 +360,12 @@
             this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             this.dgvInventario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.dgvInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            this.dgvInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInventario.ColumnHeadersHeight = 38;
             this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodigo,
@@ -374,14 +374,14 @@
             this.colExistencia,
             this.colStockMinimo,
             this.colEstado});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInventario.EnableHeadersVisualStyles = false;
             this.dgvInventario.Location = new System.Drawing.Point(270, 165);
             this.dgvInventario.MultiSelect = false;
@@ -393,7 +393,6 @@
             this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInventario.Size = new System.Drawing.Size(515, 470);
             this.dgvInventario.TabIndex = 2;
-            
             // 
             // colCodigo
             // 
@@ -457,6 +456,13 @@
             this.panelMovimiento.Size = new System.Drawing.Size(350, 540);
             this.panelMovimiento.TabIndex = 1;
             // 
+            // txtProducto
+            // 
+            this.txtProducto.Location = new System.Drawing.Point(20, 98);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(310, 27);
+            this.txtProducto.TabIndex = 12;
+            // 
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(124)))), ((int)(((byte)(68)))));
@@ -487,7 +493,7 @@
             this.lblTipoMovimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblTipoMovimiento.Location = new System.Drawing.Point(20, 332);
             this.lblTipoMovimiento.Name = "lblTipoMovimiento";
-            this.lblTipoMovimiento.Size = new System.Drawing.Size(146, 18);
+            this.lblTipoMovimiento.Size = new System.Drawing.Size(140, 18);
             this.lblTipoMovimiento.TabIndex = 2;
             this.lblTipoMovimiento.Text = "Tipo de movimiento";
             // 
@@ -508,7 +514,7 @@
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblHora.Location = new System.Drawing.Point(20, 266);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(41, 18);
+            this.lblHora.Size = new System.Drawing.Size(40, 18);
             this.lblHora.TabIndex = 4;
             this.lblHora.Text = "Hora";
             // 
@@ -528,7 +534,7 @@
             this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblFecha.Location = new System.Drawing.Point(20, 200);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(49, 18);
+            this.lblFecha.Size = new System.Drawing.Size(48, 18);
             this.lblFecha.TabIndex = 6;
             this.lblFecha.Text = "Fecha";
             // 
@@ -562,7 +568,7 @@
             this.lblCantidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblCantidad.Location = new System.Drawing.Point(20, 133);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(69, 18);
+            this.lblCantidad.Size = new System.Drawing.Size(67, 18);
             this.lblCantidad.TabIndex = 8;
             this.lblCantidad.Text = "Cantidad";
             // 
@@ -573,7 +579,7 @@
             this.lblProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblProducto.Location = new System.Drawing.Point(20, 67);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(72, 18);
+            this.lblProducto.Size = new System.Drawing.Size(68, 18);
             this.lblProducto.TabIndex = 10;
             this.lblProducto.Text = "Producto";
             // 
@@ -597,13 +603,6 @@
             this.lblNota.Size = new System.Drawing.Size(885, 35);
             this.lblNota.TabIndex = 0;
             this.lblNota.Text = "Consulta las existencias actuales y registra entradas o salidas de productos.";
-            // 
-            // txtProducto
-            // 
-            this.txtProducto.Location = new System.Drawing.Point(20, 98);
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(310, 27);
-            this.txtProducto.TabIndex = 12;
             // 
             // frmInventarioAdmin
             // 
