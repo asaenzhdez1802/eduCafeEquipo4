@@ -343,7 +343,7 @@
             this.dtpFechaFinal.TabIndex = 7;
             // 
             // btnGenerarReporte
-            // 
+            
             this.btnGenerarReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(124)))), ((int)(((byte)(68)))));
             this.btnGenerarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarReporte.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
@@ -354,6 +354,7 @@
             this.btnGenerarReporte.TabIndex = 6;
             this.btnGenerarReporte.Text = "Generar reporte";
             this.btnGenerarReporte.UseVisualStyleBackColor = false;
+            this.btnGenerarReporte.Click += new System.EventHandler(this.btnGenerarReporte_Click);
             // 
             // panelVentasTotales
             // 
