@@ -18,6 +18,7 @@ namespace eduCafeEquipo4
         private bool audioAccesibilidadActivo = false;
         private string ultimoMensaje = "";
         private DateTime ultimaLectura = DateTime.MinValue;
+
         public login()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace eduCafeEquipo4
             btnAudio.Text = "Audio: Desactivado";
             ConfigurarAudioAccesibilidad();
         }
+
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text.Trim();
@@ -48,16 +50,27 @@ namespace eduCafeEquipo4
                 {
                     if (conexion == null) return;
 
-                    string query = "SELECT nombres, primer_apellido, segundo_apellido, rol, estado " + "FROM usuario " + "WHERE nombre_usuario = @user " + "AND contrasena = @pass";
+                    string query = "SELECT contrasena, nombres, primer_apellido, segundo_apellido, rol, estado " + "FROM usuario " + "WHERE nombre_usuario = @user " + "AND BINARY contrasena = @pass";
 
                     using (MySqlCommand comando = new MySqlCommand(query, conexion))
                     {
                         comando.Parameters.AddWithValue("@user", usuario);
                         comando.Parameters.AddWithValue("@pass", contra);
+
                         using (MySqlDataReader reader = comando.ExecuteReader())
                         {
                             if (reader.Read())
                             {
+                                string contrasenaBD = reader["contrasena"].ToString();
+
+                                if (!contrasenaBD.Equals(contra, StringComparison.Ordinal))
+                                {
+                                    MessageBox.Show("Los datos son incorrectos. Intente de nuevo.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    txtContrasena.Clear();
+                                    txtUsuario.Clear();
+                                    return;
+                                }
+
                                 string nombres = reader["nombres"].ToString();
                                 string primerApellido = reader["primer_apellido"].ToString();
                                 string segundoApellido = reader["segundo_apellido"].ToString();
@@ -108,6 +121,7 @@ namespace eduCafeEquipo4
                 MessageBox.Show("Error al conectarse a la base de datos: " + ex.Message, "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -126,6 +140,7 @@ namespace eduCafeEquipo4
             AgregarLectura(btnSalir, "Salir");
             AgregarLectura(btnAudio, "Activar o desactivar audio");
         }
+
         private void AgregarLectura(Control control, string mensaje)
         {
             control.AccessibleName = mensaje;

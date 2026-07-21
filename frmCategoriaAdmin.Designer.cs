@@ -50,10 +50,6 @@
             this.txtBuscarCategoria = new System.Windows.Forms.TextBox();
             this.btnNuevaCategoria = new System.Windows.Forms.Button();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
-            this.colIdCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelInformacionCategoria = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
@@ -64,6 +60,10 @@
             this.lblNombreCategoria = new System.Windows.Forms.Label();
             this.lblTituloInformacion = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
+            this.colIdCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
@@ -260,7 +260,7 @@
             // 
             // lblEduCafe
             // 
-            this.lblEduCafe.Font = new System.Drawing.Font("Roboto Cn", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEduCafe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEduCafe.ForeColor = System.Drawing.Color.White;
             this.lblEduCafe.Location = new System.Drawing.Point(0, 130);
             this.lblEduCafe.Name = "lblEduCafe";
@@ -298,7 +298,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(158, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(155, 18);
             this.lblSubtitulo.TabIndex = 2;
             this.lblSubtitulo.Text = "Administra categorías";
             // 
@@ -309,7 +309,7 @@
             this.lblBuscarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarCategoria.Location = new System.Drawing.Point(270, 103);
             this.lblBuscarCategoria.Name = "lblBuscarCategoria";
-            this.lblBuscarCategoria.Size = new System.Drawing.Size(73, 18);
+            this.lblBuscarCategoria.Size = new System.Drawing.Size(72, 18);
             this.lblBuscarCategoria.TabIndex = 3;
             this.lblBuscarCategoria.Text = "Categoría";
             // 
@@ -381,38 +381,6 @@
             this.dgvCategorias.Size = new System.Drawing.Size(515, 470);
             this.dgvCategorias.TabIndex = 6;
             // 
-            // colIdCategoria
-            // 
-            this.colIdCategoria.FillWeight = 70F;
-            this.colIdCategoria.HeaderText = "ID";
-            this.colIdCategoria.MinimumWidth = 6;
-            this.colIdCategoria.Name = "colIdCategoria";
-            this.colIdCategoria.ReadOnly = true;
-            // 
-            // colNombreCategoria
-            // 
-            this.colNombreCategoria.FillWeight = 135F;
-            this.colNombreCategoria.HeaderText = "Nombre de la categoría";
-            this.colNombreCategoria.MinimumWidth = 6;
-            this.colNombreCategoria.Name = "colNombreCategoria";
-            this.colNombreCategoria.ReadOnly = true;
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.FillWeight = 170F;
-            this.colDescripcion.HeaderText = "Descripción";
-            this.colDescripcion.MinimumWidth = 6;
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.ReadOnly = true;
-            // 
-            // colAcciones
-            // 
-            this.colAcciones.FillWeight = 80F;
-            this.colAcciones.HeaderText = "Acciones";
-            this.colAcciones.MinimumWidth = 6;
-            this.colAcciones.Name = "colAcciones";
-            this.colAcciones.ReadOnly = true;
-            // 
             // panelInformacionCategoria
             // 
             this.panelInformacionCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(224)))), ((int)(((byte)(204)))));
@@ -460,7 +428,7 @@
             this.lblEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblEstado.Location = new System.Drawing.Point(20, 290);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(55, 18);
+            this.lblEstado.Size = new System.Drawing.Size(53, 18);
             this.lblEstado.TabIndex = 5;
             this.lblEstado.Text = "Estado";
             // 
@@ -482,7 +450,7 @@
             this.lblDescripcionCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblDescripcionCategoria.Location = new System.Drawing.Point(20, 117);
             this.lblDescripcionCategoria.Name = "lblDescripcionCategoria";
-            this.lblDescripcionCategoria.Size = new System.Drawing.Size(90, 18);
+            this.lblDescripcionCategoria.Size = new System.Drawing.Size(87, 18);
             this.lblDescripcionCategoria.TabIndex = 3;
             this.lblDescripcionCategoria.Text = "Descripción";
             // 
@@ -502,7 +470,7 @@
             this.lblNombreCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblNombreCategoria.Location = new System.Drawing.Point(20, 57);
             this.lblNombreCategoria.Name = "lblNombreCategoria";
-            this.lblNombreCategoria.Size = new System.Drawing.Size(168, 18);
+            this.lblNombreCategoria.Size = new System.Drawing.Size(163, 18);
             this.lblNombreCategoria.TabIndex = 1;
             this.lblNombreCategoria.Text = "Nombre de la categoría";
             // 
@@ -527,6 +495,38 @@
             this.lblNota.TabIndex = 8;
             this.lblNota.Text = "Desde esta sección puedes agregar, editar, eliminar y consultar las categorías.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // colIdCategoria
+            // 
+            this.colIdCategoria.FillWeight = 70F;
+            this.colIdCategoria.HeaderText = "ID";
+            this.colIdCategoria.MinimumWidth = 6;
+            this.colIdCategoria.Name = "colIdCategoria";
+            this.colIdCategoria.ReadOnly = true;
+            // 
+            // colNombreCategoria
+            // 
+            this.colNombreCategoria.FillWeight = 135F;
+            this.colNombreCategoria.HeaderText = "Nombre de la categoría";
+            this.colNombreCategoria.MinimumWidth = 6;
+            this.colNombreCategoria.Name = "colNombreCategoria";
+            this.colNombreCategoria.ReadOnly = true;
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.FillWeight = 170F;
+            this.colDescripcion.HeaderText = "Descripción";
+            this.colDescripcion.MinimumWidth = 6;
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.ReadOnly = true;
+            // 
+            // colAcciones
+            // 
+            this.colAcciones.FillWeight = 80F;
+            this.colAcciones.HeaderText = "Estado";
+            this.colAcciones.MinimumWidth = 6;
+            this.colAcciones.Name = "colAcciones";
+            this.colAcciones.ReadOnly = true;
             // 
             // frmCategoriaAdmin
             // 
@@ -581,10 +581,6 @@
         private System.Windows.Forms.Button btnNuevaCategoria;
 
         private System.Windows.Forms.DataGridView dgvCategorias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIdCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNombreCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAcciones;
 
         private System.Windows.Forms.Panel panelInformacionCategoria;
         private System.Windows.Forms.Label lblTituloInformacion;
@@ -597,5 +593,9 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Button btnCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombreCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAcciones;
     }
 }
