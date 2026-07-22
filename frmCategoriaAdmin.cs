@@ -14,11 +14,13 @@ namespace eduCafeEquipo4
     public partial class frmCategoriaAdmin : Form
     {
         private int idCategoriaSeleccionada = 0;
+        private bool altoContraste = false;
+        private Dictionary<Control, (Color back, Color fore)> coloresOriginales = new Dictionary<Control, (Color, Color)>();
 
         public frmCategoriaAdmin()
         {
             InitializeComponent();
-
+            
             ConfigurarFormulario();
 
             this.Load += frmCategoriaAdmin_Load;
@@ -26,6 +28,7 @@ namespace eduCafeEquipo4
             btnNuevaCategoria.Click += btnNuevaCategoria_Click;
             btnGuardar.Click += btnGuardar_Click;
             dgvCategorias.CellClick += dgvCategorias_CellClick;
+            
         }
 
         private void ConfigurarFormulario()
@@ -39,6 +42,7 @@ namespace eduCafeEquipo4
 
         private void frmCategoriaAdmin_Load(object sender, EventArgs e)
         {
+            GuardarColoresOriginales(this);
             CargarCategorias();
             LimpiarCampos();
         }
@@ -71,16 +75,7 @@ namespace eduCafeEquipo4
                 using (MySqlConnection conexion = ObtenerConexion())
                 {
                     string consulta = @"
-                        SELECT
-                            id_categoria,
-                            nombre,
-                            descripcion
-                            FROM categoria
-                            WHERE
-                            @filtro = ''
-                            OR nombre LIKE @busqueda
-                            OR descripcion LIKE @busqueda
-                            ORDER BY nombre ASC;";
+                        SELECT id_categoria, nombre,descripcion FROM categoria WHERE @filtro = ''OR nombre LIKE @busqueda OR descripcion LIKE @busqueda ORDER BY nombre ASC;";
 
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
@@ -357,11 +352,7 @@ namespace eduCafeEquipo4
         {
             using (MySqlConnection conexion = ObtenerConexion())
             {
-                string consulta = @"
-                    INSERT INTO categoria
-                    (nombre, descripcion, estado)
-                    VALUES
-                    (@nombre, @descripcion, @estado);";
+                string consulta = @"INSERT INTO categoria (nombre, descripcion, estado) VALUES (@nombre, @descripcion, @estado);";
 
                 using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                 {
@@ -382,13 +373,7 @@ namespace eduCafeEquipo4
         {
             using (MySqlConnection conexion = ObtenerConexion())
             {
-                string consulta = @"
-                    UPDATE categoria
-                    SET
-                        nombre = @nombre,
-                        descripcion = @descripcion,
-                        estado = @estado
-                    WHERE id_categoria = @id_categoria;";
+                string consulta = @"UPDATE categoria SET nombre = @nombre,descripcion = @descripcion,estado = @estado WHERE id_categoria = @id_categoria;";
 
                 using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                 {
@@ -519,5 +504,38 @@ namespace eduCafeEquipo4
             frm.Show();
             this.Hide();
         }
-    }
+
+        private void btnAltoContraste_Click(object sender, EventArgs e)
+        {
+            altoContraste = !altoContraste;
+            AplicarContraste(this, altoContraste);
+        }
+        private void AplicarContraste(Control control, bool activar)
+        {
+            if (activar)
+            {
+                control.BackColor = Color.Black;
+                control.ForeColor = Color.Red;
+            }
+            else
+            {
+                if (coloresOriginales.ContainsKey(control))
+                {
+                    control.BackColor = coloresOriginales[control].back;
+                    control.ForeColor = coloresOriginales[control].fore;
+                }
+            }
+
+            foreach (Control hijo in control.Controls)
+                AplicarContraste(hijo, activar);
+
+        }
+        private void GuardarColoresOriginales(Control control)
+        {
+            coloresOriginales[control] = (control.BackColor, control.ForeColor);
+            foreach (Control hijo in control.Controls)
+                GuardarColoresOriginales(hijo);
+        }
+    } 
 }
+
