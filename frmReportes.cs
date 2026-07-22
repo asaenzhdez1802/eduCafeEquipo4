@@ -174,5 +174,13 @@ namespace eduCafeEquipo4
             frm.Show();
             this.Hide();
         }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            frmProductosAdmin frm = new frmProductosAdmin();
+
+            frm.Show();
+            this.Hide();
+        }
     }
 }

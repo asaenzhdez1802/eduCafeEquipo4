@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnCategoria = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lineaMenu = new System.Windows.Forms.Panel();
             this.btnReportes = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@
             this.colMetodoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTituloResultados = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
-            this.btnCategoria = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelVentasTotales.SuspendLayout();
@@ -106,6 +106,24 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 700);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
+            // 
+            // btnCategoria
+            // 
+            this.btnCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.btnCategoria.FlatAppearance.BorderSize = 0;
+            this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoria.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
+            this.btnCategoria.Location = new System.Drawing.Point(-2, 443);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(200, 38);
+            this.btnCategoria.TabIndex = 14;
+            this.btnCategoria.Text = "  Categoria";
+            this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategoria.UseVisualStyleBackColor = false;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // btnCerrarSesion
             // 
@@ -227,6 +245,7 @@
             this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProductos.UseVisualStyleBackColor = false;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // btnInicio
             // 
@@ -298,7 +317,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(256, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(248, 18);
             this.lblSubtitulo.TabIndex = 11;
             this.lblSubtitulo.Text = "Consulta y genera reportes de venta";
             // 
@@ -309,7 +328,7 @@
             this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblFechaInicio.Location = new System.Drawing.Point(285, 102);
             this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(95, 18);
+            this.lblFechaInicio.Size = new System.Drawing.Size(92, 18);
             this.lblFechaInicio.TabIndex = 10;
             this.lblFechaInicio.Text = "Fecha inicio:";
             // 
@@ -329,7 +348,7 @@
             this.lblFechaFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblFechaFinal.Location = new System.Drawing.Point(560, 102);
             this.lblFechaFinal.Name = "lblFechaFinal";
-            this.lblFechaFinal.Size = new System.Drawing.Size(87, 18);
+            this.lblFechaFinal.Size = new System.Drawing.Size(85, 18);
             this.lblFechaFinal.TabIndex = 8;
             this.lblFechaFinal.Text = "Fecha final:";
             // 
@@ -645,24 +664,6 @@
             this.lblNota.Text = "Este reporte muestra las ventas realizadas por día en el rango de fechas seleccio" +
     "nado.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnCategoria
-            // 
-            this.btnCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
-            this.btnCategoria.FlatAppearance.BorderSize = 0;
-            this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategoria.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
-            this.btnCategoria.Location = new System.Drawing.Point(-2, 443);
-            this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(200, 38);
-            this.btnCategoria.TabIndex = 14;
-            this.btnCategoria.Text = "  Categoria";
-            this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCategoria.UseVisualStyleBackColor = false;
-            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // frmReportes
             // 
