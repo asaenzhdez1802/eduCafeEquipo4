@@ -50,6 +50,10 @@
             this.txtBuscarCategoria = new System.Windows.Forms.TextBox();
             this.btnNuevaCategoria = new System.Windows.Forms.Button();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
+            this.colIdCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelInformacionCategoria = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
@@ -60,10 +64,7 @@
             this.lblNombreCategoria = new System.Windows.Forms.Label();
             this.lblTituloInformacion = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
-            this.colIdCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAltoContraste = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
@@ -98,7 +99,7 @@
             this.btnCategoria.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
             this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
-            this.btnCategoria.Location = new System.Drawing.Point(0, 449);
+            this.btnCategoria.Location = new System.Drawing.Point(0, 365);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(200, 38);
             this.btnCategoria.TabIndex = 12;
@@ -142,7 +143,7 @@
             this.btnReportes.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.Image = global::eduCafeEquipo4.Properties.Resources.MenuAdminReportesB;
-            this.btnReportes.Location = new System.Drawing.Point(0, 405);
+            this.btnReportes.Location = new System.Drawing.Point(0, 439);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(200, 38);
             this.btnReportes.TabIndex = 9;
@@ -160,7 +161,7 @@
             this.btnUsuarios.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Image = global::eduCafeEquipo4.Properties.Resources.MenuAdminUsersB;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 367);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 404);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.btnUsuarios.Size = new System.Drawing.Size(200, 38);
@@ -298,7 +299,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(155, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(158, 18);
             this.lblSubtitulo.TabIndex = 2;
             this.lblSubtitulo.Text = "Administra categorías";
             // 
@@ -309,7 +310,7 @@
             this.lblBuscarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarCategoria.Location = new System.Drawing.Point(270, 103);
             this.lblBuscarCategoria.Name = "lblBuscarCategoria";
-            this.lblBuscarCategoria.Size = new System.Drawing.Size(72, 18);
+            this.lblBuscarCategoria.Size = new System.Drawing.Size(73, 18);
             this.lblBuscarCategoria.TabIndex = 3;
             this.lblBuscarCategoria.Text = "Categoría";
             // 
@@ -381,6 +382,38 @@
             this.dgvCategorias.Size = new System.Drawing.Size(515, 470);
             this.dgvCategorias.TabIndex = 6;
             // 
+            // colIdCategoria
+            // 
+            this.colIdCategoria.FillWeight = 70F;
+            this.colIdCategoria.HeaderText = "ID";
+            this.colIdCategoria.MinimumWidth = 6;
+            this.colIdCategoria.Name = "colIdCategoria";
+            this.colIdCategoria.ReadOnly = true;
+            // 
+            // colNombreCategoria
+            // 
+            this.colNombreCategoria.FillWeight = 135F;
+            this.colNombreCategoria.HeaderText = "Nombre de la categoría";
+            this.colNombreCategoria.MinimumWidth = 6;
+            this.colNombreCategoria.Name = "colNombreCategoria";
+            this.colNombreCategoria.ReadOnly = true;
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.FillWeight = 170F;
+            this.colDescripcion.HeaderText = "Descripción";
+            this.colDescripcion.MinimumWidth = 6;
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.ReadOnly = true;
+            // 
+            // colAcciones
+            // 
+            this.colAcciones.FillWeight = 80F;
+            this.colAcciones.HeaderText = "Estado";
+            this.colAcciones.MinimumWidth = 6;
+            this.colAcciones.Name = "colAcciones";
+            this.colAcciones.ReadOnly = true;
+            // 
             // panelInformacionCategoria
             // 
             this.panelInformacionCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(224)))), ((int)(((byte)(204)))));
@@ -428,7 +461,7 @@
             this.lblEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblEstado.Location = new System.Drawing.Point(20, 290);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(53, 18);
+            this.lblEstado.Size = new System.Drawing.Size(55, 18);
             this.lblEstado.TabIndex = 5;
             this.lblEstado.Text = "Estado";
             // 
@@ -450,7 +483,7 @@
             this.lblDescripcionCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblDescripcionCategoria.Location = new System.Drawing.Point(20, 117);
             this.lblDescripcionCategoria.Name = "lblDescripcionCategoria";
-            this.lblDescripcionCategoria.Size = new System.Drawing.Size(87, 18);
+            this.lblDescripcionCategoria.Size = new System.Drawing.Size(90, 18);
             this.lblDescripcionCategoria.TabIndex = 3;
             this.lblDescripcionCategoria.Text = "Descripción";
             // 
@@ -470,7 +503,7 @@
             this.lblNombreCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblNombreCategoria.Location = new System.Drawing.Point(20, 57);
             this.lblNombreCategoria.Name = "lblNombreCategoria";
-            this.lblNombreCategoria.Size = new System.Drawing.Size(163, 18);
+            this.lblNombreCategoria.Size = new System.Drawing.Size(168, 18);
             this.lblNombreCategoria.TabIndex = 1;
             this.lblNombreCategoria.Text = "Nombre de la categoría";
             // 
@@ -496,43 +529,22 @@
             this.lblNota.Text = "Desde esta sección puedes agregar, editar, eliminar y consultar las categorías.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // colIdCategoria
+            // btnAltoContraste
             // 
-            this.colIdCategoria.FillWeight = 70F;
-            this.colIdCategoria.HeaderText = "ID";
-            this.colIdCategoria.MinimumWidth = 6;
-            this.colIdCategoria.Name = "colIdCategoria";
-            this.colIdCategoria.ReadOnly = true;
-            // 
-            // colNombreCategoria
-            // 
-            this.colNombreCategoria.FillWeight = 135F;
-            this.colNombreCategoria.HeaderText = "Nombre de la categoría";
-            this.colNombreCategoria.MinimumWidth = 6;
-            this.colNombreCategoria.Name = "colNombreCategoria";
-            this.colNombreCategoria.ReadOnly = true;
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.FillWeight = 170F;
-            this.colDescripcion.HeaderText = "Descripción";
-            this.colDescripcion.MinimumWidth = 6;
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.ReadOnly = true;
-            // 
-            // colAcciones
-            // 
-            this.colAcciones.FillWeight = 80F;
-            this.colAcciones.HeaderText = "Estado";
-            this.colAcciones.MinimumWidth = 6;
-            this.colAcciones.Name = "colAcciones";
-            this.colAcciones.ReadOnly = true;
+            this.btnAltoContraste.Location = new System.Drawing.Point(839, 41);
+            this.btnAltoContraste.Name = "btnAltoContraste";
+            this.btnAltoContraste.Size = new System.Drawing.Size(282, 30);
+            this.btnAltoContraste.TabIndex = 9;
+            this.btnAltoContraste.Text = "contraste";
+            this.btnAltoContraste.UseVisualStyleBackColor = true;
+            this.btnAltoContraste.Click += new System.EventHandler(this.btnAltoContraste_Click);
             // 
             // frmCategoriaAdmin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1178, 692);
+            this.Controls.Add(this.btnAltoContraste);
             this.Controls.Add(this.lblNota);
             this.Controls.Add(this.panelInformacionCategoria);
             this.Controls.Add(this.dgvCategorias);
@@ -597,5 +609,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombreCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAcciones;
+        private System.Windows.Forms.Button btnAltoContraste;
     }
 }

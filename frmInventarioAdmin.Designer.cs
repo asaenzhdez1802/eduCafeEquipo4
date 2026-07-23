@@ -106,7 +106,7 @@
             this.btnCategoria.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.Color.White;
             this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
-            this.btnCategoria.Location = new System.Drawing.Point(0, 449);
+            this.btnCategoria.Location = new System.Drawing.Point(0, 370);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(200, 38);
             this.btnCategoria.TabIndex = 14;
@@ -151,7 +151,7 @@
             this.btnReportes.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.Image = global::eduCafeEquipo4.Properties.Resources.MenuAdminReportesB;
-            this.btnReportes.Location = new System.Drawing.Point(0, 405);
+            this.btnReportes.Location = new System.Drawing.Point(0, 447);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(200, 38);
             this.btnReportes.TabIndex = 9;
@@ -169,7 +169,7 @@
             this.btnUsuarios.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Image = global::eduCafeEquipo4.Properties.Resources.MenuAdminUsersB;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 367);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 407);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.btnUsuarios.Size = new System.Drawing.Size(200, 38);
@@ -306,7 +306,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(423, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(437, 18);
             this.lblSubtitulo.TabIndex = 7;
             this.lblSubtitulo.Text = "Consulta existencias y registra entradas o salidas de producto";
             // 
@@ -317,7 +317,7 @@
             this.lblBuscarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarProducto.Location = new System.Drawing.Point(270, 103);
             this.lblBuscarProducto.Name = "lblBuscarProducto";
-            this.lblBuscarProducto.Size = new System.Drawing.Size(127, 18);
+            this.lblBuscarProducto.Size = new System.Drawing.Size(134, 18);
             this.lblBuscarProducto.TabIndex = 6;
             this.lblBuscarProducto.Text = "Nombre producto:";
             // 
@@ -338,7 +338,7 @@
             this.lblBuscarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarCategoria.Location = new System.Drawing.Point(495, 103);
             this.lblBuscarCategoria.Name = "lblBuscarCategoria";
-            this.lblBuscarCategoria.Size = new System.Drawing.Size(72, 18);
+            this.lblBuscarCategoria.Size = new System.Drawing.Size(73, 18);
             this.lblBuscarCategoria.TabIndex = 4;
             this.lblBuscarCategoria.Text = "Categoría";
             // 
@@ -493,7 +493,7 @@
             this.lblTipoMovimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblTipoMovimiento.Location = new System.Drawing.Point(20, 332);
             this.lblTipoMovimiento.Name = "lblTipoMovimiento";
-            this.lblTipoMovimiento.Size = new System.Drawing.Size(140, 18);
+            this.lblTipoMovimiento.Size = new System.Drawing.Size(146, 18);
             this.lblTipoMovimiento.TabIndex = 2;
             this.lblTipoMovimiento.Text = "Tipo de movimiento";
             // 
@@ -514,7 +514,7 @@
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblHora.Location = new System.Drawing.Point(20, 266);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(40, 18);
+            this.lblHora.Size = new System.Drawing.Size(41, 18);
             this.lblHora.TabIndex = 4;
             this.lblHora.Text = "Hora";
             // 
@@ -534,7 +534,7 @@
             this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblFecha.Location = new System.Drawing.Point(20, 200);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(48, 18);
+            this.lblFecha.Size = new System.Drawing.Size(49, 18);
             this.lblFecha.TabIndex = 6;
             this.lblFecha.Text = "Fecha";
             // 
@@ -568,7 +568,7 @@
             this.lblCantidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblCantidad.Location = new System.Drawing.Point(20, 133);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(67, 18);
+            this.lblCantidad.Size = new System.Drawing.Size(69, 18);
             this.lblCantidad.TabIndex = 8;
             this.lblCantidad.Text = "Cantidad";
             // 
@@ -579,7 +579,7 @@
             this.lblProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblProducto.Location = new System.Drawing.Point(20, 67);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(68, 18);
+            this.lblProducto.Size = new System.Drawing.Size(72, 18);
             this.lblProducto.TabIndex = 10;
             this.lblProducto.Text = "Producto";
             // 

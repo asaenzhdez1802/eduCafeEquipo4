@@ -14,6 +14,8 @@ namespace eduCafeEquipo4
     public partial class frmCategoriaAdmin : Form
     {
         private int idCategoriaSeleccionada = 0;
+        private bool altoContraste = false;
+        private Dictionary<Control, (Color back, Color fore)> coloresOriginales = new Dictionary<Control, (Color, Color)>();
 
         public frmCategoriaAdmin()
         {
@@ -41,6 +43,7 @@ namespace eduCafeEquipo4
         {
             CargarCategorias();
             LimpiarCampos();
+            GuardarColoresOriginales(this);
         }
 
         private MySqlConnection ObtenerConexion()
@@ -90,7 +93,6 @@ namespace eduCafeEquipo4
                             while (lector.Read())
                             {
                                 string estadoValor = (lector["estado"] == DBNull.Value || string.IsNullOrWhiteSpace(lector["estado"].ToString())) ? "Activo"  : lector["estado"].ToString();
-                                string descValor = lector["descripcion"] == DBNull.Value  ? "" : lector["descripcion"].ToString();
                                 string descValor = lector["descripcion"] == DBNull.Value  ? "" : lector["descripcion"].ToString();
                                 dgvCategorias.Rows.Add(lector["id_categoria"].ToString(), lector["nombre"].ToString(), descValor, estadoValor);
                             }
@@ -405,6 +407,38 @@ namespace eduCafeEquipo4
 
             frm.Show();
             this.Hide();
+        }
+        private void GuardarColoresOriginales(Control control)
+        {
+            coloresOriginales[control] = (control.BackColor, control.ForeColor);
+            foreach (Control hijo in control.Controls)
+                GuardarColoresOriginales(hijo);
+        }
+
+        private void btnAltoContraste_Click(object sender, EventArgs e)
+        {
+            altoContraste = !altoContraste;
+            AplicarContraste(this, altoContraste);
+
+        }
+        private void AplicarContraste(Control control, bool activar)
+        {
+            if (activar)
+            {
+                control.BackColor = Color.Black;
+                control.ForeColor = Color.Red;
+            }
+            else
+            {
+                if (coloresOriginales.ContainsKey(control))
+                {
+                    control.BackColor = coloresOriginales[control].back;
+                    control.ForeColor = coloresOriginales[control].fore;
+                }
+            }
+
+            foreach (Control hijo in control.Controls)
+                AplicarContraste(hijo, activar);
         }
     }
 }
