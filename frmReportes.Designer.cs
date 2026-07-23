@@ -115,7 +115,7 @@
             this.btnCategoria.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.Color.White;
             this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
-            this.btnCategoria.Location = new System.Drawing.Point(-2, 443);
+            this.btnCategoria.Location = new System.Drawing.Point(-3, 368);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(200, 38);
             this.btnCategoria.TabIndex = 14;
@@ -160,7 +160,7 @@
             this.btnReportes.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
             this.btnReportes.Image = global::eduCafeEquipo4.Properties.Resources.reportes_master_verde;
-            this.btnReportes.Location = new System.Drawing.Point(0, 405);
+            this.btnReportes.Location = new System.Drawing.Point(0, 443);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnReportes.Size = new System.Drawing.Size(200, 38);
@@ -178,7 +178,7 @@
             this.btnUsuarios.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Image = global::eduCafeEquipo4.Properties.Resources.MenuAdminUsersB;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 367);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 405);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnUsuarios.Size = new System.Drawing.Size(200, 38);
@@ -317,7 +317,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(248, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(256, 18);
             this.lblSubtitulo.TabIndex = 11;
             this.lblSubtitulo.Text = "Consulta y genera reportes de venta";
             // 
@@ -328,7 +328,7 @@
             this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblFechaInicio.Location = new System.Drawing.Point(285, 102);
             this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(92, 18);
+            this.lblFechaInicio.Size = new System.Drawing.Size(95, 18);
             this.lblFechaInicio.TabIndex = 10;
             this.lblFechaInicio.Text = "Fecha inicio:";
             // 
@@ -348,7 +348,7 @@
             this.lblFechaFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblFechaFinal.Location = new System.Drawing.Point(560, 102);
             this.lblFechaFinal.Name = "lblFechaFinal";
-            this.lblFechaFinal.Size = new System.Drawing.Size(85, 18);
+            this.lblFechaFinal.Size = new System.Drawing.Size(87, 18);
             this.lblFechaFinal.TabIndex = 8;
             this.lblFechaFinal.Text = "Fecha final:";
             // 
@@ -362,7 +362,7 @@
             this.dtpFechaFinal.TabIndex = 7;
             // 
             // btnGenerarReporte
-            
+            // 
             this.btnGenerarReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(124)))), ((int)(((byte)(68)))));
             this.btnGenerarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarReporte.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
