@@ -18,8 +18,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedoresAdmin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCategoria = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
@@ -54,13 +54,16 @@
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblZoom = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtNombreProveedor = new System.Windows.Forms.TextBox();
             this.lblNombreProveedor = new System.Windows.Forms.Label();
             this.lblTituloInformacion = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
+            this.btnRestZoom = new System.Windows.Forms.Button();
+            this.btnMenosZoom = new System.Windows.Forms.Button();
+            this.bntMasZoom = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
@@ -298,7 +301,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(172, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(167, 18);
             this.lblSubtitulo.TabIndex = 2;
             this.lblSubtitulo.Text = "Administra proveedores";
             // 
@@ -309,7 +312,7 @@
             this.lblBuscarProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarProveedor.Location = new System.Drawing.Point(270, 103);
             this.lblBuscarProveedor.Name = "lblBuscarProveedor";
-            this.lblBuscarProveedor.Size = new System.Drawing.Size(79, 18);
+            this.lblBuscarProveedor.Size = new System.Drawing.Size(76, 18);
             this.lblBuscarProveedor.TabIndex = 3;
             this.lblBuscarProveedor.Text = "Proveedor";
             // 
@@ -347,24 +350,24 @@
             this.dgvProveedores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             this.dgvProveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvProveedores.ColumnHeadersHeight = 38;
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProveedores.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProveedores.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProveedores.EnableHeadersVisualStyles = false;
             this.dgvProveedores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(220)))), ((int)(((byte)(210)))));
             this.dgvProveedores.Location = new System.Drawing.Point(270, 165);
@@ -396,7 +399,6 @@
             this.panelInformacionProveedor.Controls.Add(this.txtEmpresa);
             this.panelInformacionProveedor.Controls.Add(this.lblEmpresa);
             this.panelInformacionProveedor.Controls.Add(this.txtTelefono);
-            this.panelInformacionProveedor.Controls.Add(this.lblTelefono);
             this.panelInformacionProveedor.Controls.Add(this.txtCorreo);
             this.panelInformacionProveedor.Controls.Add(this.lblCorreo);
             this.panelInformacionProveedor.Controls.Add(this.txtNombreProveedor);
@@ -442,7 +444,7 @@
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblStatus.Location = new System.Drawing.Point(185, 365);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(55, 18);
+            this.lblStatus.Size = new System.Drawing.Size(53, 18);
             this.lblStatus.TabIndex = 17;
             this.lblStatus.Text = "Estado";
             // 
@@ -462,7 +464,7 @@
             this.lblCodigoPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCodigoPostal.Location = new System.Drawing.Point(20, 365);
             this.lblCodigoPostal.Name = "lblCodigoPostal";
-            this.lblCodigoPostal.Size = new System.Drawing.Size(104, 18);
+            this.lblCodigoPostal.Size = new System.Drawing.Size(99, 18);
             this.lblCodigoPostal.TabIndex = 15;
             this.lblCodigoPostal.Text = "Código postal";
             // 
@@ -482,7 +484,7 @@
             this.lblCiudad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCiudad.Location = new System.Drawing.Point(185, 302);
             this.lblCiudad.Name = "lblCiudad";
-            this.lblCiudad.Size = new System.Drawing.Size(56, 18);
+            this.lblCiudad.Size = new System.Drawing.Size(54, 18);
             this.lblCiudad.TabIndex = 13;
             this.lblCiudad.Text = "Ciudad";
             // 
@@ -502,7 +504,7 @@
             this.lblColonia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblColonia.Location = new System.Drawing.Point(20, 302);
             this.lblColonia.Name = "lblColonia";
-            this.lblColonia.Size = new System.Drawing.Size(60, 18);
+            this.lblColonia.Size = new System.Drawing.Size(58, 18);
             this.lblColonia.TabIndex = 11;
             this.lblColonia.Text = "Colonia";
             // 
@@ -522,7 +524,7 @@
             this.lblCalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCalle.Location = new System.Drawing.Point(185, 239);
             this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(41, 18);
+            this.lblCalle.Size = new System.Drawing.Size(42, 18);
             this.lblCalle.TabIndex = 9;
             this.lblCalle.Text = "Calle";
             // 
@@ -542,7 +544,7 @@
             this.lblEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblEmpresa.Location = new System.Drawing.Point(20, 239);
             this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(67, 18);
+            this.lblEmpresa.Size = new System.Drawing.Size(66, 18);
             this.lblEmpresa.TabIndex = 7;
             this.lblEmpresa.Text = "Empresa";
             // 
@@ -555,16 +557,16 @@
             this.txtTelefono.Size = new System.Drawing.Size(310, 27);
             this.txtTelefono.TabIndex = 6;
             // 
-            // lblTelefono
+            // lblZoom
             // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Font = new System.Drawing.Font("Roboto", 8.5F);
-            this.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
-            this.lblTelefono.Location = new System.Drawing.Point(20, 177);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(69, 18);
-            this.lblTelefono.TabIndex = 5;
-            this.lblTelefono.Text = "Teléfono";
+            this.lblZoom.AutoSize = true;
+            this.lblZoom.Font = new System.Drawing.Font("Roboto", 8.5F);
+            this.lblZoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
+            this.lblZoom.Location = new System.Drawing.Point(896, 17);
+            this.lblZoom.Name = "lblZoom";
+            this.lblZoom.Size = new System.Drawing.Size(50, 18);
+            this.lblZoom.TabIndex = 5;
+            this.lblZoom.Text = "Zoom:";
             // 
             // txtCorreo
             // 
@@ -582,7 +584,7 @@
             this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCorreo.Location = new System.Drawing.Point(20, 117);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(134, 18);
+            this.lblCorreo.Size = new System.Drawing.Size(130, 18);
             this.lblCorreo.TabIndex = 3;
             this.lblCorreo.Text = "Correo electrónico";
             // 
@@ -602,7 +604,7 @@
             this.lblNombreProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblNombreProveedor.Location = new System.Drawing.Point(20, 57);
             this.lblNombreProveedor.Name = "lblNombreProveedor";
-            this.lblNombreProveedor.Size = new System.Drawing.Size(162, 18);
+            this.lblNombreProveedor.Size = new System.Drawing.Size(155, 18);
             this.lblNombreProveedor.TabIndex = 1;
             this.lblNombreProveedor.Text = "Nombre del proveedor";
             // 
@@ -628,12 +630,48 @@
             this.lblNota.Text = "Desde esta sección puedes agregar, editar, eliminar y consultar los proveedores.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnRestZoom
+            // 
+            this.btnRestZoom.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestZoom.Location = new System.Drawing.Point(997, 38);
+            this.btnRestZoom.Name = "btnRestZoom";
+            this.btnRestZoom.Size = new System.Drawing.Size(120, 43);
+            this.btnRestZoom.TabIndex = 9;
+            this.btnRestZoom.Text = "Restablecer";
+            this.btnRestZoom.UseVisualStyleBackColor = true;
+            this.btnRestZoom.Click += new System.EventHandler(this.btnRestZoom_Click);
+            // 
+            // btnMenosZoom
+            // 
+            this.btnMenosZoom.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenosZoom.Location = new System.Drawing.Point(948, 38);
+            this.btnMenosZoom.Name = "btnMenosZoom";
+            this.btnMenosZoom.Size = new System.Drawing.Size(43, 43);
+            this.btnMenosZoom.TabIndex = 10;
+            this.btnMenosZoom.Text = "-";
+            this.btnMenosZoom.UseVisualStyleBackColor = true;
+            this.btnMenosZoom.Click += new System.EventHandler(this.btnMenosZoom_Click);
+            // 
+            // bntMasZoom
+            // 
+            this.bntMasZoom.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntMasZoom.Location = new System.Drawing.Point(899, 40);
+            this.bntMasZoom.Name = "bntMasZoom";
+            this.bntMasZoom.Size = new System.Drawing.Size(43, 43);
+            this.bntMasZoom.TabIndex = 11;
+            this.bntMasZoom.Text = "+";
+            this.bntMasZoom.UseVisualStyleBackColor = true;
+            this.bntMasZoom.Click += new System.EventHandler(this.bntMasZoom_Click);
+            // 
             // frmProveedoresAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1178, 692);
+            this.Controls.Add(this.bntMasZoom);
+            this.Controls.Add(this.btnMenosZoom);
+            this.Controls.Add(this.btnRestZoom);
             this.Controls.Add(this.lblNota);
             this.Controls.Add(this.panelInformacionProveedor);
             this.Controls.Add(this.dgvProveedores);
@@ -643,6 +681,7 @@
             this.Controls.Add(this.lblSubtitulo);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.lblZoom);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -688,7 +727,7 @@
         private System.Windows.Forms.TextBox txtNombreProveedor;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblZoom;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblEmpresa;
         private System.Windows.Forms.TextBox txtEmpresa;
@@ -706,5 +745,8 @@
         private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Button btnCategoria;
+        private System.Windows.Forms.Button btnRestZoom;
+        private System.Windows.Forms.Button btnMenosZoom;
+        private System.Windows.Forms.Button bntMasZoom;
     }
 }
