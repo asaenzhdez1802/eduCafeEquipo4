@@ -17,10 +17,11 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedoresAdmin));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnCategoria = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lineaMenu = new System.Windows.Forms.Panel();
             this.btnReportes = new System.Windows.Forms.Button();
@@ -60,7 +61,10 @@
             this.lblNombreProveedor = new System.Windows.Forms.Label();
             this.lblTituloInformacion = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
-            this.btnCategoria = new System.Windows.Forms.Button();
+            this.btnRestZoom = new System.Windows.Forms.Button();
+            this.btnMenosZoon = new System.Windows.Forms.Button();
+            this.btnMasZoom = new System.Windows.Forms.Button();
+            this.lblZoon = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
@@ -87,6 +91,24 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 700);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
+            // 
+            // btnCategoria
+            // 
+            this.btnCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.btnCategoria.FlatAppearance.BorderSize = 0;
+            this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoria.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
+            this.btnCategoria.Location = new System.Drawing.Point(2, 449);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(200, 38);
+            this.btnCategoria.TabIndex = 14;
+            this.btnCategoria.Text = "Categoria";
+            this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategoria.UseVisualStyleBackColor = false;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // btnCerrarSesion
             // 
@@ -280,7 +302,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(273, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(172, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(167, 18);
             this.lblSubtitulo.TabIndex = 2;
             this.lblSubtitulo.Text = "Administra proveedores";
             // 
@@ -291,7 +313,7 @@
             this.lblBuscarProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarProveedor.Location = new System.Drawing.Point(270, 103);
             this.lblBuscarProveedor.Name = "lblBuscarProveedor";
-            this.lblBuscarProveedor.Size = new System.Drawing.Size(79, 18);
+            this.lblBuscarProveedor.Size = new System.Drawing.Size(76, 18);
             this.lblBuscarProveedor.TabIndex = 3;
             this.lblBuscarProveedor.Text = "Proveedor";
             // 
@@ -329,24 +351,24 @@
             this.dgvProveedores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             this.dgvProveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvProveedores.ColumnHeadersHeight = 38;
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProveedores.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProveedores.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvProveedores.EnableHeadersVisualStyles = false;
             this.dgvProveedores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(220)))), ((int)(((byte)(210)))));
             this.dgvProveedores.Location = new System.Drawing.Point(270, 165);
@@ -424,7 +446,7 @@
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblStatus.Location = new System.Drawing.Point(185, 365);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(55, 18);
+            this.lblStatus.Size = new System.Drawing.Size(53, 18);
             this.lblStatus.TabIndex = 17;
             this.lblStatus.Text = "Estado";
             // 
@@ -444,7 +466,7 @@
             this.lblCodigoPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCodigoPostal.Location = new System.Drawing.Point(20, 365);
             this.lblCodigoPostal.Name = "lblCodigoPostal";
-            this.lblCodigoPostal.Size = new System.Drawing.Size(104, 18);
+            this.lblCodigoPostal.Size = new System.Drawing.Size(99, 18);
             this.lblCodigoPostal.TabIndex = 15;
             this.lblCodigoPostal.Text = "Código postal";
             // 
@@ -464,7 +486,7 @@
             this.lblCiudad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCiudad.Location = new System.Drawing.Point(185, 302);
             this.lblCiudad.Name = "lblCiudad";
-            this.lblCiudad.Size = new System.Drawing.Size(56, 18);
+            this.lblCiudad.Size = new System.Drawing.Size(54, 18);
             this.lblCiudad.TabIndex = 13;
             this.lblCiudad.Text = "Ciudad";
             // 
@@ -484,7 +506,7 @@
             this.lblColonia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblColonia.Location = new System.Drawing.Point(20, 302);
             this.lblColonia.Name = "lblColonia";
-            this.lblColonia.Size = new System.Drawing.Size(60, 18);
+            this.lblColonia.Size = new System.Drawing.Size(58, 18);
             this.lblColonia.TabIndex = 11;
             this.lblColonia.Text = "Colonia";
             // 
@@ -504,7 +526,7 @@
             this.lblCalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCalle.Location = new System.Drawing.Point(185, 239);
             this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(41, 18);
+            this.lblCalle.Size = new System.Drawing.Size(42, 18);
             this.lblCalle.TabIndex = 9;
             this.lblCalle.Text = "Calle";
             // 
@@ -524,7 +546,7 @@
             this.lblEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblEmpresa.Location = new System.Drawing.Point(20, 239);
             this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(67, 18);
+            this.lblEmpresa.Size = new System.Drawing.Size(66, 18);
             this.lblEmpresa.TabIndex = 7;
             this.lblEmpresa.Text = "Empresa";
             // 
@@ -544,7 +566,7 @@
             this.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblTelefono.Location = new System.Drawing.Point(20, 177);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(69, 18);
+            this.lblTelefono.Size = new System.Drawing.Size(66, 18);
             this.lblTelefono.TabIndex = 5;
             this.lblTelefono.Text = "Teléfono";
             // 
@@ -564,7 +586,7 @@
             this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblCorreo.Location = new System.Drawing.Point(20, 117);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(134, 18);
+            this.lblCorreo.Size = new System.Drawing.Size(130, 18);
             this.lblCorreo.TabIndex = 3;
             this.lblCorreo.Text = "Correo electrónico";
             // 
@@ -584,7 +606,7 @@
             this.lblNombreProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
             this.lblNombreProveedor.Location = new System.Drawing.Point(20, 57);
             this.lblNombreProveedor.Name = "lblNombreProveedor";
-            this.lblNombreProveedor.Size = new System.Drawing.Size(162, 18);
+            this.lblNombreProveedor.Size = new System.Drawing.Size(155, 18);
             this.lblNombreProveedor.TabIndex = 1;
             this.lblNombreProveedor.Text = "Nombre del proveedor";
             // 
@@ -610,23 +632,49 @@
             this.lblNota.Text = "Desde esta sección puedes agregar, editar, eliminar y consultar los proveedores.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnCategoria
+            // btnRestZoom
             // 
-            this.btnCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
-            this.btnCategoria.FlatAppearance.BorderSize = 0;
-            this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategoria.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
-            this.btnCategoria.Location = new System.Drawing.Point(2, 449);
-            this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(200, 38);
-            this.btnCategoria.TabIndex = 14;
-            this.btnCategoria.Text = "Categoria";
-            this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCategoria.UseVisualStyleBackColor = false;
-            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
+            this.btnRestZoom.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestZoom.Location = new System.Drawing.Point(993, 46);
+            this.btnRestZoom.Name = "btnRestZoom";
+            this.btnRestZoom.Size = new System.Drawing.Size(120, 43);
+            this.btnRestZoom.TabIndex = 9;
+            this.btnRestZoom.Text = "Restablecer";
+            this.btnRestZoom.UseVisualStyleBackColor = true;
+            this.btnRestZoom.Click += new System.EventHandler(this.btnRestZoom_Click);
+            // 
+            // btnMenosZoon
+            // 
+            this.btnMenosZoon.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenosZoon.Location = new System.Drawing.Point(944, 46);
+            this.btnMenosZoon.Name = "btnMenosZoon";
+            this.btnMenosZoon.Size = new System.Drawing.Size(43, 43);
+            this.btnMenosZoon.TabIndex = 10;
+            this.btnMenosZoon.Text = "-";
+            this.btnMenosZoon.UseVisualStyleBackColor = true;
+            this.btnMenosZoon.Click += new System.EventHandler(this.btnMenosZoon_Click);
+            // 
+            // btnMasZoom
+            // 
+            this.btnMasZoom.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMasZoom.Location = new System.Drawing.Point(895, 46);
+            this.btnMasZoom.Name = "btnMasZoom";
+            this.btnMasZoom.Size = new System.Drawing.Size(43, 43);
+            this.btnMasZoom.TabIndex = 11;
+            this.btnMasZoom.Text = "+";
+            this.btnMasZoom.UseVisualStyleBackColor = true;
+            this.btnMasZoom.Click += new System.EventHandler(this.btnMasZoom_Click);
+            // 
+            // lblZoon
+            // 
+            this.lblZoon.AutoSize = true;
+            this.lblZoon.Font = new System.Drawing.Font("Roboto", 8.5F);
+            this.lblZoon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(54)))), ((int)(((byte)(25)))));
+            this.lblZoon.Location = new System.Drawing.Point(892, 25);
+            this.lblZoon.Name = "lblZoon";
+            this.lblZoon.Size = new System.Drawing.Size(54, 18);
+            this.lblZoon.TabIndex = 20;
+            this.lblZoon.Text = "Zoom: ";
             // 
             // frmProveedoresAdmin
             // 
@@ -634,6 +682,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1178, 692);
+            this.Controls.Add(this.lblZoon);
+            this.Controls.Add(this.btnMasZoom);
+            this.Controls.Add(this.btnMenosZoon);
+            this.Controls.Add(this.btnRestZoom);
             this.Controls.Add(this.lblNota);
             this.Controls.Add(this.panelInformacionProveedor);
             this.Controls.Add(this.dgvProveedores);
@@ -706,5 +758,9 @@
         private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Button btnCategoria;
+        private System.Windows.Forms.Button btnRestZoom;
+        private System.Windows.Forms.Button btnMenosZoon;
+        private System.Windows.Forms.Button btnMasZoom;
+        private System.Windows.Forms.Label lblZoon;
     }
 }

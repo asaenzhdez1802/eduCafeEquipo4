@@ -14,6 +14,11 @@ namespace eduCafeEquipo4
     public partial class frmProveedoresAdmin : Form
     {
         int IdProveedorSeleccionado = 0;
+        //Accesibilidad de aumento
+        private float factorZoomActual = 1.0f;
+        private const float INCREMENTO = 0.10f;
+        private const float ZOOM_MAXIMO = 1.5f; 
+        private const float ZOOM_MINIMO = 0.9f;
         public frmProveedoresAdmin()
         {
             InitializeComponent();
@@ -326,7 +331,6 @@ namespace eduCafeEquipo4
                 btnGuardar.Text = "Actualizar";
             }
         }
-
         private void btnCategoria_Click(object sender, EventArgs e)
         {
             frmCategoriaAdmin frm = new frmCategoriaAdmin();
@@ -334,6 +338,50 @@ namespace eduCafeEquipo4
             frm.Show();
 
             this.Hide();
+        }
+        private void AplicarZoom(Control parent, float factor)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                // Guardamos el tamaño original de la fuente la primera vez que se hace zoom
+                if (c.Tag == null || !(c.Tag is float))
+                {
+                    c.Tag = c.Font.Size;
+                }
+
+                float tamanoBase = (float)c.Tag;
+                c.Font = new Font(c.Font.FontFamily, tamanoBase * factor, c.Font.Style);
+
+                if (c.HasChildren)
+                {
+                    AplicarZoom(c, factor);
+                }
+            }
+        }
+
+        private void btnMasZoom_Click(object sender, EventArgs e)
+        {
+            if (factorZoomActual < ZOOM_MAXIMO)
+            {
+                factorZoomActual += INCREMENTO;
+                AplicarZoom(this, factorZoomActual);
+            }
+
+        }
+
+        private void btnMenosZoon_Click(object sender, EventArgs e)
+        {
+            if (factorZoomActual > ZOOM_MINIMO)
+            {
+                factorZoomActual -= INCREMENTO;
+                AplicarZoom(this, factorZoomActual);
+            }
+        }
+
+        private void btnRestZoom_Click(object sender, EventArgs e)
+        {
+            factorZoomActual = 1.0f;
+            AplicarZoom(this, factorZoomActual);
         }
     }
 }
