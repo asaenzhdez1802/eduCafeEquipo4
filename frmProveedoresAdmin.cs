@@ -14,6 +14,11 @@ namespace eduCafeEquipo4
     public partial class frmProveedoresAdmin : Form
     {
         int IdProveedorSeleccionado = 0;
+
+        private float factorZoomActual = 1.0f;
+        private const float INCREMENTO = 0.15f;
+        private const float ZOOM_MAXIMO = 1.7f; 
+        private const float ZOOM_MINIMO = 0.8f; 
         public frmProveedoresAdmin()
         {
             InitializeComponent();
@@ -334,6 +339,50 @@ namespace eduCafeEquipo4
             frm.Show();
 
             this.Hide();
+        }
+
+        private void AplicarZoom(Control parent, float factor)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                // Guarda el tamaño original 
+                if (c.Tag == null || !(c.Tag is float))
+                {
+                    c.Tag = c.Font.Size;
+                }
+
+                float tamanoBase = (float)c.Tag;
+                c.Font = new Font(c.Font.FontFamily, tamanoBase * factor, c.Font.Style);
+
+                if (c.HasChildren)
+                {
+                    AplicarZoom(c, factor);
+                }
+            }
+        }
+
+        private void bntMasZoom_Click(object sender, EventArgs e)
+        {
+            if (factorZoomActual < ZOOM_MAXIMO)
+            {
+                factorZoomActual += INCREMENTO;
+                AplicarZoom(this, factorZoomActual);
+            }
+        }
+
+        private void btnMenosZoom_Click(object sender, EventArgs e)
+        {
+            if (factorZoomActual > ZOOM_MINIMO)
+            {
+                factorZoomActual -= INCREMENTO;
+                AplicarZoom(this, factorZoomActual);
+            }
+        }
+
+        private void btnRestZoom_Click(object sender, EventArgs e)
+        {
+            factorZoomActual = 1.0f;
+            AplicarZoom(this, factorZoomActual);
         }
     }
 }
