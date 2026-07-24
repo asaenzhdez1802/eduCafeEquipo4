@@ -50,7 +50,7 @@ namespace eduCafeEquipo4
                 {
                     if (conexion == null) return;
 
-                    string query = "SELECT contrasena, nombres, primer_apellido, segundo_apellido, rol, estado " + "FROM usuario " + "WHERE nombre_usuario = @user " + "AND BINARY contrasena = @pass";
+                    string query = "SELECT id_usuario, contrasena, nombres, primer_apellido, segundo_apellido, rol, estado " +   "FROM usuario " +  "WHERE nombre_usuario = @user " +"AND BINARY contrasena = @pass";
 
                     using (MySqlCommand comando = new MySqlCommand(query, conexion))
                     {
@@ -61,6 +61,7 @@ namespace eduCafeEquipo4
                         {
                             if (reader.Read())
                             {
+                                int idUsuario = Convert.ToInt32(reader["id_usuario"]);
                                 string contrasenaBD = reader["contrasena"].ToString();
 
                                 if (!contrasenaBD.Equals(contra, StringComparison.Ordinal))
@@ -95,7 +96,7 @@ namespace eduCafeEquipo4
                                 }
                                 else if (rol.Equals("Cajero", StringComparison.OrdinalIgnoreCase))
                                 {
-                                    frmPuntodeVentaCajero formularioCajero = new frmPuntodeVentaCajero();
+                                    frmPuntodeVentaCajero formularioCajero = new frmPuntodeVentaCajero(idUsuario, nombreCompleto);
                                     formularioCajero.Show();
                                 }
                                 else

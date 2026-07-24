@@ -91,7 +91,7 @@ namespace eduCafeEquipo4
                             {
                                 string estadoValor = (lector["estado"] == DBNull.Value || string.IsNullOrWhiteSpace(lector["estado"].ToString())) ? "Activo"  : lector["estado"].ToString();
                                 string descValor = lector["descripcion"] == DBNull.Value  ? "" : lector["descripcion"].ToString();
-                                string descValor = lector["descripcion"] == DBNull.Value  ? "" : lector["descripcion"].ToString();
+                               
                                 dgvCategorias.Rows.Add(lector["id_categoria"].ToString(), lector["nombre"].ToString(), descValor, estadoValor);
                             }
                         }
