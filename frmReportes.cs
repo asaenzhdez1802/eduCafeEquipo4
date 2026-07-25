@@ -24,7 +24,7 @@ namespace eduCafeEquipo4
 
         private void frmReportes_Load(object sender, EventArgs e)
         {
-            // Opcional: cargar reporte del mes actual al abrir
+          
         }
 
         private void btnGenerarReporte_Click(object sender, EventArgs e)
@@ -78,13 +78,13 @@ namespace eduCafeEquipo4
                                     row["numero_ventas"].ToString(),
                                     row["productos_vendidos"].ToString(),
                                     "$ " + Convert.ToDecimal(row["total_ventas"]).ToString("F2"),
-                                    "N/A" // No hay metodo_pago en la BD
+                                    "N/A" 
                                 );
                             }
                         }
                     }
 
-                    // Estadísticas generales
+                  
                     string queryStats = @"
                 SELECT 
                     COUNT(DISTINCT v.id_venta) AS total_ventas,

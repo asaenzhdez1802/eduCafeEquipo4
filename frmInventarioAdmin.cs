@@ -14,11 +14,15 @@ namespace eduCafeEquipo4
 {
     public partial class frmInventarioAdmin : Form
     {
+    
+    
         private int idProductoSeleccionado = 0;
         private int existenciaSeleccionada = 0;
         private string estadoProductoSeleccionado = "";
 
         private bool cargandoCategorias = false;
+        private bool procesandoRegistro = false; 
+
 
         public frmInventarioAdmin()
         {
@@ -26,6 +30,14 @@ namespace eduCafeEquipo4
 
             ConfigurarFormulario();
 
+   
+            this.Load -= frmInventarioAdmin_Load;
+            txtBuscarProducto.TextChanged -= txtBuscarProducto_TextChanged;
+            cmbBuscarCategoria.SelectedIndexChanged -= cmbBuscarCategoria_SelectedIndexChanged;
+            dgvInventario.CellClick -= dgvInventario_CellClick;
+            btnRegistrar.Click -= btnRegistrar_Click;
+
+   
             this.Load += frmInventarioAdmin_Load;
             txtBuscarProducto.TextChanged += txtBuscarProducto_TextChanged;
             cmbBuscarCategoria.SelectedIndexChanged += cmbBuscarCategoria_SelectedIndexChanged;
@@ -38,7 +50,6 @@ namespace eduCafeEquipo4
             cmbTipoMovimiento.Items.Clear();
             cmbTipoMovimiento.Items.Add("Entrada");
             cmbTipoMovimiento.Items.Add("Salida");
-
             cmbTipoMovimiento.SelectedIndex = -1;
 
             nudCantidad.Minimum = 1;
@@ -61,7 +72,6 @@ namespace eduCafeEquipo4
         private MySqlConnection ObtenerConexion()
         {
             Conexion objetoConexion = new Conexion();
-
             MySqlConnection conexion = objetoConexion.GetConexion();
 
             if (conexion == null)
@@ -90,11 +100,9 @@ namespace eduCafeEquipo4
                     using (MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conexion))
                     {
                         DataTable tablaCategorias = new DataTable();
-
                         adaptador.Fill(tablaCategorias);
 
                         DataRow filaTodas = tablaCategorias.NewRow();
-
                         filaTodas["id_categoria"] = 0;
                         filaTodas["nombre"] = "Todas";
 
@@ -156,12 +164,7 @@ namespace eduCafeEquipo4
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
                         comando.Parameters.AddWithValue("@nombre_producto", nombreProducto);
-
-                        comando.Parameters.AddWithValue(
-                            "@busqueda",
-                            "%" + nombreProducto + "%"
-                        );
-
+                        comando.Parameters.AddWithValue("@busqueda", "%" + nombreProducto + "%");
                         comando.Parameters.AddWithValue("@id_categoria", idCategoria);
 
                         using (MySqlDataReader lector = comando.ExecuteReader())
@@ -180,9 +183,6 @@ namespace eduCafeEquipo4
                         }
                     }
                 }
-
-                dgvInventario.ClearSelection();
-                LimpiarSeleccionProducto();
             }
             catch (Exception ex)
             {
@@ -203,18 +203,12 @@ namespace eduCafeEquipo4
             }
 
             int idCategoria;
-
             bool conversionCorrecta = int.TryParse(
                 cmbBuscarCategoria.SelectedValue.ToString(),
                 out idCategoria
             );
 
-            if (!conversionCorrecta)
-            {
-                return 0;
-            }
-
-            return idCategoria;
+            return conversionCorrecta ? idCategoria : 0;
         }
 
         private void txtBuscarProducto_TextChanged(object sender, EventArgs e)
@@ -224,29 +218,19 @@ namespace eduCafeEquipo4
 
         private void cmbBuscarCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cargandoCategorias)
-            {
-                return;
-            }
-
+            if (cargandoCategorias) return;
             CargarInventario();
         }
 
         private void dgvInventario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
+
+            if (procesandoRegistro || e.RowIndex < 0) return;
 
             DataGridViewRow fila = dgvInventario.Rows[e.RowIndex];
-
             object valorId = fila.Cells["colCodigo"].Value;
 
-            if (valorId == null)
-            {
-                return;
-            }
+            if (valorId == null) return;
 
             bool idCorrecto = int.TryParse(valorId.ToString(), out idProductoSeleccionado);
 
@@ -256,41 +240,24 @@ namespace eduCafeEquipo4
                 return;
             }
 
-            txtProducto.Text =
-                fila.Cells["colProducto"].Value?.ToString() ?? "";
-
-            int.TryParse(
-                fila.Cells["colExistencia"].Value?.ToString(),
-                out existenciaSeleccionada
-            );
-
-            estadoProductoSeleccionado =
-                fila.Cells["colEstado"].Value?.ToString() ?? "";
-        }
-
-        private void LimpiarSeleccionProducto()
-        {
-            idProductoSeleccionado = 0;
-            existenciaSeleccionada = 0;
-            estadoProductoSeleccionado = "";
-
-            txtProducto.Clear();
+            txtProducto.Text = fila.Cells["colProducto"].Value?.ToString() ?? "";
+            int.TryParse(fila.Cells["colExistencia"].Value?.ToString(), out existenciaSeleccionada);
+            estadoProductoSeleccionado = fila.Cells["colEstado"].Value?.ToString() ?? "";
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+        
+            if (procesandoRegistro) return;
+
             if (!ValidarMovimiento())
             {
                 return;
             }
 
             string tipoMovimiento = cmbTipoMovimiento.SelectedItem.ToString();
-
             int cantidad = Convert.ToInt32(nudCantidad.Value);
-
-            DateTime fechaHora = dtpFecha.Value.Date.Add(
-                dtpHora.Value.TimeOfDay
-            );
+            DateTime fechaHora = dtpFecha.Value.Date.Add(dtpHora.Value.TimeOfDay);
 
             DialogResult respuesta = MessageBox.Show(
                 "Producto: " + txtProducto.Text + "\n" +
@@ -309,6 +276,9 @@ namespace eduCafeEquipo4
 
             try
             {
+        
+                procesandoRegistro = true;
+
                 RegistrarMovimiento(
                     idProductoSeleccionado,
                     tipoMovimiento,
@@ -316,15 +286,18 @@ namespace eduCafeEquipo4
                     fechaHora
                 );
 
+                CargarInventario();
+
+          
+                LimpiarMovimiento();
+
+             
                 MessageBox.Show(
                     "Movimiento registrado correctamente.",
                     "Registro exitoso",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
-
-                CargarInventario();
-                LimpiarMovimiento();
             }
             catch (Exception ex)
             {
@@ -334,6 +307,13 @@ namespace eduCafeEquipo4
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+            }
+            finally
+            {
+           
+                procesandoRegistro = false;
+
+                txtBuscarProducto.Focus();
             }
         }
 
@@ -347,7 +327,6 @@ namespace eduCafeEquipo4
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
-
                 return false;
             }
 
@@ -359,7 +338,6 @@ namespace eduCafeEquipo4
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
-
                 return false;
             }
 
@@ -371,7 +349,6 @@ namespace eduCafeEquipo4
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
-
                 nudCantidad.Focus();
                 return false;
             }
@@ -384,7 +361,6 @@ namespace eduCafeEquipo4
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
-
                 cmbTipoMovimiento.Focus();
                 return false;
             }
@@ -402,7 +378,6 @@ namespace eduCafeEquipo4
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning
                     );
-
                     return false;
                 }
             }
@@ -435,38 +410,25 @@ namespace eduCafeEquipo4
                             WHERE i.id_producto = @id_producto
                             FOR UPDATE;";
 
-                        using (MySqlCommand comandoExistencia = new MySqlCommand(
-                            consultaExistencia,
-                            conexion,
-                            transaccion))
+                        using (MySqlCommand comandoExistencia = new MySqlCommand(consultaExistencia, conexion, transaccion))
                         {
-                            comandoExistencia.Parameters.AddWithValue(
-                                "@id_producto",
-                                idProducto
-                            );
+                            comandoExistencia.Parameters.AddWithValue("@id_producto", idProducto);
 
                             using (MySqlDataReader lector = comandoExistencia.ExecuteReader())
                             {
                                 if (!lector.Read())
                                 {
-                                    throw new Exception(
-                                        "El producto no tiene un registro de inventario."
-                                    );
+                                    throw new Exception("El producto no tiene un registro de inventario.");
                                 }
 
-                                existenciaActual = Convert.ToInt32(
-                                    lector["existencia_actual"]
-                                );
-
+                                existenciaActual = Convert.ToInt32(lector["existencia_actual"]);
                                 estadoActual = lector["estado"].ToString();
                             }
                         }
 
                         if (estadoActual != "Activo")
                         {
-                            throw new Exception(
-                                "El producto se encuentra inactivo."
-                            );
+                            throw new Exception("El producto se encuentra inactivo.");
                         }
 
                         int nuevaExistencia;
@@ -479,10 +441,7 @@ namespace eduCafeEquipo4
                         {
                             if (cantidad > existenciaActual)
                             {
-                                throw new Exception(
-                                    "No hay suficientes existencias.\n" +
-                                    "Existencia disponible: " + existenciaActual
-                                );
+                                throw new Exception("No hay suficientes existencias.\nExistencia disponible: " + existenciaActual);
                             }
 
                             nuevaExistencia = existenciaActual - cantidad;
@@ -498,9 +457,7 @@ namespace eduCafeEquipo4
                         using (MySqlCommand comandoActualizar = new MySqlCommand(actualizarInventario, conexion, transaccion))
                         {
                             comandoActualizar.Parameters.AddWithValue("@nueva_existencia", nuevaExistencia);
-
                             comandoActualizar.Parameters.AddWithValue("@fecha_hora", fechaHora);
-
                             comandoActualizar.Parameters.AddWithValue("@id_producto", idProducto);
 
                             int filasActualizadas = comandoActualizar.ExecuteNonQuery();
@@ -522,7 +479,8 @@ namespace eduCafeEquipo4
                             comandoMovimiento.Parameters.AddWithValue("@id_producto", idProducto);
                             comandoMovimiento.Parameters.AddWithValue("@tipo_movimiento", tipoMovimiento);
                             comandoMovimiento.Parameters.AddWithValue("@fecha_hora", fechaHora);
-                            comandoMovimiento.Parameters.AddWithValue("@cantidad", cantidad); comandoMovimiento.ExecuteNonQuery();
+                            comandoMovimiento.Parameters.AddWithValue("@cantidad", cantidad);
+                            comandoMovimiento.ExecuteNonQuery();
                         }
 
                         transaccion.Commit();
@@ -536,6 +494,16 @@ namespace eduCafeEquipo4
             }
         }
 
+      
+        private void LimpiarSeleccionProducto()
+        {
+            idProductoSeleccionado = 0;
+            existenciaSeleccionada = 0;
+            estadoProductoSeleccionado = "";
+
+            txtProducto.Clear();
+        }
+
         private void LimpiarMovimiento()
         {
             LimpiarSeleccionProducto();
@@ -545,14 +513,12 @@ namespace eduCafeEquipo4
 
             dtpFecha.Value = DateTime.Now;
             dtpHora.Value = DateTime.Now;
-
-            dgvInventario.ClearSelection();
         }
 
+       
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             frmProveedoresAdmin frm = new frmProveedoresAdmin();
-
             frm.Show();
             this.Hide();
         }
@@ -560,7 +526,6 @@ namespace eduCafeEquipo4
         private void btnProductos_Click(object sender, EventArgs e)
         {
             frmProductosAdmin frm = new frmProductosAdmin();
-
             frm.Show();
             this.Hide();
         }
@@ -568,7 +533,6 @@ namespace eduCafeEquipo4
         private void btnInicio_Click(object sender, EventArgs e)
         {
             frmDashAdmin frm = new frmDashAdmin();
-
             frm.Show();
             this.Hide();
         }
@@ -576,7 +540,6 @@ namespace eduCafeEquipo4
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             frmUsuarios frm = new frmUsuarios();
-
             frm.Show();
             this.Hide();
         }
@@ -584,7 +547,6 @@ namespace eduCafeEquipo4
         private void btnReportes_Click(object sender, EventArgs e)
         {
             frmReportes frm = new frmReportes();
-
             frm.Show();
             this.Hide();
         }
@@ -601,7 +563,6 @@ namespace eduCafeEquipo4
             if (respuesta == DialogResult.Yes)
             {
                 login frm = new login();
-
                 frm.Show();
                 this.Hide();
             }
@@ -610,7 +571,6 @@ namespace eduCafeEquipo4
         private void btnCategoria_Click(object sender, EventArgs e)
         {
             frmCategoriaAdmin frm = new frmCategoriaAdmin();
-
             frm.Show();
             this.Hide();
         }
