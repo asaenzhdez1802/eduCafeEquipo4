@@ -47,18 +47,8 @@ namespace eduCafeEquipo4
                     DateTime fechaInicio = dtpFechaInicio.Value.Date;
                     DateTime fechaFinal = dtpFechaFinal.Value.Date.AddDays(1).AddTicks(-1);
 
-                    // Detalle del reporte por día
-                    string queryDetalle = @"
-                SELECT 
-                    DATE(v.fecha_hora) AS fecha,
-                    COUNT(DISTINCT v.id_venta) AS numero_ventas,
-                    SUM(dv.cantidad) AS productos_vendidos,
-                    SUM(v.total) AS total_ventas
-                FROM venta v
-                INNER JOIN detalle_venta dv ON v.id_venta = dv.id_venta
-                WHERE v.fecha_hora BETWEEN @fechaInicio AND @fechaFinal
-                GROUP BY DATE(v.fecha_hora)
-                ORDER BY fecha ASC";
+                  
+                    string queryDetalle = @"SELECT DATE(v.fecha_hora) AS fecha, COUNT(DISTINCT v.id_venta) AS numero_ventas,SUM(dv.cantidad) AS productos_vendidos, SUM(v.total) AS total_ventas FROM venta v INNER JOIN detalle_venta dv ON v.id_venta = dv.id_venta WHERE v.fecha_hora BETWEEN @fechaInicio AND @fechaFinal GROUP BY DATE(v.fecha_hora) ORDER BY fecha ASC";
 
                     using (MySqlCommand cmd = new MySqlCommand(queryDetalle, conexion))
                     {
@@ -85,14 +75,7 @@ namespace eduCafeEquipo4
                     }
 
                   
-                    string queryStats = @"
-                SELECT 
-                    COUNT(DISTINCT v.id_venta) AS total_ventas,
-                    SUM(dv.cantidad) AS total_productos,
-                    SUM(v.total) AS total_monto
-                FROM venta v
-                INNER JOIN detalle_venta dv ON v.id_venta = dv.id_venta
-                WHERE v.fecha_hora BETWEEN @fechaInicio AND @fechaFinal";
+                    string queryStats = @" SELECT COUNT(DISTINCT v.id_venta) AS total_ventas, SUM(dv.cantidad) AS total_productos SUM(v.total) AS total_monto FROM venta v INNER JOIN detalle_venta dv ON v.id_venta = dv.id_venta WHERE v.fecha_hora BETWEEN @fechaInicio AND @fechaFinal";
 
                     using (MySqlCommand cmdStats = new MySqlCommand(queryStats, conexion))
                     {

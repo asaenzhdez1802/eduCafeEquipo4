@@ -425,8 +425,9 @@ namespace eduCafeEquipo4
         {
             if (activar)
             {
-                control.BackColor = Color.Black;
-                control.ForeColor = Color.Red;
+
+                control.BackColor = Color.Orange;
+                control.ForeColor = Color.SaddleBrown;
             }
             else
             {
