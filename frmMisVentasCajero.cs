@@ -360,15 +360,7 @@ namespace eduCafeEquipo4
 
                     string consulta = @"
                         SELECT
-                            p.nombre AS producto,
-                            dv.cantidad,
-                            dv.precio_unitario,
-                            dv.subtotal
-                        FROM detalle_venta AS dv
-                        INNER JOIN producto AS p
-                            ON p.id_producto = dv.id_producto
-                        WHERE dv.id_venta = @id_venta
-                        ORDER BY p.nombre ASC;";
+                           p.nombre AS producto,  dv.cantidad,  dv.precio_unitario, dv.subtotal FROM detalle_venta AS dv INNER JOIN producto AS p ON p.id_producto = dv.id_producto WHERE dv.id_venta = @id_venta ORDER BY p.nombre ASC;";
 
                     using (MySqlCommand comando =
                            new MySqlCommand(consulta, conexion))
