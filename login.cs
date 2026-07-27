@@ -50,7 +50,7 @@ namespace eduCafeEquipo4
                 {
                     if (conexion == null) return;
 
-                    string query = "SELECT contrasena, nombres, primer_apellido, segundo_apellido, rol, estado " + "FROM usuario " + "WHERE nombre_usuario = @user " + "AND BINARY contrasena = @pass";
+                    string query = "SELECT contrasena, nombres, primer_apellido, segundo_apellido, rol, estado " + "FROM usuario " + "WHERE nombre_usuario = @user " + "AND contrasena = SHA2(@pass, 256)";
 
                     using (MySqlCommand comando = new MySqlCommand(query, conexion))
                     {
@@ -61,16 +61,6 @@ namespace eduCafeEquipo4
                         {
                             if (reader.Read())
                             {
-                                string contrasenaBD = reader["contrasena"].ToString();
-
-                                if (!contrasenaBD.Equals(contra, StringComparison.Ordinal))
-                                {
-                                    MessageBox.Show("Los datos son incorrectos. Intente de nuevo.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    txtContrasena.Clear();
-                                    txtUsuario.Clear();
-                                    return;
-                                }
-
                                 string nombres = reader["nombres"].ToString();
                                 string primerApellido = reader["primer_apellido"].ToString();
                                 string segundoApellido = reader["segundo_apellido"].ToString();
