@@ -342,26 +342,41 @@ namespace eduCafeEquipo4
 
             dgvCategorias.ClearSelection();
         }
-
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
+   
+        private void GuardarColoresOriginales(Control control)
         {
-            DialogResult respuesta = MessageBox.Show(
-                "¿En realidad quiere cerrar sesión?",
-                "Confirmar",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (respuesta == DialogResult.Yes)
-            {
-                login frm = new login();
-
-                frm.Show();
-                this.Hide();
-            }
+            coloresOriginales[control] = (control.BackColor, control.ForeColor);
+            foreach (Control hijo in control.Controls)
+                GuardarColoresOriginales(hijo);
         }
 
-        private void btnInicio_Click(object sender, EventArgs e)
+        private void btnAltoContraste_Click(object sender, EventArgs e)
+        {
+            altoContraste = !altoContraste;
+            AplicarContraste(this, altoContraste);
+
+        }
+        private void AplicarContraste(Control control, bool activar)
+        {
+            if (activar)
+            {
+                control.BackColor = Color.Black;
+                control.ForeColor = Color.Red;
+            }
+            else
+            {
+                if (coloresOriginales.ContainsKey(control))
+                {
+                    control.BackColor = coloresOriginales[control].back;
+                    control.ForeColor = coloresOriginales[control].fore;
+                }
+            }
+
+            foreach (Control hijo in control.Controls)
+                AplicarContraste(hijo, activar);
+        }
+
+        private void btnInicio_Click_1(object sender, EventArgs e)
         {
             frmDashAdmin frm = new frmDashAdmin();
 
@@ -408,37 +423,23 @@ namespace eduCafeEquipo4
             frm.Show();
             this.Hide();
         }
-        private void GuardarColoresOriginales(Control control)
-        {
-            coloresOriginales[control] = (control.BackColor, control.ForeColor);
-            foreach (Control hijo in control.Controls)
-                GuardarColoresOriginales(hijo);
-        }
 
-        private void btnAltoContraste_Click(object sender, EventArgs e)
+        private void btnCerrarSesion_Click_1(object sender, EventArgs e)
         {
-            altoContraste = !altoContraste;
-            AplicarContraste(this, altoContraste);
+            DialogResult respuesta = MessageBox.Show(
+               "¿En realidad quiere cerrar sesión?",
+               "Confirmar",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question
+           );
 
-        }
-        private void AplicarContraste(Control control, bool activar)
-        {
-            if (activar)
+            if (respuesta == DialogResult.Yes)
             {
-                control.BackColor = Color.Black;
-                control.ForeColor = Color.Red;
-            }
-            else
-            {
-                if (coloresOriginales.ContainsKey(control))
-                {
-                    control.BackColor = coloresOriginales[control].back;
-                    control.ForeColor = coloresOriginales[control].fore;
-                }
-            }
+                login frm = new login();
 
-            foreach (Control hijo in control.Controls)
-                AplicarContraste(hijo, activar);
+                frm.Show();
+                this.Hide();
+            }
         }
     }
 }
