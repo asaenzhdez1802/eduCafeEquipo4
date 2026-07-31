@@ -17,18 +17,18 @@ namespace eduCafeEquipo4
             InitializeComponent();
         }
 
-        private void btnInventario_Click(object sender, EventArgs e)
+        private void btnProductos_Click_1(object sender, EventArgs e)
         {
-            frmInventarioAdmin frm = new frmInventarioAdmin();
+            frmProductosAdmin   frm = new frmProductosAdmin();
 
             frm.Show();
 
             this.Hide();
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void btnInventario_Click(object sender, EventArgs e)
         {
-            frmProductosAdmin frm = new frmProductosAdmin();
+            frmInventarioAdmin frm = new frmInventarioAdmin();
 
             frm.Show();
 
@@ -42,7 +42,15 @@ namespace eduCafeEquipo4
             frm.Show();
 
             this.Hide();
+        }
 
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            frmCategoriaAdmin frm = new frmCategoriaAdmin();
+
+            frm.Show();
+
+            this.Hide();
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -63,7 +71,7 @@ namespace eduCafeEquipo4
             this.Hide();
         }
 
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        private void btnCerrarSesion_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿En realidad quiere cerrar sesión?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -73,15 +81,6 @@ namespace eduCafeEquipo4
 
                 this.Hide();
             }
-        }
-
-        private void btnCategoria_Click(object sender, EventArgs e)
-        {
-            frmCategoriaAdmin frm = new frmCategoriaAdmin();
-
-            frm.Show();
-
-            this.Hide();
         }
     }
 }

@@ -29,63 +29,6 @@ namespace eduCafeEquipo4
 
         }
 
-        private void btnInicio_Click(object sender, EventArgs e)
-        {
-            frmDashAdmin frm = new frmDashAdmin();
-
-            frm.Show();
-
-            this.Hide();
-        }
-
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            frmProductosAdmin frm = new frmProductosAdmin();
-
-            frm.Show();
-
-            this.Hide();
-        }
-
-        private void btnInventario_Click(object sender, EventArgs e)
-        {
-            frmInventarioAdmin frm = new frmInventarioAdmin();
-
-            frm.Show();
-
-            this.Hide();
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            frmUsuarios frm = new frmUsuarios();
-
-            frm.Show();
-
-            this.Hide();
-        }
-
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            frmReportes frm = new frmReportes();
-
-            frm.Show();
-
-            this.Hide();
-        }
-
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿En realidad quiere cerrar sesión?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                login frm = new login();
-
-                frm.Show();
-
-                this.Hide();
-            }
-        }
-
         private void frmProveedoresAdmin_Load(object sender, EventArgs e)
         {
             CargarProveedores();
@@ -332,15 +275,6 @@ namespace eduCafeEquipo4
             }
         }
 
-        private void btnCategoria_Click(object sender, EventArgs e)
-        {
-            frmCategoriaAdmin frm = new frmCategoriaAdmin();
-
-            frm.Show();
-
-            this.Hide();
-        }
-
         private void AplicarZoom(Control parent, float factor)
         {
             foreach (Control c in parent.Controls)
@@ -383,6 +317,72 @@ namespace eduCafeEquipo4
         {
             factorZoomActual = 1.0f;
             AplicarZoom(this, factorZoomActual);
+        }
+
+        private void btnInicio_Click_1(object sender, EventArgs e)
+        {
+            frmDashAdmin frm = new frmDashAdmin();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            frmProductosAdmin frm = new frmProductosAdmin();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            frmInventarioAdmin frm = new frmInventarioAdmin();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            frmCategoriaAdmin frm = new frmCategoriaAdmin();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frm = new frmUsuarios();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            frmReportes frm = new frmReportes();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿En realidad quiere cerrar sesión?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                login frm = new login();
+
+                frm.Show();
+
+                this.Hide();
+            }
         }
     }
 }

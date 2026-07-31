@@ -549,54 +549,80 @@ namespace eduCafeEquipo4
             dgvInventario.ClearSelection();
         }
 
+        private void btnInicio_Click_1(object sender, EventArgs e)
+        {
+            {
+                frmDashAdmin frm = new frmDashAdmin();
+
+                frm.Show();
+                this.Hide();
+            }
+
+        }
+
+        private void btnProductos_Click_1(object sender, EventArgs e)
+        {
+            {
+                frmProductosAdmin frm = new frmProductosAdmin();
+
+                frm.Show();
+                this.Hide();
+            }
+
+        }
+
         private void btnProveedores_Click(object sender, EventArgs e)
         {
-            frmProveedoresAdmin frm = new frmProveedoresAdmin();
+            {
+                frmProveedoresAdmin frm = new frmProveedoresAdmin();
 
-            frm.Show();
-            this.Hide();
+                frm.Show();
+                this.Hide();
+            }
+
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void btnCategoria_Click(object sender, EventArgs e)
         {
-            frmProductosAdmin frm = new frmProductosAdmin();
+            {
+                frmCategoriaAdmin  frm = new frmCategoriaAdmin();
 
-            frm.Show();
-            this.Hide();
-        }
+                frm.Show();
+                this.Hide();
+            }
 
-        private void btnInicio_Click(object sender, EventArgs e)
-        {
-            frmDashAdmin frm = new frmDashAdmin();
-
-            frm.Show();
-            this.Hide();
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            frmUsuarios frm = new frmUsuarios();
+            {
+                frmUsuarios frm = new frmUsuarios();
 
-            frm.Show();
-            this.Hide();
+                frm.Show();
+                this.Hide();
+            }
+
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            frmReportes frm = new frmReportes();
+            {
+                frmReportes frm = new frmReportes();
 
-            frm.Show();
-            this.Hide();
+                frm.Show();
+                this.Hide();
+            }
+
         }
 
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        private void btnCerrarSesion_Click_1(object sender, EventArgs e)
         {
             DialogResult respuesta = MessageBox.Show(
-                "¿En realidad quiere cerrar sesión?",
-                "Confirmar",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+            "¿En realidad quiere cerrar sesión?",
+            "Confirmar",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+        );
 
             if (respuesta == DialogResult.Yes)
             {
@@ -605,14 +631,6 @@ namespace eduCafeEquipo4
                 frm.Show();
                 this.Hide();
             }
-        }
-
-        private void btnCategoria_Click(object sender, EventArgs e)
-        {
-            frmCategoriaAdmin frm = new frmCategoriaAdmin();
-
-            frm.Show();
-            this.Hide();
         }
     }
 }
