@@ -16,7 +16,7 @@ namespace eduCafeEquipo4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDashAdmin());
+            Application.Run(new login());
         }
     }
 }
