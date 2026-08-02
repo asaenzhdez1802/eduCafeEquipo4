@@ -39,42 +39,49 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.panelVentasDia = new System.Windows.Forms.Panel();
-            this.panelVentasSemana = new System.Windows.Forms.Panel();
-            this.panelVentasMes = new System.Windows.Forms.Panel();
-            this.panelTicketPromedio = new System.Windows.Forms.Panel();
-            this.lblconoVentasDia = new System.Windows.Forms.Label();
-            this.lblTextoVentasDia = new System.Windows.Forms.Label();
-            this.lblMontoDia = new System.Windows.Forms.Label();
             this.lblCantidadDia = new System.Windows.Forms.Label();
-            this.lblIconoSemana = new System.Windows.Forms.Label();
-            this.lblPeriodoTicket = new System.Windows.Forms.Label();
-            this.lblMontoMes = new System.Windows.Forms.Label();
-            this.lblTextoMes = new System.Windows.Forms.Label();
-            this.lblIconoMes = new System.Windows.Forms.Label();
+            this.lblMontoDia = new System.Windows.Forms.Label();
+            this.lblTextoVentasDia = new System.Windows.Forms.Label();
+            this.lblconoVentasDia = new System.Windows.Forms.Label();
+            this.panelVentasSemana = new System.Windows.Forms.Panel();
             this.lblCantidadSemana = new System.Windows.Forms.Label();
             this.lblMontoSemana = new System.Windows.Forms.Label();
             this.lblTextoSemana = new System.Windows.Forms.Label();
+            this.lblIconoSemana = new System.Windows.Forms.Label();
+            this.panelVentasMes = new System.Windows.Forms.Panel();
+            this.lblCantidadMes = new System.Windows.Forms.Label();
+            this.lblMontoMes = new System.Windows.Forms.Label();
+            this.lblTextoMes = new System.Windows.Forms.Label();
+            this.lblIconoMes = new System.Windows.Forms.Label();
+            this.panelTicketPromedio = new System.Windows.Forms.Panel();
+            this.lblPeriodoTicket = new System.Windows.Forms.Label();
+            this.lblMontoTicket = new System.Windows.Forms.Label();
             this.lblTextoTicket = new System.Windows.Forms.Label();
             this.lblIconoTicket = new System.Windows.Forms.Label();
-            this.lblCantidadMes = new System.Windows.Forms.Label();
-            this.lblMontoTicket = new System.Windows.Forms.Label();
             this.panelHistorial = new System.Windows.Forms.Panel();
-            this.lblIconoHistorial = new System.Windows.Forms.Label();
-            this.lblHistorialTitulo = new System.Windows.Forms.Label();
-            this.dgvHistorialVentas = new System.Windows.Forms.DataGridView();
             this.panelFiltro = new System.Windows.Forms.Panel();
-            this.lblIconoFiltros = new System.Windows.Forms.Label();
-            this.lblTituloFiltros = new System.Windows.Forms.Label();
-            this.lblFechaInicio = new System.Windows.Forms.Label();
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaFin = new System.Windows.Forms.Label();
-            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.lblMetodoPago = new System.Windows.Forms.Label();
-            this.cmcMetodPagoFiltro = new System.Windows.Forms.ComboBox();
-            this.lblEstadoFiltro = new System.Windows.Forms.Label();
-            this.cmbEstadoFiltro = new System.Windows.Forms.ComboBox();
+            this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.btnLimpiarFiltrar = new System.Windows.Forms.Button();
+            this.cmbEstadoFiltro = new System.Windows.Forms.ComboBox();
+            this.lblEstadoFiltro = new System.Windows.Forms.Label();
+            this.cmbMetodoPagoFiltro = new System.Windows.Forms.ComboBox();
+            this.lblMetodoPago = new System.Windows.Forms.Label();
+            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaFin = new System.Windows.Forms.Label();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
+            this.lblTituloFiltros = new System.Windows.Forms.Label();
+            this.lblIconoFiltros = new System.Windows.Forms.Label();
+            this.dgvHistorialVentas = new System.Windows.Forms.DataGridView();
+            this.lblNotaHistorial = new System.Windows.Forms.Label();
+            this.lblIconoHistorial = new System.Windows.Forms.Label();
+            this.ColFolio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVerDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMetodoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelVentasDia.SuspendLayout();
@@ -82,8 +89,8 @@
             this.panelVentasMes.SuspendLayout();
             this.panelTicketPromedio.SuspendLayout();
             this.panelHistorial.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialVentas)).BeginInit();
             this.panelFiltro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -233,6 +240,45 @@
             this.panelVentasDia.Size = new System.Drawing.Size(190, 92);
             this.panelVentasDia.TabIndex = 4;
             // 
+            // lblCantidadDia
+            // 
+            this.lblCantidadDia.AutoSize = true;
+            this.lblCantidadDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.lblCantidadDia.Location = new System.Drawing.Point(80, 65);
+            this.lblCantidadDia.Name = "lblCantidadDia";
+            this.lblCantidadDia.Size = new System.Drawing.Size(69, 18);
+            this.lblCantidadDia.TabIndex = 8;
+            this.lblCantidadDia.Text = "0 Ventas ";
+            // 
+            // lblMontoDia
+            // 
+            this.lblMontoDia.AutoSize = true;
+            this.lblMontoDia.Location = new System.Drawing.Point(80, 43);
+            this.lblMontoDia.Name = "lblMontoDia";
+            this.lblMontoDia.Size = new System.Drawing.Size(44, 18);
+            this.lblMontoDia.TabIndex = 8;
+            this.lblMontoDia.Text = "$0,00";
+            // 
+            // lblTextoVentasDia
+            // 
+            this.lblTextoVentasDia.AutoSize = true;
+            this.lblTextoVentasDia.Location = new System.Drawing.Point(80, 12);
+            this.lblTextoVentasDia.Name = "lblTextoVentasDia";
+            this.lblTextoVentasDia.Size = new System.Drawing.Size(102, 18);
+            this.lblTextoVentasDia.TabIndex = 8;
+            this.lblTextoVentasDia.Text = "Ventas del Dia";
+            // 
+            // lblconoVentasDia
+            // 
+            this.lblconoVentasDia.AutoSize = true;
+            this.lblconoVentasDia.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblconoVentasDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
+            this.lblconoVentasDia.Location = new System.Drawing.Point(26, 12);
+            this.lblconoVentasDia.Name = "lblconoVentasDia";
+            this.lblconoVentasDia.Size = new System.Drawing.Size(48, 57);
+            this.lblconoVentasDia.TabIndex = 8;
+            this.lblconoVentasDia.Text = "$";
+            // 
             // panelVentasSemana
             // 
             this.panelVentasSemana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
@@ -244,6 +290,45 @@
             this.panelVentasSemana.Name = "panelVentasSemana";
             this.panelVentasSemana.Size = new System.Drawing.Size(190, 92);
             this.panelVentasSemana.TabIndex = 5;
+            // 
+            // lblCantidadSemana
+            // 
+            this.lblCantidadSemana.AutoSize = true;
+            this.lblCantidadSemana.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.lblCantidadSemana.Location = new System.Drawing.Point(76, 65);
+            this.lblCantidadSemana.Name = "lblCantidadSemana";
+            this.lblCantidadSemana.Size = new System.Drawing.Size(54, 15);
+            this.lblCantidadSemana.TabIndex = 13;
+            this.lblCantidadSemana.Text = "0 Ventas";
+            // 
+            // lblMontoSemana
+            // 
+            this.lblMontoSemana.AutoSize = true;
+            this.lblMontoSemana.Location = new System.Drawing.Point(76, 30);
+            this.lblMontoSemana.Name = "lblMontoSemana";
+            this.lblMontoSemana.Size = new System.Drawing.Size(48, 18);
+            this.lblMontoSemana.TabIndex = 14;
+            this.lblMontoSemana.Text = "$ 0.00";
+            // 
+            // lblTextoSemana
+            // 
+            this.lblTextoSemana.AutoSize = true;
+            this.lblTextoSemana.Location = new System.Drawing.Point(39, 7);
+            this.lblTextoSemana.Name = "lblTextoSemana";
+            this.lblTextoSemana.Size = new System.Drawing.Size(147, 18);
+            this.lblTextoSemana.TabIndex = 15;
+            this.lblTextoSemana.Text = "Ventas de la Semana";
+            // 
+            // lblIconoSemana
+            // 
+            this.lblIconoSemana.AutoSize = true;
+            this.lblIconoSemana.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIconoSemana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
+            this.lblIconoSemana.Location = new System.Drawing.Point(3, 12);
+            this.lblIconoSemana.Name = "lblIconoSemana";
+            this.lblIconoSemana.Size = new System.Drawing.Size(48, 57);
+            this.lblIconoSemana.TabIndex = 8;
+            this.lblIconoSemana.Text = "$";
             // 
             // panelVentasMes
             // 
@@ -257,77 +342,14 @@
             this.panelVentasMes.Size = new System.Drawing.Size(190, 92);
             this.panelVentasMes.TabIndex = 6;
             // 
-            // panelTicketPromedio
+            // lblCantidadMes
             // 
-            this.panelTicketPromedio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
-            this.panelTicketPromedio.Controls.Add(this.lblPeriodoTicket);
-            this.panelTicketPromedio.Controls.Add(this.lblMontoTicket);
-            this.panelTicketPromedio.Controls.Add(this.lblTextoTicket);
-            this.panelTicketPromedio.Controls.Add(this.lblIconoTicket);
-            this.panelTicketPromedio.Location = new System.Drawing.Point(885, 100);
-            this.panelTicketPromedio.Name = "panelTicketPromedio";
-            this.panelTicketPromedio.Size = new System.Drawing.Size(190, 92);
-            this.panelTicketPromedio.TabIndex = 7;
-            // 
-            // lblconoVentasDia
-            // 
-            this.lblconoVentasDia.AutoSize = true;
-            this.lblconoVentasDia.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblconoVentasDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
-            this.lblconoVentasDia.Location = new System.Drawing.Point(26, 12);
-            this.lblconoVentasDia.Name = "lblconoVentasDia";
-            this.lblconoVentasDia.Size = new System.Drawing.Size(48, 57);
-            this.lblconoVentasDia.TabIndex = 8;
-            this.lblconoVentasDia.Text = "$";
-            // 
-            // lblTextoVentasDia
-            // 
-            this.lblTextoVentasDia.AutoSize = true;
-            this.lblTextoVentasDia.Location = new System.Drawing.Point(80, 12);
-            this.lblTextoVentasDia.Name = "lblTextoVentasDia";
-            this.lblTextoVentasDia.Size = new System.Drawing.Size(102, 18);
-            this.lblTextoVentasDia.TabIndex = 8;
-            this.lblTextoVentasDia.Text = "Ventas del Dia";
-            // 
-            // lblMontoDia
-            // 
-            this.lblMontoDia.AutoSize = true;
-            this.lblMontoDia.Location = new System.Drawing.Point(80, 43);
-            this.lblMontoDia.Name = "lblMontoDia";
-            this.lblMontoDia.Size = new System.Drawing.Size(44, 18);
-            this.lblMontoDia.TabIndex = 8;
-            this.lblMontoDia.Text = "$0,00";
-            // 
-            // lblCantidadDia
-            // 
-            this.lblCantidadDia.AutoSize = true;
-            this.lblCantidadDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.lblCantidadDia.Location = new System.Drawing.Point(80, 65);
-            this.lblCantidadDia.Name = "lblCantidadDia";
-            this.lblCantidadDia.Size = new System.Drawing.Size(69, 18);
-            this.lblCantidadDia.TabIndex = 8;
-            this.lblCantidadDia.Text = "0 Ventas ";
-            // 
-            // lblIconoSemana
-            // 
-            this.lblIconoSemana.AutoSize = true;
-            this.lblIconoSemana.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIconoSemana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
-            this.lblIconoSemana.Location = new System.Drawing.Point(3, 12);
-            this.lblIconoSemana.Name = "lblIconoSemana";
-            this.lblIconoSemana.Size = new System.Drawing.Size(48, 57);
-            this.lblIconoSemana.TabIndex = 8;
-            this.lblIconoSemana.Text = "$";
-            // 
-            // lblPeriodoTicket
-            // 
-            this.lblPeriodoTicket.AutoSize = true;
-            this.lblPeriodoTicket.Location = new System.Drawing.Point(53, 72);
-            this.lblPeriodoTicket.Name = "lblPeriodoTicket";
-            this.lblPeriodoTicket.Size = new System.Drawing.Size(75, 18);
-            this.lblPeriodoTicket.TabIndex = 9;
-            this.lblPeriodoTicket.Text = "Este Mes ";
-            this.lblPeriodoTicket.Click += new System.EventHandler(this.lblPeriodoTicket_Click);
+            this.lblCantidadMes.AutoSize = true;
+            this.lblCantidadMes.Location = new System.Drawing.Point(76, 67);
+            this.lblCantidadMes.Name = "lblCantidadMes";
+            this.lblCantidadMes.Size = new System.Drawing.Size(65, 18);
+            this.lblCantidadMes.TabIndex = 12;
+            this.lblCantidadMes.Text = "0 Ventas";
             // 
             // lblMontoMes
             // 
@@ -359,33 +381,37 @@
             this.lblIconoMes.TabIndex = 12;
             this.lblIconoMes.Text = "$";
             // 
-            // lblCantidadSemana
+            // panelTicketPromedio
             // 
-            this.lblCantidadSemana.AutoSize = true;
-            this.lblCantidadSemana.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.lblCantidadSemana.Location = new System.Drawing.Point(76, 65);
-            this.lblCantidadSemana.Name = "lblCantidadSemana";
-            this.lblCantidadSemana.Size = new System.Drawing.Size(54, 15);
-            this.lblCantidadSemana.TabIndex = 13;
-            this.lblCantidadSemana.Text = "0 Ventas";
+            this.panelTicketPromedio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
+            this.panelTicketPromedio.Controls.Add(this.lblPeriodoTicket);
+            this.panelTicketPromedio.Controls.Add(this.lblMontoTicket);
+            this.panelTicketPromedio.Controls.Add(this.lblTextoTicket);
+            this.panelTicketPromedio.Controls.Add(this.lblIconoTicket);
+            this.panelTicketPromedio.Location = new System.Drawing.Point(885, 100);
+            this.panelTicketPromedio.Name = "panelTicketPromedio";
+            this.panelTicketPromedio.Size = new System.Drawing.Size(190, 92);
+            this.panelTicketPromedio.TabIndex = 7;
             // 
-            // lblMontoSemana
+            // lblPeriodoTicket
             // 
-            this.lblMontoSemana.AutoSize = true;
-            this.lblMontoSemana.Location = new System.Drawing.Point(76, 30);
-            this.lblMontoSemana.Name = "lblMontoSemana";
-            this.lblMontoSemana.Size = new System.Drawing.Size(48, 18);
-            this.lblMontoSemana.TabIndex = 14;
-            this.lblMontoSemana.Text = "$ 0.00";
+            this.lblPeriodoTicket.AutoSize = true;
+            this.lblPeriodoTicket.Location = new System.Drawing.Point(53, 72);
+            this.lblPeriodoTicket.Name = "lblPeriodoTicket";
+            this.lblPeriodoTicket.Size = new System.Drawing.Size(75, 18);
+            this.lblPeriodoTicket.TabIndex = 9;
+            this.lblPeriodoTicket.Text = "Este Mes ";
+            this.lblPeriodoTicket.Click += new System.EventHandler(this.lblPeriodoTicket_Click);
             // 
-            // lblTextoSemana
+            // lblMontoTicket
             // 
-            this.lblTextoSemana.AutoSize = true;
-            this.lblTextoSemana.Location = new System.Drawing.Point(39, 7);
-            this.lblTextoSemana.Name = "lblTextoSemana";
-            this.lblTextoSemana.Size = new System.Drawing.Size(147, 18);
-            this.lblTextoSemana.TabIndex = 15;
-            this.lblTextoSemana.Text = "Ventas de la Semana";
+            this.lblMontoTicket.AutoSize = true;
+            this.lblMontoTicket.Location = new System.Drawing.Point(67, 45);
+            this.lblMontoTicket.Name = "lblMontoTicket";
+            this.lblMontoTicket.Size = new System.Drawing.Size(44, 18);
+            this.lblMontoTicket.TabIndex = 10;
+            this.lblMontoTicket.Text = "$0.00";
+            this.lblMontoTicket.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblTextoTicket
             // 
@@ -407,87 +433,28 @@
             this.lblIconoTicket.TabIndex = 11;
             this.lblIconoTicket.Text = "$";
             // 
-            // lblCantidadMes
-            // 
-            this.lblCantidadMes.AutoSize = true;
-            this.lblCantidadMes.Location = new System.Drawing.Point(76, 67);
-            this.lblCantidadMes.Name = "lblCantidadMes";
-            this.lblCantidadMes.Size = new System.Drawing.Size(65, 18);
-            this.lblCantidadMes.TabIndex = 12;
-            this.lblCantidadMes.Text = "0 Ventas";
-            // 
-            // lblMontoTicket
-            // 
-            this.lblMontoTicket.AutoSize = true;
-            this.lblMontoTicket.Location = new System.Drawing.Point(67, 45);
-            this.lblMontoTicket.Name = "lblMontoTicket";
-            this.lblMontoTicket.Size = new System.Drawing.Size(44, 18);
-            this.lblMontoTicket.TabIndex = 10;
-            this.lblMontoTicket.Text = "$0.00";
-            this.lblMontoTicket.Click += new System.EventHandler(this.label1_Click);
-            // 
             // panelHistorial
             // 
             this.panelHistorial.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelHistorial.Controls.Add(this.panelFiltro);
             this.panelHistorial.Controls.Add(this.dgvHistorialVentas);
-            this.panelHistorial.Controls.Add(this.lblHistorialTitulo);
+            this.panelHistorial.Controls.Add(this.lblNotaHistorial);
             this.panelHistorial.Controls.Add(this.lblIconoHistorial);
             this.panelHistorial.Location = new System.Drawing.Point(277, 215);
             this.panelHistorial.Name = "panelHistorial";
             this.panelHistorial.Size = new System.Drawing.Size(805, 420);
             this.panelHistorial.TabIndex = 8;
             // 
-            // lblIconoHistorial
-            // 
-            this.lblIconoHistorial.AutoSize = true;
-            this.lblIconoHistorial.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIconoHistorial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
-            this.lblIconoHistorial.Location = new System.Drawing.Point(15, 13);
-            this.lblIconoHistorial.Name = "lblIconoHistorial";
-            this.lblIconoHistorial.Size = new System.Drawing.Size(34, 31);
-            this.lblIconoHistorial.TabIndex = 0;
-            this.lblIconoHistorial.Text = "▣";
-            // 
-            // lblHistorialTitulo
-            // 
-            this.lblHistorialTitulo.AutoSize = true;
-            this.lblHistorialTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(60)))), ((int)(((byte)(50)))));
-            this.lblHistorialTitulo.Location = new System.Drawing.Point(47, 23);
-            this.lblHistorialTitulo.Name = "lblHistorialTitulo";
-            this.lblHistorialTitulo.Size = new System.Drawing.Size(135, 18);
-            this.lblHistorialTitulo.TabIndex = 1;
-            this.lblHistorialTitulo.Text = "Historial de Ventas ";
-            // 
-            // dgvHistorialVentas
-            // 
-            this.dgvHistorialVentas.AllowUserToAddRows = false;
-            this.dgvHistorialVentas.AllowUserToDeleteRows = false;
-            this.dgvHistorialVentas.AllowUserToResizeRows = false;
-            this.dgvHistorialVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHistorialVentas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.dgvHistorialVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvHistorialVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistorialVentas.EnableHeadersVisualStyles = false;
-            this.dgvHistorialVentas.Location = new System.Drawing.Point(15, 50);
-            this.dgvHistorialVentas.Name = "dgvHistorialVentas";
-            this.dgvHistorialVentas.ReadOnly = true;
-            this.dgvHistorialVentas.RowHeadersWidth = 51;
-            this.dgvHistorialVentas.RowTemplate.Height = 24;
-            this.dgvHistorialVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistorialVentas.Size = new System.Drawing.Size(535, 335);
-            this.dgvHistorialVentas.TabIndex = 2;
-            // 
             // panelFiltro
             // 
             this.panelFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(226)))), ((int)(((byte)(205)))));
-            this.panelFiltro.Controls.Add(this.btnLimpiarFiltrar);
+            this.panelFiltro.Controls.Add(this.btnLimpiarFiltros);
             this.panelFiltro.Controls.Add(this.btnFiltrar);
             this.panelFiltro.Controls.Add(this.cmbEstadoFiltro);
             this.panelFiltro.Controls.Add(this.lblEstadoFiltro);
-            this.panelFiltro.Controls.Add(this.cmcMetodPagoFiltro);
+            this.panelFiltro.Controls.Add(this.cmbMetodoPagoFiltro);
             this.panelFiltro.Controls.Add(this.lblMetodoPago);
             this.panelFiltro.Controls.Add(this.dtpFechaFin);
             this.panelFiltro.Controls.Add(this.lblFechaFin);
@@ -500,96 +467,19 @@
             this.panelFiltro.Size = new System.Drawing.Size(220, 335);
             this.panelFiltro.TabIndex = 3;
             // 
-            // lblIconoFiltros
+            // btnLimpiarFiltros
             // 
-            this.lblIconoFiltros.AutoSize = true;
-            this.lblIconoFiltros.Location = new System.Drawing.Point(16, 8);
-            this.lblIconoFiltros.Name = "lblIconoFiltros";
-            this.lblIconoFiltros.Size = new System.Drawing.Size(19, 18);
-            this.lblIconoFiltros.TabIndex = 9;
-            this.lblIconoFiltros.Text = "▽";
-            // 
-            // lblTituloFiltros
-            // 
-            this.lblTituloFiltros.AutoSize = true;
-            this.lblTituloFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(55)))));
-            this.lblTituloFiltros.Location = new System.Drawing.Point(47, 8);
-            this.lblTituloFiltros.Name = "lblTituloFiltros";
-            this.lblTituloFiltros.Size = new System.Drawing.Size(49, 18);
-            this.lblTituloFiltros.TabIndex = 10;
-            this.lblTituloFiltros.Text = "Filtros";
-            // 
-            // lblFechaInicio
-            // 
-            this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Location = new System.Drawing.Point(15, 55);
-            this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(87, 18);
-            this.lblFechaInicio.TabIndex = 11;
-            this.lblFechaInicio.Text = "Fecha Inicio";
-            // 
-            // dtpFechaInicio
-            // 
-            this.dtpFechaInicio.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaInicio.CustomFormat = "dd/mm/yyyy";
-            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(15, 75);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(190, 24);
-            this.dtpFechaInicio.TabIndex = 12;
-            // 
-            // lblFechaFin
-            // 
-            this.lblFechaFin.AutoSize = true;
-            this.lblFechaFin.Location = new System.Drawing.Point(19, 111);
-            this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(77, 18);
-            this.lblFechaFin.TabIndex = 9;
-            this.lblFechaFin.Text = "Fecha Fin ";
-            // 
-            // dtpFechaFin
-            // 
-            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaFin.Location = new System.Drawing.Point(15, 130);
-            this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(190, 24);
-            this.dtpFechaFin.TabIndex = 13;
-            // 
-            // lblMetodoPago
-            // 
-            this.lblMetodoPago.AutoSize = true;
-            this.lblMetodoPago.Location = new System.Drawing.Point(15, 165);
-            this.lblMetodoPago.Name = "lblMetodoPago";
-            this.lblMetodoPago.Size = new System.Drawing.Size(116, 18);
-            this.lblMetodoPago.TabIndex = 14;
-            this.lblMetodoPago.Text = "Metodo de pago";
-            // 
-            // cmcMetodPagoFiltro
-            // 
-            this.cmcMetodPagoFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmcMetodPagoFiltro.FormattingEnabled = true;
-            this.cmcMetodPagoFiltro.Location = new System.Drawing.Point(15, 185);
-            this.cmcMetodPagoFiltro.Name = "cmcMetodPagoFiltro";
-            this.cmcMetodPagoFiltro.Size = new System.Drawing.Size(190, 26);
-            this.cmcMetodPagoFiltro.TabIndex = 15;
-            // 
-            // lblEstadoFiltro
-            // 
-            this.lblEstadoFiltro.AutoSize = true;
-            this.lblEstadoFiltro.Location = new System.Drawing.Point(15, 220);
-            this.lblEstadoFiltro.Name = "lblEstadoFiltro";
-            this.lblEstadoFiltro.Size = new System.Drawing.Size(55, 18);
-            this.lblEstadoFiltro.TabIndex = 16;
-            this.lblEstadoFiltro.Text = "Estado";
-            // 
-            // cmbEstadoFiltro
-            // 
-            this.cmbEstadoFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstadoFiltro.FormattingEnabled = true;
-            this.cmbEstadoFiltro.Location = new System.Drawing.Point(15, 240);
-            this.cmbEstadoFiltro.Name = "cmbEstadoFiltro";
-            this.cmbEstadoFiltro.Size = new System.Drawing.Size(190, 26);
-            this.cmbEstadoFiltro.TabIndex = 17;
+            this.btnLimpiarFiltros.BackColor = System.Drawing.Color.Red;
+            this.btnLimpiarFiltros.FlatAppearance.BorderSize = 0;
+            this.btnLimpiarFiltros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnLimpiarFiltros.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(107, 281);
+            this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
+            this.btnLimpiarFiltros.Size = new System.Drawing.Size(130, 35);
+            this.btnLimpiarFiltros.TabIndex = 18;
+            this.btnLimpiarFiltros.Text = "Limpiar ";
+            this.btnLimpiarFiltros.UseCompatibleTextRendering = true;
+            this.btnLimpiarFiltros.UseVisualStyleBackColor = false;
             // 
             // btnFiltrar
             // 
@@ -606,19 +496,193 @@
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
             // 
-            // btnLimpiarFiltrar
+            // cmbEstadoFiltro
             // 
-            this.btnLimpiarFiltrar.BackColor = System.Drawing.Color.Red;
-            this.btnLimpiarFiltrar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiarFiltrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.btnLimpiarFiltrar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarFiltrar.Location = new System.Drawing.Point(107, 281);
-            this.btnLimpiarFiltrar.Name = "btnLimpiarFiltrar";
-            this.btnLimpiarFiltrar.Size = new System.Drawing.Size(130, 35);
-            this.btnLimpiarFiltrar.TabIndex = 18;
-            this.btnLimpiarFiltrar.Text = "Limpiar ";
-            this.btnLimpiarFiltrar.UseCompatibleTextRendering = true;
-            this.btnLimpiarFiltrar.UseVisualStyleBackColor = false;
+            this.cmbEstadoFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstadoFiltro.FormattingEnabled = true;
+            this.cmbEstadoFiltro.Location = new System.Drawing.Point(15, 240);
+            this.cmbEstadoFiltro.Name = "cmbEstadoFiltro";
+            this.cmbEstadoFiltro.Size = new System.Drawing.Size(190, 26);
+            this.cmbEstadoFiltro.TabIndex = 17;
+            // 
+            // lblEstadoFiltro
+            // 
+            this.lblEstadoFiltro.AutoSize = true;
+            this.lblEstadoFiltro.Location = new System.Drawing.Point(15, 220);
+            this.lblEstadoFiltro.Name = "lblEstadoFiltro";
+            this.lblEstadoFiltro.Size = new System.Drawing.Size(55, 18);
+            this.lblEstadoFiltro.TabIndex = 16;
+            this.lblEstadoFiltro.Text = "Estado";
+            // 
+            // cmbMetodoPagoFiltro
+            // 
+            this.cmbMetodoPagoFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMetodoPagoFiltro.FormattingEnabled = true;
+            this.cmbMetodoPagoFiltro.Location = new System.Drawing.Point(15, 185);
+            this.cmbMetodoPagoFiltro.Name = "cmbMetodoPagoFiltro";
+            this.cmbMetodoPagoFiltro.Size = new System.Drawing.Size(190, 26);
+            this.cmbMetodoPagoFiltro.TabIndex = 15;
+            // 
+            // lblMetodoPago
+            // 
+            this.lblMetodoPago.AutoSize = true;
+            this.lblMetodoPago.Location = new System.Drawing.Point(15, 165);
+            this.lblMetodoPago.Name = "lblMetodoPago";
+            this.lblMetodoPago.Size = new System.Drawing.Size(116, 18);
+            this.lblMetodoPago.TabIndex = 14;
+            this.lblMetodoPago.Text = "Metodo de pago";
+            // 
+            // dtpFechaFin
+            // 
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaFin.Location = new System.Drawing.Point(15, 130);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(190, 24);
+            this.dtpFechaFin.TabIndex = 13;
+            // 
+            // lblFechaFin
+            // 
+            this.lblFechaFin.AutoSize = true;
+            this.lblFechaFin.Location = new System.Drawing.Point(19, 111);
+            this.lblFechaFin.Name = "lblFechaFin";
+            this.lblFechaFin.Size = new System.Drawing.Size(77, 18);
+            this.lblFechaFin.TabIndex = 9;
+            this.lblFechaFin.Text = "Fecha Fin ";
+            // 
+            // dtpFechaInicio
+            // 
+            this.dtpFechaInicio.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaInicio.CustomFormat = "dd/mm/yyyy";
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(15, 75);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(190, 24);
+            this.dtpFechaInicio.TabIndex = 12;
+            // 
+            // lblFechaInicio
+            // 
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.Location = new System.Drawing.Point(15, 55);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(87, 18);
+            this.lblFechaInicio.TabIndex = 11;
+            this.lblFechaInicio.Text = "Fecha Inicio";
+            // 
+            // lblTituloFiltros
+            // 
+            this.lblTituloFiltros.AutoSize = true;
+            this.lblTituloFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(55)))));
+            this.lblTituloFiltros.Location = new System.Drawing.Point(47, 8);
+            this.lblTituloFiltros.Name = "lblTituloFiltros";
+            this.lblTituloFiltros.Size = new System.Drawing.Size(49, 18);
+            this.lblTituloFiltros.TabIndex = 10;
+            this.lblTituloFiltros.Text = "Filtros";
+            // 
+            // lblIconoFiltros
+            // 
+            this.lblIconoFiltros.AutoSize = true;
+            this.lblIconoFiltros.Location = new System.Drawing.Point(16, 8);
+            this.lblIconoFiltros.Name = "lblIconoFiltros";
+            this.lblIconoFiltros.Size = new System.Drawing.Size(19, 18);
+            this.lblIconoFiltros.TabIndex = 9;
+            this.lblIconoFiltros.Text = "▽";
+            // 
+            // dgvHistorialVentas
+            // 
+            this.dgvHistorialVentas.AllowUserToAddRows = false;
+            this.dgvHistorialVentas.AllowUserToDeleteRows = false;
+            this.dgvHistorialVentas.AllowUserToResizeRows = false;
+            this.dgvHistorialVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHistorialVentas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.dgvHistorialVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvHistorialVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistorialVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColFolio,
+            this.colVerDetalle,
+            this.colFecha,
+            this.colHora,
+            this.colProductos,
+            this.colTotal,
+            this.colMetodoPago});
+            this.dgvHistorialVentas.EnableHeadersVisualStyles = false;
+            this.dgvHistorialVentas.Location = new System.Drawing.Point(15, 50);
+            this.dgvHistorialVentas.Name = "dgvHistorialVentas";
+            this.dgvHistorialVentas.ReadOnly = true;
+            this.dgvHistorialVentas.RowHeadersWidth = 51;
+            this.dgvHistorialVentas.RowTemplate.Height = 24;
+            this.dgvHistorialVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHistorialVentas.Size = new System.Drawing.Size(535, 335);
+            this.dgvHistorialVentas.TabIndex = 2;
+            // 
+            // lblNotaHistorial
+            // 
+            this.lblNotaHistorial.AutoSize = true;
+            this.lblNotaHistorial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(60)))), ((int)(((byte)(50)))));
+            this.lblNotaHistorial.Location = new System.Drawing.Point(47, 23);
+            this.lblNotaHistorial.Name = "lblNotaHistorial";
+            this.lblNotaHistorial.Size = new System.Drawing.Size(135, 18);
+            this.lblNotaHistorial.TabIndex = 1;
+            this.lblNotaHistorial.Text = "Historial de Ventas ";
+            // 
+            // lblIconoHistorial
+            // 
+            this.lblIconoHistorial.AutoSize = true;
+            this.lblIconoHistorial.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIconoHistorial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
+            this.lblIconoHistorial.Location = new System.Drawing.Point(15, 13);
+            this.lblIconoHistorial.Name = "lblIconoHistorial";
+            this.lblIconoHistorial.Size = new System.Drawing.Size(34, 31);
+            this.lblIconoHistorial.TabIndex = 0;
+            this.lblIconoHistorial.Text = "▣";
+            // 
+            // ColFolio
+            // 
+            this.ColFolio.HeaderText = "Folio";
+            this.ColFolio.MinimumWidth = 6;
+            this.ColFolio.Name = "ColFolio";
+            this.ColFolio.ReadOnly = true;
+            // 
+            // colVerDetalle
+            // 
+            this.colVerDetalle.HeaderText = "Acciones";
+            this.colVerDetalle.MinimumWidth = 6;
+            this.colVerDetalle.Name = "colVerDetalle";
+            this.colVerDetalle.ReadOnly = true;
+            // 
+            // colFecha
+            // 
+            this.colFecha.HeaderText = "Fecha";
+            this.colFecha.MinimumWidth = 6;
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            // 
+            // colHora
+            // 
+            this.colHora.HeaderText = "Hora";
+            this.colHora.MinimumWidth = 6;
+            this.colHora.Name = "colHora";
+            this.colHora.ReadOnly = true;
+            // 
+            // colProductos
+            // 
+            this.colProductos.HeaderText = "Productos";
+            this.colProductos.MinimumWidth = 6;
+            this.colProductos.Name = "colProductos";
+            this.colProductos.ReadOnly = true;
+            // 
+            // colTotal
+            // 
+            this.colTotal.HeaderText = "Total";
+            this.colTotal.MinimumWidth = 6;
+            this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
+            // 
+            // colMetodoPago
+            // 
+            this.colMetodoPago.HeaderText = "Metodo de Pago";
+            this.colMetodoPago.MinimumWidth = 6;
+            this.colMetodoPago.Name = "colMetodoPago";
+            this.colMetodoPago.ReadOnly = true;
             // 
             // frmMisVentasCajero
             // 
@@ -650,9 +714,9 @@
             this.panelTicketPromedio.PerformLayout();
             this.panelHistorial.ResumeLayout(false);
             this.panelHistorial.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialVentas)).EndInit();
             this.panelFiltro.ResumeLayout(false);
             this.panelFiltro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -691,7 +755,7 @@
         private System.Windows.Forms.Label lblCantidadMes;
         private System.Windows.Forms.Label lblMontoTicket;
         private System.Windows.Forms.Panel panelHistorial;
-        private System.Windows.Forms.Label lblHistorialTitulo;
+        private System.Windows.Forms.Label lblNotaHistorial;
         private System.Windows.Forms.Label lblIconoHistorial;
         private System.Windows.Forms.DataGridView dgvHistorialVentas;
         private System.Windows.Forms.Panel panelFiltro;
@@ -704,8 +768,15 @@
         private System.Windows.Forms.Label lblFechaFin;
         private System.Windows.Forms.ComboBox cmbEstadoFiltro;
         private System.Windows.Forms.Label lblEstadoFiltro;
-        private System.Windows.Forms.ComboBox cmcMetodPagoFiltro;
-        private System.Windows.Forms.Button btnLimpiarFiltrar;
+        private System.Windows.Forms.ComboBox cmbMetodoPagoFiltro;
         private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.Button btnLimpiarFiltros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColFolio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVerDetalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMetodoPago;
     }
 }
