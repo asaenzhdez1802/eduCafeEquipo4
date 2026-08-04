@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMisVentasCajero));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lineaMenu = new System.Windows.Forms.Panel();
@@ -42,22 +43,20 @@
             this.lblCantidadDia = new System.Windows.Forms.Label();
             this.lblMontoDia = new System.Windows.Forms.Label();
             this.lblTextoVentasDia = new System.Windows.Forms.Label();
-            this.lblconoVentasDia = new System.Windows.Forms.Label();
             this.panelVentasSemana = new System.Windows.Forms.Panel();
             this.lblCantidadSemana = new System.Windows.Forms.Label();
             this.lblMontoSemana = new System.Windows.Forms.Label();
             this.lblTextoSemana = new System.Windows.Forms.Label();
-            this.lblIconoSemana = new System.Windows.Forms.Label();
             this.panelVentasMes = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblCantidadMes = new System.Windows.Forms.Label();
             this.lblMontoMes = new System.Windows.Forms.Label();
             this.lblTextoMes = new System.Windows.Forms.Label();
-            this.lblIconoMes = new System.Windows.Forms.Label();
             this.panelTicketPromedio = new System.Windows.Forms.Panel();
             this.lblPeriodoTicket = new System.Windows.Forms.Label();
             this.lblMontoTicket = new System.Windows.Forms.Label();
             this.lblTextoTicket = new System.Windows.Forms.Label();
-            this.lblIconoTicket = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelHistorial = new System.Windows.Forms.Panel();
             this.panelFiltro = new System.Windows.Forms.Panel();
             this.btnLimpiarFiltros = new System.Windows.Forms.Button();
@@ -73,8 +72,6 @@
             this.lblTituloFiltros = new System.Windows.Forms.Label();
             this.lblIconoFiltros = new System.Windows.Forms.Label();
             this.dgvHistorialVentas = new System.Windows.Forms.DataGridView();
-            this.lblNotaHistorial = new System.Windows.Forms.Label();
-            this.lblIconoHistorial = new System.Windows.Forms.Label();
             this.ColFolio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVerDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,15 +79,23 @@
             this.colProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMetodoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblNotaHistorial = new System.Windows.Forms.Label();
+            this.lblIconoHistorial = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelVentasDia.SuspendLayout();
             this.panelVentasSemana.SuspendLayout();
             this.panelVentasMes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelTicketPromedio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelHistorial.SuspendLayout();
             this.panelFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -142,9 +147,8 @@
             this.btnMisVentas.FlatAppearance.BorderSize = 0;
             this.btnMisVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMisVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMisVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(123)))), ((int)(((byte)(85)))));
-            this.btnMisVentas.Image = global::eduCafeEquipo4.Properties.Resources.MenuAdminProductosB;
-            this.btnMisVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMisVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.btnMisVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnMisVentas.Image")));
             this.btnMisVentas.Location = new System.Drawing.Point(0, 253);
             this.btnMisVentas.Name = "btnMisVentas";
             this.btnMisVentas.Size = new System.Drawing.Size(230, 38);
@@ -161,7 +165,7 @@
             this.btnPuntoVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPuntoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPuntoVenta.ForeColor = System.Drawing.Color.White;
-            this.btnPuntoVenta.Image = global::eduCafeEquipo4.Properties.Resources.imicio_admin_verde;
+            this.btnPuntoVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnPuntoVenta.Image")));
             this.btnPuntoVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPuntoVenta.Location = new System.Drawing.Point(0, 214);
             this.btnPuntoVenta.Name = "btnPuntoVenta";
@@ -231,10 +235,10 @@
             // panelVentasDia
             // 
             this.panelVentasDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(222)))), ((int)(((byte)(157)))));
+            this.panelVentasDia.Controls.Add(this.pictureBox4);
             this.panelVentasDia.Controls.Add(this.lblCantidadDia);
             this.panelVentasDia.Controls.Add(this.lblMontoDia);
             this.panelVentasDia.Controls.Add(this.lblTextoVentasDia);
-            this.panelVentasDia.Controls.Add(this.lblconoVentasDia);
             this.panelVentasDia.Location = new System.Drawing.Point(270, 100);
             this.panelVentasDia.Name = "panelVentasDia";
             this.panelVentasDia.Size = new System.Drawing.Size(190, 92);
@@ -244,7 +248,7 @@
             // 
             this.lblCantidadDia.AutoSize = true;
             this.lblCantidadDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.lblCantidadDia.Location = new System.Drawing.Point(80, 65);
+            this.lblCantidadDia.Location = new System.Drawing.Point(80, 71);
             this.lblCantidadDia.Name = "lblCantidadDia";
             this.lblCantidadDia.Size = new System.Drawing.Size(69, 18);
             this.lblCantidadDia.TabIndex = 8;
@@ -253,7 +257,7 @@
             // lblMontoDia
             // 
             this.lblMontoDia.AutoSize = true;
-            this.lblMontoDia.Location = new System.Drawing.Point(80, 43);
+            this.lblMontoDia.Location = new System.Drawing.Point(85, 45);
             this.lblMontoDia.Name = "lblMontoDia";
             this.lblMontoDia.Size = new System.Drawing.Size(44, 18);
             this.lblMontoDia.TabIndex = 8;
@@ -262,22 +266,11 @@
             // lblTextoVentasDia
             // 
             this.lblTextoVentasDia.AutoSize = true;
-            this.lblTextoVentasDia.Location = new System.Drawing.Point(80, 12);
+            this.lblTextoVentasDia.Location = new System.Drawing.Point(80, 5);
             this.lblTextoVentasDia.Name = "lblTextoVentasDia";
             this.lblTextoVentasDia.Size = new System.Drawing.Size(102, 18);
             this.lblTextoVentasDia.TabIndex = 8;
             this.lblTextoVentasDia.Text = "Ventas del Dia";
-            // 
-            // lblconoVentasDia
-            // 
-            this.lblconoVentasDia.AutoSize = true;
-            this.lblconoVentasDia.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblconoVentasDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
-            this.lblconoVentasDia.Location = new System.Drawing.Point(26, 12);
-            this.lblconoVentasDia.Name = "lblconoVentasDia";
-            this.lblconoVentasDia.Size = new System.Drawing.Size(48, 57);
-            this.lblconoVentasDia.TabIndex = 8;
-            this.lblconoVentasDia.Text = "$";
             // 
             // panelVentasSemana
             // 
@@ -285,7 +278,7 @@
             this.panelVentasSemana.Controls.Add(this.lblCantidadSemana);
             this.panelVentasSemana.Controls.Add(this.lblMontoSemana);
             this.panelVentasSemana.Controls.Add(this.lblTextoSemana);
-            this.panelVentasSemana.Controls.Add(this.lblIconoSemana);
+            this.panelVentasSemana.Controls.Add(this.pictureBox3);
             this.panelVentasSemana.Location = new System.Drawing.Point(475, 100);
             this.panelVentasSemana.Name = "panelVentasSemana";
             this.panelVentasSemana.Size = new System.Drawing.Size(190, 92);
@@ -295,7 +288,7 @@
             // 
             this.lblCantidadSemana.AutoSize = true;
             this.lblCantidadSemana.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.lblCantidadSemana.Location = new System.Drawing.Point(76, 65);
+            this.lblCantidadSemana.Location = new System.Drawing.Point(76, 74);
             this.lblCantidadSemana.Name = "lblCantidadSemana";
             this.lblCantidadSemana.Size = new System.Drawing.Size(54, 15);
             this.lblCantidadSemana.TabIndex = 13;
@@ -304,7 +297,7 @@
             // lblMontoSemana
             // 
             this.lblMontoSemana.AutoSize = true;
-            this.lblMontoSemana.Location = new System.Drawing.Point(76, 30);
+            this.lblMontoSemana.Location = new System.Drawing.Point(79, 37);
             this.lblMontoSemana.Name = "lblMontoSemana";
             this.lblMontoSemana.Size = new System.Drawing.Size(48, 18);
             this.lblMontoSemana.TabIndex = 14;
@@ -313,22 +306,11 @@
             // lblTextoSemana
             // 
             this.lblTextoSemana.AutoSize = true;
-            this.lblTextoSemana.Location = new System.Drawing.Point(39, 7);
+            this.lblTextoSemana.Location = new System.Drawing.Point(39, 4);
             this.lblTextoSemana.Name = "lblTextoSemana";
             this.lblTextoSemana.Size = new System.Drawing.Size(147, 18);
             this.lblTextoSemana.TabIndex = 15;
             this.lblTextoSemana.Text = "Ventas de la Semana";
-            // 
-            // lblIconoSemana
-            // 
-            this.lblIconoSemana.AutoSize = true;
-            this.lblIconoSemana.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIconoSemana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
-            this.lblIconoSemana.Location = new System.Drawing.Point(3, 12);
-            this.lblIconoSemana.Name = "lblIconoSemana";
-            this.lblIconoSemana.Size = new System.Drawing.Size(48, 57);
-            this.lblIconoSemana.TabIndex = 8;
-            this.lblIconoSemana.Text = "$";
             // 
             // panelVentasMes
             // 
@@ -336,16 +318,25 @@
             this.panelVentasMes.Controls.Add(this.lblCantidadMes);
             this.panelVentasMes.Controls.Add(this.lblMontoMes);
             this.panelVentasMes.Controls.Add(this.lblTextoMes);
-            this.panelVentasMes.Controls.Add(this.lblIconoMes);
+            this.panelVentasMes.Controls.Add(this.pictureBox2);
             this.panelVentasMes.Location = new System.Drawing.Point(680, 100);
             this.panelVentasMes.Name = "panelVentasMes";
             this.panelVentasMes.Size = new System.Drawing.Size(190, 92);
             this.panelVentasMes.TabIndex = 6;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(69, 67);
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
             // lblCantidadMes
             // 
             this.lblCantidadMes.AutoSize = true;
-            this.lblCantidadMes.Location = new System.Drawing.Point(76, 67);
+            this.lblCantidadMes.Location = new System.Drawing.Point(76, 72);
             this.lblCantidadMes.Name = "lblCantidadMes";
             this.lblCantidadMes.Size = new System.Drawing.Size(65, 18);
             this.lblCantidadMes.TabIndex = 12;
@@ -364,22 +355,11 @@
             // lblTextoMes
             // 
             this.lblTextoMes.AutoSize = true;
-            this.lblTextoMes.Location = new System.Drawing.Point(57, 12);
+            this.lblTextoMes.Location = new System.Drawing.Point(57, 3);
             this.lblTextoMes.Name = "lblTextoMes";
             this.lblTextoMes.Size = new System.Drawing.Size(113, 18);
             this.lblTextoMes.TabIndex = 11;
             this.lblTextoMes.Text = "Ventas del Mes ";
-            // 
-            // lblIconoMes
-            // 
-            this.lblIconoMes.AutoSize = true;
-            this.lblIconoMes.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIconoMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
-            this.lblIconoMes.Location = new System.Drawing.Point(3, 23);
-            this.lblIconoMes.Name = "lblIconoMes";
-            this.lblIconoMes.Size = new System.Drawing.Size(48, 57);
-            this.lblIconoMes.TabIndex = 12;
-            this.lblIconoMes.Text = "$";
             // 
             // panelTicketPromedio
             // 
@@ -387,7 +367,7 @@
             this.panelTicketPromedio.Controls.Add(this.lblPeriodoTicket);
             this.panelTicketPromedio.Controls.Add(this.lblMontoTicket);
             this.panelTicketPromedio.Controls.Add(this.lblTextoTicket);
-            this.panelTicketPromedio.Controls.Add(this.lblIconoTicket);
+            this.panelTicketPromedio.Controls.Add(this.pictureBox1);
             this.panelTicketPromedio.Location = new System.Drawing.Point(885, 100);
             this.panelTicketPromedio.Name = "panelTicketPromedio";
             this.panelTicketPromedio.Size = new System.Drawing.Size(190, 92);
@@ -396,7 +376,7 @@
             // lblPeriodoTicket
             // 
             this.lblPeriodoTicket.AutoSize = true;
-            this.lblPeriodoTicket.Location = new System.Drawing.Point(53, 72);
+            this.lblPeriodoTicket.Location = new System.Drawing.Point(73, 72);
             this.lblPeriodoTicket.Name = "lblPeriodoTicket";
             this.lblPeriodoTicket.Size = new System.Drawing.Size(75, 18);
             this.lblPeriodoTicket.TabIndex = 9;
@@ -406,7 +386,7 @@
             // lblMontoTicket
             // 
             this.lblMontoTicket.AutoSize = true;
-            this.lblMontoTicket.Location = new System.Drawing.Point(67, 45);
+            this.lblMontoTicket.Location = new System.Drawing.Point(82, 41);
             this.lblMontoTicket.Name = "lblMontoTicket";
             this.lblMontoTicket.Size = new System.Drawing.Size(44, 18);
             this.lblMontoTicket.TabIndex = 10;
@@ -416,22 +396,20 @@
             // lblTextoTicket
             // 
             this.lblTextoTicket.AutoSize = true;
-            this.lblTextoTicket.Location = new System.Drawing.Point(53, 12);
+            this.lblTextoTicket.Location = new System.Drawing.Point(53, 1);
             this.lblTextoTicket.Name = "lblTextoTicket";
             this.lblTextoTicket.Size = new System.Drawing.Size(117, 18);
             this.lblTextoTicket.TabIndex = 10;
             this.lblTextoTicket.Text = "Ticket Promedio";
             // 
-            // lblIconoTicket
+            // pictureBox1
             // 
-            this.lblIconoTicket.AutoSize = true;
-            this.lblIconoTicket.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIconoTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
-            this.lblIconoTicket.Location = new System.Drawing.Point(13, 23);
-            this.lblIconoTicket.Name = "lblIconoTicket";
-            this.lblIconoTicket.Size = new System.Drawing.Size(48, 57);
-            this.lblIconoTicket.TabIndex = 11;
-            this.lblIconoTicket.Text = "$";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 67);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // panelHistorial
             // 
@@ -572,20 +550,22 @@
             // 
             this.lblTituloFiltros.AutoSize = true;
             this.lblTituloFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(55)))));
-            this.lblTituloFiltros.Location = new System.Drawing.Point(47, 8);
+            this.lblTituloFiltros.Image = ((System.Drawing.Image)(resources.GetObject("lblTituloFiltros.Image")));
+            this.lblTituloFiltros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTituloFiltros.Location = new System.Drawing.Point(9, 8);
             this.lblTituloFiltros.Name = "lblTituloFiltros";
-            this.lblTituloFiltros.Size = new System.Drawing.Size(49, 18);
+            this.lblTituloFiltros.Size = new System.Drawing.Size(69, 18);
             this.lblTituloFiltros.TabIndex = 10;
-            this.lblTituloFiltros.Text = "Filtros";
+            this.lblTituloFiltros.Text = "     Filtros";
             // 
             // lblIconoFiltros
             // 
             this.lblIconoFiltros.AutoSize = true;
+            this.lblIconoFiltros.Image = ((System.Drawing.Image)(resources.GetObject("lblIconoFiltros.Image")));
             this.lblIconoFiltros.Location = new System.Drawing.Point(16, 8);
             this.lblIconoFiltros.Name = "lblIconoFiltros";
-            this.lblIconoFiltros.Size = new System.Drawing.Size(19, 18);
+            this.lblIconoFiltros.Size = new System.Drawing.Size(0, 18);
             this.lblIconoFiltros.TabIndex = 9;
-            this.lblIconoFiltros.Text = "▽";
             // 
             // dgvHistorialVentas
             // 
@@ -613,27 +593,6 @@
             this.dgvHistorialVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorialVentas.Size = new System.Drawing.Size(535, 335);
             this.dgvHistorialVentas.TabIndex = 2;
-            // 
-            // lblNotaHistorial
-            // 
-            this.lblNotaHistorial.AutoSize = true;
-            this.lblNotaHistorial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(60)))), ((int)(((byte)(50)))));
-            this.lblNotaHistorial.Location = new System.Drawing.Point(47, 23);
-            this.lblNotaHistorial.Name = "lblNotaHistorial";
-            this.lblNotaHistorial.Size = new System.Drawing.Size(135, 18);
-            this.lblNotaHistorial.TabIndex = 1;
-            this.lblNotaHistorial.Text = "Historial de Ventas ";
-            // 
-            // lblIconoHistorial
-            // 
-            this.lblIconoHistorial.AutoSize = true;
-            this.lblIconoHistorial.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIconoHistorial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
-            this.lblIconoHistorial.Location = new System.Drawing.Point(15, 13);
-            this.lblIconoHistorial.Name = "lblIconoHistorial";
-            this.lblIconoHistorial.Size = new System.Drawing.Size(34, 31);
-            this.lblIconoHistorial.TabIndex = 0;
-            this.lblIconoHistorial.Text = "▣";
             // 
             // ColFolio
             // 
@@ -684,6 +643,45 @@
             this.colMetodoPago.Name = "colMetodoPago";
             this.colMetodoPago.ReadOnly = true;
             // 
+            // lblNotaHistorial
+            // 
+            this.lblNotaHistorial.AutoSize = true;
+            this.lblNotaHistorial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(60)))), ((int)(((byte)(50)))));
+            this.lblNotaHistorial.Location = new System.Drawing.Point(47, 23);
+            this.lblNotaHistorial.Name = "lblNotaHistorial";
+            this.lblNotaHistorial.Size = new System.Drawing.Size(135, 18);
+            this.lblNotaHistorial.TabIndex = 1;
+            this.lblNotaHistorial.Text = "Historial de Ventas ";
+            // 
+            // lblIconoHistorial
+            // 
+            this.lblIconoHistorial.AutoSize = true;
+            this.lblIconoHistorial.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIconoHistorial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(140)))), ((int)(((byte)(78)))));
+            this.lblIconoHistorial.Location = new System.Drawing.Point(15, 13);
+            this.lblIconoHistorial.Name = "lblIconoHistorial";
+            this.lblIconoHistorial.Size = new System.Drawing.Size(34, 31);
+            this.lblIconoHistorial.TabIndex = 0;
+            this.lblIconoHistorial.Text = "▣";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 16);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(69, 67);
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(0, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(69, 67);
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
+            // 
             // frmMisVentasCajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -710,13 +708,17 @@
             this.panelVentasSemana.PerformLayout();
             this.panelVentasMes.ResumeLayout(false);
             this.panelVentasMes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelTicketPromedio.ResumeLayout(false);
             this.panelTicketPromedio.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelHistorial.ResumeLayout(false);
             this.panelHistorial.PerformLayout();
             this.panelFiltro.ResumeLayout(false);
             this.panelFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialVentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -738,20 +740,16 @@
         private System.Windows.Forms.Panel panelVentasSemana;
         private System.Windows.Forms.Panel panelVentasMes;
         private System.Windows.Forms.Panel panelTicketPromedio;
-        private System.Windows.Forms.Label lblconoVentasDia;
         private System.Windows.Forms.Label lblTextoVentasDia;
         private System.Windows.Forms.Label lblCantidadDia;
         private System.Windows.Forms.Label lblMontoDia;
-        private System.Windows.Forms.Label lblIconoSemana;
         private System.Windows.Forms.Label lblPeriodoTicket;
         private System.Windows.Forms.Label lblMontoMes;
         private System.Windows.Forms.Label lblTextoMes;
-        private System.Windows.Forms.Label lblIconoMes;
         private System.Windows.Forms.Label lblCantidadSemana;
         private System.Windows.Forms.Label lblMontoSemana;
         private System.Windows.Forms.Label lblTextoSemana;
         private System.Windows.Forms.Label lblTextoTicket;
-        private System.Windows.Forms.Label lblIconoTicket;
         private System.Windows.Forms.Label lblCantidadMes;
         private System.Windows.Forms.Label lblMontoTicket;
         private System.Windows.Forms.Panel panelHistorial;
@@ -778,5 +776,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMetodoPago;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
