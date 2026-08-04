@@ -19,6 +19,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPuntodeVentaCajero));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lineaMenu = new System.Windows.Forms.Panel();
@@ -80,7 +81,7 @@
             this.panelMenu.Controls.Add(this.picLogo);
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(230, 739);
+            this.panelMenu.Size = new System.Drawing.Size(200, 700);
             this.panelMenu.TabIndex = 0;
             // 
             // btnCerrarSesion
@@ -91,12 +92,12 @@
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
             this.btnCerrarSesion.Image = global::eduCafeEquipo4.Properties.Resources.MenuAdminSalirB;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 667);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(-4, 657);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnCerrarSesion.Size = new System.Drawing.Size(230, 40);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(200, 40);
             this.btnCerrarSesion.TabIndex = 11;
-            this.btnCerrarSesion.Text = "  Cerrar sesión";
+            this.btnCerrarSesion.Text = " Cerrar sesión";
             this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
@@ -104,9 +105,9 @@
             // lineaMenu
             // 
             this.lineaMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(220)))), ((int)(((byte)(210)))));
-            this.lineaMenu.Location = new System.Drawing.Point(25, 660);
+            this.lineaMenu.Location = new System.Drawing.Point(30, 650);
             this.lineaMenu.Name = "lineaMenu";
-            this.lineaMenu.Size = new System.Drawing.Size(180, 1);
+            this.lineaMenu.Size = new System.Drawing.Size(150, 1);
             this.lineaMenu.TabIndex = 10;
             // 
             // btnMisVentas
@@ -119,10 +120,9 @@
             this.btnMisVentas.Image = global::eduCafeEquipo4.Properties.Resources.MenuAdminProductosB;
             this.btnMisVentas.Location = new System.Drawing.Point(0, 253);
             this.btnMisVentas.Name = "btnMisVentas";
-            this.btnMisVentas.Size = new System.Drawing.Size(230, 38);
+            this.btnMisVentas.Size = new System.Drawing.Size(200, 38);
             this.btnMisVentas.TabIndex = 4;
             this.btnMisVentas.Text = "Mis ventas";
-            this.btnMisVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMisVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMisVentas.UseVisualStyleBackColor = false;
             // 
@@ -135,10 +135,10 @@
             this.btnPuntoVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(123)))), ((int)(((byte)(85)))));
             this.btnPuntoVenta.Image = global::eduCafeEquipo4.Properties.Resources.imicio_admin_verde;
             this.btnPuntoVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPuntoVenta.Location = new System.Drawing.Point(0, 214);
+            this.btnPuntoVenta.Location = new System.Drawing.Point(-6, 214);
             this.btnPuntoVenta.Name = "btnPuntoVenta";
             this.btnPuntoVenta.Padding = new System.Windows.Forms.Padding(23, 0, 0, 0);
-            this.btnPuntoVenta.Size = new System.Drawing.Size(230, 38);
+            this.btnPuntoVenta.Size = new System.Drawing.Size(206, 38);
             this.btnPuntoVenta.TabIndex = 3;
             this.btnPuntoVenta.Text = "Punto de venta";
             this.btnPuntoVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -148,9 +148,9 @@
             // 
             this.lblSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSistema.ForeColor = System.Drawing.Color.White;
-            this.lblSistema.Location = new System.Drawing.Point(10, 165);
+            this.lblSistema.Location = new System.Drawing.Point(-1, 165);
             this.lblSistema.Name = "lblSistema";
-            this.lblSistema.Size = new System.Drawing.Size(210, 25);
+            this.lblSistema.Size = new System.Drawing.Size(200, 25);
             this.lblSistema.TabIndex = 2;
             this.lblSistema.Text = "Sistema de control de ventas";
             this.lblSistema.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,7 +159,7 @@
             // 
             this.lblEduCafe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEduCafe.ForeColor = System.Drawing.Color.White;
-            this.lblEduCafe.Location = new System.Drawing.Point(15, 130);
+            this.lblEduCafe.Location = new System.Drawing.Point(-3, 130);
             this.lblEduCafe.Name = "lblEduCafe";
             this.lblEduCafe.Size = new System.Drawing.Size(200, 35);
             this.lblEduCafe.TabIndex = 1;
@@ -170,7 +170,7 @@
             // 
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
             this.picLogo.Image = global::eduCafeEquipo4.Properties.Resources.EDU_CAFÉ__1___1___2_;
-            this.picLogo.Location = new System.Drawing.Point(65, 25);
+            this.picLogo.Location = new System.Drawing.Point(44, 25);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(100, 100);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -268,7 +268,7 @@
             this.colAgregar});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
@@ -276,7 +276,7 @@
             this.dgvProductosVenta.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductosVenta.EnableHeadersVisualStyles = false;
             this.dgvProductosVenta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(220)))), ((int)(((byte)(210)))));
-            this.dgvProductosVenta.Location = new System.Drawing.Point(270, 165);
+            this.dgvProductosVenta.Location = new System.Drawing.Point(271, 165);
             this.dgvProductosVenta.MultiSelect = false;
             this.dgvProductosVenta.Name = "dgvProductosVenta";
             this.dgvProductosVenta.ReadOnly = true;
@@ -535,21 +535,26 @@
             this.lblTituloDetalle.AutoSize = true;
             this.lblTituloDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblTituloDetalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            this.lblTituloDetalle.Image = ((System.Drawing.Image)(resources.GetObject("lblTituloDetalle.Image")));
+            this.lblTituloDetalle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTituloDetalle.Location = new System.Drawing.Point(20, 18);
             this.lblTituloDetalle.Name = "lblTituloDetalle";
-            this.lblTituloDetalle.Size = new System.Drawing.Size(160, 24);
+            this.lblTituloDetalle.Size = new System.Drawing.Size(190, 24);
             this.lblTituloDetalle.TabIndex = 13;
-            this.lblTituloDetalle.Text = "Detalle de venta";
+            this.lblTituloDetalle.Text = "     Detalle de venta";
             // 
             // lblNota
             // 
             this.lblNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.lblNota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblNota.Location = new System.Drawing.Point(270, 650);
+            this.lblNota.Image = ((System.Drawing.Image)(resources.GetObject("lblNota.Image")));
+            this.lblNota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNota.Location = new System.Drawing.Point(270, 639);
             this.lblNota.Name = "lblNota";
             this.lblNota.Size = new System.Drawing.Size(885, 35);
             this.lblNota.TabIndex = 9;
-            this.lblNota.Text = "Selecciona un producto de la lista o agrégalo al carrito para comenzar la venta.";
+            this.lblNota.Text = "      Selecciona un producto de la lista o agrégalo al carrito para comenzar la v" +
+    "enta.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmPuntodeVentaCajero

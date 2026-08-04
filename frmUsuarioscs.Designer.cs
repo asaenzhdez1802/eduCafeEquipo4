@@ -289,11 +289,13 @@
             this.lblTituloRoles.AutoSize = true;
             this.lblTituloRoles.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.lblTituloRoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            this.lblTituloRoles.Image = ((System.Drawing.Image)(resources.GetObject("lblTituloRoles.Image")));
+            this.lblTituloRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTituloRoles.Location = new System.Drawing.Point(15, 12);
             this.lblTituloRoles.Name = "lblTituloRoles";
-            this.lblTituloRoles.Size = new System.Drawing.Size(170, 20);
+            this.lblTituloRoles.Size = new System.Drawing.Size(190, 20);
             this.lblTituloRoles.TabIndex = 0;
-            this.lblTituloRoles.Text = "Información de roles";
+            this.lblTituloRoles.Text = "     Información de roles";
             // 
             // panelInformacionUsuario
             // 
@@ -480,22 +482,26 @@
             this.lblTituloInformacion.AutoSize = true;
             this.lblTituloInformacion.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold);
             this.lblTituloInformacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            this.lblTituloInformacion.Image = ((System.Drawing.Image)(resources.GetObject("lblTituloInformacion.Image")));
+            this.lblTituloInformacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTituloInformacion.Location = new System.Drawing.Point(20, 18);
             this.lblTituloInformacion.Name = "lblTituloInformacion";
-            this.lblTituloInformacion.Size = new System.Drawing.Size(217, 23);
+            this.lblTituloInformacion.Size = new System.Drawing.Size(242, 23);
             this.lblTituloInformacion.TabIndex = 0;
-            this.lblTituloInformacion.Text = "Agregar / Editar usuario";
+            this.lblTituloInformacion.Text = "     Agregar / Editar usuario";
             // 
             // lblNota
             // 
             this.lblNota.Font = new System.Drawing.Font("Roboto", 8.5F);
             this.lblNota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblNota.Location = new System.Drawing.Point(244, 650);
+            this.lblNota.Image = ((System.Drawing.Image)(resources.GetObject("lblNota.Image")));
+            this.lblNota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNota.Location = new System.Drawing.Point(244, 637);
             this.lblNota.Name = "lblNota";
             this.lblNota.Size = new System.Drawing.Size(885, 35);
             this.lblNota.TabIndex = 9;
-            this.lblNota.Text = "Desde esta sección puedes agregar, editar, eliminar y activar o desactivar usuari" +
-    "os del sistema.";
+            this.lblNota.Text = "      Desde esta sección puedes agregar, editar, eliminar y activar o desactivar " +
+    "usuarios del sistema.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelMenu
