@@ -121,11 +121,13 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            this.lblUsuario.Image = ((System.Drawing.Image)(resources.GetObject("lblUsuario.Image")));
+            this.lblUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblUsuario.Location = new System.Drawing.Point(595, 215);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(77, 25);
+            this.lblUsuario.Size = new System.Drawing.Size(92, 25);
             this.lblUsuario.TabIndex = 3;
-            this.lblUsuario.Text = "Usuario";
+            this.lblUsuario.Text = "   Usuario";
             // 
             // txtUsuario
             // 
@@ -143,11 +145,14 @@
             this.lblContrasena.AutoSize = true;
             this.lblContrasena.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            this.lblContrasena.Image = ((System.Drawing.Image)(resources.GetObject("lblContrasena.Image")));
+            this.lblContrasena.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblContrasena.Location = new System.Drawing.Point(595, 305);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(108, 25);
+            this.lblContrasena.Size = new System.Drawing.Size(128, 25);
             this.lblContrasena.TabIndex = 5;
-            this.lblContrasena.Text = "Contraseña";
+            this.lblContrasena.Text = "    Contraseña";
+            this.lblContrasena.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtContrasena
             // 
@@ -176,15 +181,19 @@
             // btnIniciarSesion
             // 
             this.btnIniciarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(124)))), ((int)(((byte)(68)))));
+            this.btnIniciarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnIniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(86)))), ((int)(((byte)(54)))));
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.White;
+            this.btnIniciarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnIniciarSesion.Image")));
             this.btnIniciarSesion.Location = new System.Drawing.Point(595, 425);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(440, 45);
             this.btnIniciarSesion.TabIndex = 8;
             this.btnIniciarSesion.Text = "Iniciar sesión";
+            this.btnIniciarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIniciarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
