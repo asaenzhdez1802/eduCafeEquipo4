@@ -183,6 +183,7 @@
             this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInventario.Size = new System.Drawing.Size(515, 470);
             this.dgvInventario.TabIndex = 2;
+            
             // 
             // colCodigo
             // 
