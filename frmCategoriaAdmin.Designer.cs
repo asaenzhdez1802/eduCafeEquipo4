@@ -316,7 +316,7 @@
             this.lblNota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblNota.Image = ((System.Drawing.Image)(resources.GetObject("lblNota.Image")));
             this.lblNota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblNota.Location = new System.Drawing.Point(270, 650);
+            this.lblNota.Location = new System.Drawing.Point(270, 638);
             this.lblNota.Name = "lblNota";
             this.lblNota.Size = new System.Drawing.Size(885, 35);
             this.lblNota.TabIndex = 8;
