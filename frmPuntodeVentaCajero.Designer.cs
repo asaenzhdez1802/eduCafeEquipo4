@@ -17,9 +17,9 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPuntodeVentaCajero));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPuntodeVentaCajero));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lineaMenu = new System.Windows.Forms.Panel();
@@ -132,8 +132,8 @@
             this.btnPuntoVenta.FlatAppearance.BorderSize = 0;
             this.btnPuntoVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPuntoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPuntoVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(123)))), ((int)(((byte)(85)))));
-            this.btnPuntoVenta.Image = global::eduCafeEquipo4.Properties.Resources.imicio_admin_verde;
+            this.btnPuntoVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(54)))));
+            this.btnPuntoVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnPuntoVenta.Image")));
             this.btnPuntoVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPuntoVenta.Location = new System.Drawing.Point(-6, 214);
             this.btnPuntoVenta.Name = "btnPuntoVenta";
