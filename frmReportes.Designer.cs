@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.lblFechaInicio = new System.Windows.Forms.Label();
@@ -177,7 +177,7 @@
             // 
             this.lblDescripcionVentasTotales.Font = new System.Drawing.Font("Roboto", 8F);
             this.lblDescripcionVentasTotales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblDescripcionVentasTotales.Location = new System.Drawing.Point(10, 76);
+            this.lblDescripcionVentasTotales.Location = new System.Drawing.Point(10, 86);
             this.lblDescripcionVentasTotales.Name = "lblDescripcionVentasTotales";
             this.lblDescripcionVentasTotales.Size = new System.Drawing.Size(190, 20);
             this.lblDescripcionVentasTotales.TabIndex = 0;
@@ -188,9 +188,11 @@
             // 
             this.lblCantidadVentasTotales.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.lblCantidadVentasTotales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            this.lblCantidadVentasTotales.Image = ((System.Drawing.Image)(resources.GetObject("lblCantidadVentasTotales.Image")));
+            this.lblCantidadVentasTotales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblCantidadVentasTotales.Location = new System.Drawing.Point(10, 32);
             this.lblCantidadVentasTotales.Name = "lblCantidadVentasTotales";
-            this.lblCantidadVentasTotales.Size = new System.Drawing.Size(190, 38);
+            this.lblCantidadVentasTotales.Size = new System.Drawing.Size(190, 55);
             this.lblCantidadVentasTotales.TabIndex = 1;
             this.lblCantidadVentasTotales.Text = "$ 0.00";
             this.lblCantidadVentasTotales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -199,7 +201,7 @@
             // 
             this.lblTituloVentasTotales.Font = new System.Drawing.Font("Roboto", 8.5F);
             this.lblTituloVentasTotales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblTituloVentasTotales.Location = new System.Drawing.Point(10, 10);
+            this.lblTituloVentasTotales.Location = new System.Drawing.Point(10, 5);
             this.lblTituloVentasTotales.Name = "lblTituloVentasTotales";
             this.lblTituloVentasTotales.Size = new System.Drawing.Size(190, 20);
             this.lblTituloVentasTotales.TabIndex = 2;
@@ -221,7 +223,7 @@
             // 
             this.lblDescripcionNumeroVentas.Font = new System.Drawing.Font("Roboto", 8F);
             this.lblDescripcionNumeroVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblDescripcionNumeroVentas.Location = new System.Drawing.Point(10, 76);
+            this.lblDescripcionNumeroVentas.Location = new System.Drawing.Point(10, 87);
             this.lblDescripcionNumeroVentas.Name = "lblDescripcionNumeroVentas";
             this.lblDescripcionNumeroVentas.Size = new System.Drawing.Size(190, 20);
             this.lblDescripcionNumeroVentas.TabIndex = 0;
@@ -232,9 +234,11 @@
             // 
             this.lblCantidadNumeroVentas.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.lblCantidadNumeroVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblCantidadNumeroVentas.Location = new System.Drawing.Point(10, 32);
+            this.lblCantidadNumeroVentas.Image = ((System.Drawing.Image)(resources.GetObject("lblCantidadNumeroVentas.Image")));
+            this.lblCantidadNumeroVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCantidadNumeroVentas.Location = new System.Drawing.Point(10, 25);
             this.lblCantidadNumeroVentas.Name = "lblCantidadNumeroVentas";
-            this.lblCantidadNumeroVentas.Size = new System.Drawing.Size(190, 38);
+            this.lblCantidadNumeroVentas.Size = new System.Drawing.Size(190, 62);
             this.lblCantidadNumeroVentas.TabIndex = 1;
             this.lblCantidadNumeroVentas.Text = "0";
             this.lblCantidadNumeroVentas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -243,7 +247,7 @@
             // 
             this.lblTituloNumeroVentas.Font = new System.Drawing.Font("Roboto", 8.5F);
             this.lblTituloNumeroVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblTituloNumeroVentas.Location = new System.Drawing.Point(10, 10);
+            this.lblTituloNumeroVentas.Location = new System.Drawing.Point(10, 6);
             this.lblTituloNumeroVentas.Name = "lblTituloNumeroVentas";
             this.lblTituloNumeroVentas.Size = new System.Drawing.Size(190, 20);
             this.lblTituloNumeroVentas.TabIndex = 2;
@@ -265,7 +269,7 @@
             // 
             this.lblDescripcionProductosVendidos.Font = new System.Drawing.Font("Roboto", 8F);
             this.lblDescripcionProductosVendidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblDescripcionProductosVendidos.Location = new System.Drawing.Point(10, 76);
+            this.lblDescripcionProductosVendidos.Location = new System.Drawing.Point(10, 87);
             this.lblDescripcionProductosVendidos.Name = "lblDescripcionProductosVendidos";
             this.lblDescripcionProductosVendidos.Size = new System.Drawing.Size(190, 20);
             this.lblDescripcionProductosVendidos.TabIndex = 0;
@@ -276,9 +280,11 @@
             // 
             this.lblCantidadProductosVendidos.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.lblCantidadProductosVendidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblCantidadProductosVendidos.Location = new System.Drawing.Point(10, 32);
+            this.lblCantidadProductosVendidos.Image = ((System.Drawing.Image)(resources.GetObject("lblCantidadProductosVendidos.Image")));
+            this.lblCantidadProductosVendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCantidadProductosVendidos.Location = new System.Drawing.Point(10, 27);
             this.lblCantidadProductosVendidos.Name = "lblCantidadProductosVendidos";
-            this.lblCantidadProductosVendidos.Size = new System.Drawing.Size(190, 38);
+            this.lblCantidadProductosVendidos.Size = new System.Drawing.Size(190, 60);
             this.lblCantidadProductosVendidos.TabIndex = 1;
             this.lblCantidadProductosVendidos.Text = "0";
             this.lblCantidadProductosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -287,7 +293,7 @@
             // 
             this.lblTituloProductosVendidos.Font = new System.Drawing.Font("Roboto", 8.5F);
             this.lblTituloProductosVendidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblTituloProductosVendidos.Location = new System.Drawing.Point(10, 10);
+            this.lblTituloProductosVendidos.Location = new System.Drawing.Point(10, 7);
             this.lblTituloProductosVendidos.Name = "lblTituloProductosVendidos";
             this.lblTituloProductosVendidos.Size = new System.Drawing.Size(190, 20);
             this.lblTituloProductosVendidos.TabIndex = 2;
@@ -309,7 +315,7 @@
             // 
             this.lblDescripcionTicketPromedio.Font = new System.Drawing.Font("Roboto", 8F);
             this.lblDescripcionTicketPromedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblDescripcionTicketPromedio.Location = new System.Drawing.Point(10, 76);
+            this.lblDescripcionTicketPromedio.Location = new System.Drawing.Point(10, 86);
             this.lblDescripcionTicketPromedio.Name = "lblDescripcionTicketPromedio";
             this.lblDescripcionTicketPromedio.Size = new System.Drawing.Size(190, 20);
             this.lblDescripcionTicketPromedio.TabIndex = 0;
@@ -320,18 +326,20 @@
             // 
             this.lblCantidadTicketPromedio.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.lblCantidadTicketPromedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblCantidadTicketPromedio.Location = new System.Drawing.Point(10, 32);
+            this.lblCantidadTicketPromedio.Image = ((System.Drawing.Image)(resources.GetObject("lblCantidadTicketPromedio.Image")));
+            this.lblCantidadTicketPromedio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCantidadTicketPromedio.Location = new System.Drawing.Point(10, 25);
             this.lblCantidadTicketPromedio.Name = "lblCantidadTicketPromedio";
-            this.lblCantidadTicketPromedio.Size = new System.Drawing.Size(190, 38);
+            this.lblCantidadTicketPromedio.Size = new System.Drawing.Size(190, 51);
             this.lblCantidadTicketPromedio.TabIndex = 1;
-            this.lblCantidadTicketPromedio.Text = "$ 0.00";
+            this.lblCantidadTicketPromedio.Text = "      $ 0.00";
             this.lblCantidadTicketPromedio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTituloTicketPromedio
             // 
             this.lblTituloTicketPromedio.Font = new System.Drawing.Font("Roboto", 8.5F);
             this.lblTituloTicketPromedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblTituloTicketPromedio.Location = new System.Drawing.Point(10, 10);
+            this.lblTituloTicketPromedio.Location = new System.Drawing.Point(10, 5);
             this.lblTituloTicketPromedio.Name = "lblTituloTicketPromedio";
             this.lblTituloTicketPromedio.Size = new System.Drawing.Size(190, 20);
             this.lblTituloTicketPromedio.TabIndex = 2;
@@ -444,12 +452,14 @@
             // 
             this.lblNota.Font = new System.Drawing.Font("Roboto", 8.5F);
             this.lblNota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblNota.Location = new System.Drawing.Point(270, 650);
+            this.lblNota.Image = ((System.Drawing.Image)(resources.GetObject("lblNota.Image")));
+            this.lblNota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNota.Location = new System.Drawing.Point(270, 638);
             this.lblNota.Name = "lblNota";
             this.lblNota.Size = new System.Drawing.Size(885, 35);
             this.lblNota.TabIndex = 0;
-            this.lblNota.Text = "Este reporte muestra las ventas realizadas por día en el rango de fechas seleccio" +
-    "nado.";
+            this.lblNota.Text = "      Este reporte muestra las ventas realizadas por día en el rango de fechas se" +
+    "leccionado.";
             this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelMenu
