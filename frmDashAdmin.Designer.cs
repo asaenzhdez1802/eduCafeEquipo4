@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashAdmin));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashAdmin));
             this.lblBienvenida = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.panelVentas = new System.Windows.Forms.Panel();
@@ -57,7 +57,6 @@
             this.colStockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTituloBajoStock = new System.Windows.Forms.Label();
-            this.picUsuario = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCategoria = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
@@ -77,7 +76,6 @@
             this.panelAgotados.SuspendLayout();
             this.panelBajoStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBajoStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -119,7 +117,7 @@
             // 
             this.lblDescripcionVentas.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblDescripcionVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(40)))));
-            this.lblDescripcionVentas.Location = new System.Drawing.Point(10, 87);
+            this.lblDescripcionVentas.Location = new System.Drawing.Point(10, 96);
             this.lblDescripcionVentas.Name = "lblDescripcionVentas";
             this.lblDescripcionVentas.Size = new System.Drawing.Size(190, 25);
             this.lblDescripcionVentas.TabIndex = 2;
@@ -130,11 +128,13 @@
             // 
             this.lblCantidadVentas.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.lblCantidadVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.lblCantidadVentas.Location = new System.Drawing.Point(10, 41);
+            this.lblCantidadVentas.Image = ((System.Drawing.Image)(resources.GetObject("lblCantidadVentas.Image")));
+            this.lblCantidadVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCantidadVentas.Location = new System.Drawing.Point(3, 35);
             this.lblCantidadVentas.Name = "lblCantidadVentas";
-            this.lblCantidadVentas.Size = new System.Drawing.Size(190, 42);
+            this.lblCantidadVentas.Size = new System.Drawing.Size(204, 58);
             this.lblCantidadVentas.TabIndex = 1;
-            this.lblCantidadVentas.Text = "$ 2,450.00";
+            this.lblCantidadVentas.Text = " $ 00";
             this.lblCantidadVentas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTituloVentas
@@ -163,7 +163,7 @@
             // 
             this.lblDescripcionProductos.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblDescripcionProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(40)))));
-            this.lblDescripcionProductos.Location = new System.Drawing.Point(10, 87);
+            this.lblDescripcionProductos.Location = new System.Drawing.Point(10, 96);
             this.lblDescripcionProductos.Name = "lblDescripcionProductos";
             this.lblDescripcionProductos.Size = new System.Drawing.Size(190, 25);
             this.lblDescripcionProductos.TabIndex = 2;
@@ -174,9 +174,11 @@
             // 
             this.lblCantidadProductos.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.lblCantidadProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.lblCantidadProductos.Location = new System.Drawing.Point(10, 41);
+            this.lblCantidadProductos.Image = ((System.Drawing.Image)(resources.GetObject("lblCantidadProductos.Image")));
+            this.lblCantidadProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCantidadProductos.Location = new System.Drawing.Point(10, 35);
             this.lblCantidadProductos.Name = "lblCantidadProductos";
-            this.lblCantidadProductos.Size = new System.Drawing.Size(190, 42);
+            this.lblCantidadProductos.Size = new System.Drawing.Size(190, 58);
             this.lblCantidadProductos.TabIndex = 1;
             this.lblCantidadProductos.Text = "125";
             this.lblCantidadProductos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -207,7 +209,7 @@
             // 
             this.lblDescripcionInventario.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblDescripcionInventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(40)))));
-            this.lblDescripcionInventario.Location = new System.Drawing.Point(10, 87);
+            this.lblDescripcionInventario.Location = new System.Drawing.Point(10, 96);
             this.lblDescripcionInventario.Name = "lblDescripcionInventario";
             this.lblDescripcionInventario.Size = new System.Drawing.Size(190, 25);
             this.lblDescripcionInventario.TabIndex = 2;
@@ -218,9 +220,11 @@
             // 
             this.lblCantidadInventario.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.lblCantidadInventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.lblCantidadInventario.Image = ((System.Drawing.Image)(resources.GetObject("lblCantidadInventario.Image")));
+            this.lblCantidadInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblCantidadInventario.Location = new System.Drawing.Point(10, 41);
             this.lblCantidadInventario.Name = "lblCantidadInventario";
-            this.lblCantidadInventario.Size = new System.Drawing.Size(190, 42);
+            this.lblCantidadInventario.Size = new System.Drawing.Size(190, 52);
             this.lblCantidadInventario.TabIndex = 1;
             this.lblCantidadInventario.Text = "8";
             this.lblCantidadInventario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -251,7 +255,7 @@
             // 
             this.lblDescripcionAgotados.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblDescripcionAgotados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(40)))));
-            this.lblDescripcionAgotados.Location = new System.Drawing.Point(10, 87);
+            this.lblDescripcionAgotados.Location = new System.Drawing.Point(10, 95);
             this.lblDescripcionAgotados.Name = "lblDescripcionAgotados";
             this.lblDescripcionAgotados.Size = new System.Drawing.Size(190, 25);
             this.lblDescripcionAgotados.TabIndex = 2;
@@ -262,9 +266,11 @@
             // 
             this.lblCantidadAgotados.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.lblCantidadAgotados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.lblCantidadAgotados.Image = ((System.Drawing.Image)(resources.GetObject("lblCantidadAgotados.Image")));
+            this.lblCantidadAgotados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblCantidadAgotados.Location = new System.Drawing.Point(10, 41);
             this.lblCantidadAgotados.Name = "lblCantidadAgotados";
-            this.lblCantidadAgotados.Size = new System.Drawing.Size(190, 42);
+            this.lblCantidadAgotados.Size = new System.Drawing.Size(190, 52);
             this.lblCantidadAgotados.TabIndex = 1;
             this.lblCantidadAgotados.Text = "2";
             this.lblCantidadAgotados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -377,22 +383,14 @@
             this.lblTituloBajoStock.AutoSize = true;
             this.lblTituloBajoStock.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblTituloBajoStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
+            this.lblTituloBajoStock.Image = ((System.Drawing.Image)(resources.GetObject("lblTituloBajoStock.Image")));
+            this.lblTituloBajoStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTituloBajoStock.Location = new System.Drawing.Point(25, 20);
             this.lblTituloBajoStock.Name = "lblTituloBajoStock";
-            this.lblTituloBajoStock.Size = new System.Drawing.Size(238, 25);
+            this.lblTituloBajoStock.Size = new System.Drawing.Size(263, 25);
             this.lblTituloBajoStock.TabIndex = 0;
-            this.lblTituloBajoStock.Text = "Productos con bajo stock";
-            // 
-            // picUsuario
-            // 
-            this.picUsuario.BackColor = System.Drawing.Color.White;
-            this.picUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picUsuario.Location = new System.Drawing.Point(270, 30);
-            this.picUsuario.Name = "picUsuario";
-            this.picUsuario.Size = new System.Drawing.Size(52, 52);
-            this.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picUsuario.TabIndex = 1;
-            this.picUsuario.TabStop = false;
+            this.lblTituloBajoStock.Text = "     Productos con bajo stock";
+            this.lblTituloBajoStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelMenu
             // 
@@ -629,7 +627,6 @@
             this.Controls.Add(this.panelVentas);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblBienvenida);
-            this.Controls.Add(this.picUsuario);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -643,7 +640,6 @@
             this.panelBajoStock.ResumeLayout(false);
             this.panelBajoStock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBajoStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
@@ -652,14 +648,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox picUsuario;
         private System.Windows.Forms.Label lblBienvenida;
         private System.Windows.Forms.Label lblDescripcion;
 
         private System.Windows.Forms.Panel panelVentas;
         private System.Windows.Forms.Label lblTituloVentas;
-        private System.Windows.Forms.Label lblCantidadVentas;
         private System.Windows.Forms.Label lblDescripcionVentas;
 
         private System.Windows.Forms.Panel panelProductos;
@@ -698,5 +691,6 @@
         private System.Windows.Forms.Label lblSistema;
         private System.Windows.Forms.Label lblEduCafe;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Label lblCantidadVentas;
     }
 }
