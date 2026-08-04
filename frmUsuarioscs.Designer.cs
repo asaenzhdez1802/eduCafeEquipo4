@@ -42,8 +42,6 @@
             this.colNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelRoles = new System.Windows.Forms.Panel();
-            this.lblDescripcionCajero = new System.Windows.Forms.Label();
             this.lblTituloCajero = new System.Windows.Forms.Label();
             this.lblDescripcionAdministrador = new System.Windows.Forms.Label();
             this.lblTituloAdministrador = new System.Windows.Forms.Label();
@@ -79,11 +77,15 @@
             this.lblSistema = new System.Windows.Forms.Label();
             this.lblEduCafe = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.panelVentasTotales = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            this.panelRoles.SuspendLayout();
             this.panelInformacionUsuario.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.panelVentasTotales.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -104,7 +106,7 @@
             this.lblSubtitulo.ForeColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Location = new System.Drawing.Point(248, 66);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(375, 18);
+            this.lblSubtitulo.Size = new System.Drawing.Size(365, 18);
             this.lblSubtitulo.TabIndex = 2;
             this.lblSubtitulo.Text = "Administra los usuarios que tienen acceso al sistema";
             // 
@@ -115,7 +117,7 @@
             this.lblBuscarNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblBuscarNombre.Location = new System.Drawing.Point(244, 103);
             this.lblBuscarNombre.Name = "lblBuscarNombre";
-            this.lblBuscarNombre.Size = new System.Drawing.Size(63, 18);
+            this.lblBuscarNombre.Size = new System.Drawing.Size(61, 18);
             this.lblBuscarNombre.TabIndex = 3;
             this.lblBuscarNombre.Text = "Nombre";
             // 
@@ -228,36 +230,12 @@
             this.colEstadoUsuario.Name = "colEstadoUsuario";
             this.colEstadoUsuario.ReadOnly = true;
             // 
-            // panelRoles
-            // 
-            this.panelRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
-            this.panelRoles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelRoles.Controls.Add(this.lblDescripcionCajero);
-            this.panelRoles.Controls.Add(this.lblTituloCajero);
-            this.panelRoles.Controls.Add(this.lblDescripcionAdministrador);
-            this.panelRoles.Controls.Add(this.lblTituloAdministrador);
-            this.panelRoles.Controls.Add(this.lblTituloRoles);
-            this.panelRoles.Location = new System.Drawing.Point(245, 515);
-            this.panelRoles.Name = "panelRoles";
-            this.panelRoles.Size = new System.Drawing.Size(515, 120);
-            this.panelRoles.TabIndex = 7;
-            // 
-            // lblDescripcionCajero
-            // 
-            this.lblDescripcionCajero.Font = new System.Drawing.Font("Roboto", 8F);
-            this.lblDescripcionCajero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblDescripcionCajero.Location = new System.Drawing.Point(285, 65);
-            this.lblDescripcionCajero.Name = "lblDescripcionCajero";
-            this.lblDescripcionCajero.Size = new System.Drawing.Size(190, 45);
-            this.lblDescripcionCajero.TabIndex = 4;
-            this.lblDescripcionCajero.Text = "Puede realizar ventas y consultar productos";
-            // 
             // lblTituloCajero
             // 
             this.lblTituloCajero.AutoSize = true;
             this.lblTituloCajero.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
             this.lblTituloCajero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblTituloCajero.Location = new System.Drawing.Point(285, 46);
+            this.lblTituloCajero.Location = new System.Drawing.Point(6, 13);
             this.lblTituloCajero.Name = "lblTituloCajero";
             this.lblTituloCajero.Size = new System.Drawing.Size(51, 18);
             this.lblTituloCajero.TabIndex = 3;
@@ -266,10 +244,10 @@
             // lblDescripcionAdministrador
             // 
             this.lblDescripcionAdministrador.Font = new System.Drawing.Font("Roboto", 8F);
-            this.lblDescripcionAdministrador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblDescripcionAdministrador.Location = new System.Drawing.Point(25, 65);
+            this.lblDescripcionAdministrador.ForeColor = System.Drawing.Color.Black;
+            this.lblDescripcionAdministrador.Location = new System.Drawing.Point(9, 30);
             this.lblDescripcionAdministrador.Name = "lblDescripcionAdministrador";
-            this.lblDescripcionAdministrador.Size = new System.Drawing.Size(190, 45);
+            this.lblDescripcionAdministrador.Size = new System.Drawing.Size(193, 45);
             this.lblDescripcionAdministrador.TabIndex = 2;
             this.lblDescripcionAdministrador.Text = "Acceso completo a todas las funciones del sistema";
             // 
@@ -278,7 +256,7 @@
             this.lblTituloAdministrador.AutoSize = true;
             this.lblTituloAdministrador.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
             this.lblTituloAdministrador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
-            this.lblTituloAdministrador.Location = new System.Drawing.Point(25, 46);
+            this.lblTituloAdministrador.Location = new System.Drawing.Point(12, 12);
             this.lblTituloAdministrador.Name = "lblTituloAdministrador";
             this.lblTituloAdministrador.Size = new System.Drawing.Size(102, 18);
             this.lblTituloAdministrador.TabIndex = 1;
@@ -291,7 +269,7 @@
             this.lblTituloRoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblTituloRoles.Image = ((System.Drawing.Image)(resources.GetObject("lblTituloRoles.Image")));
             this.lblTituloRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTituloRoles.Location = new System.Drawing.Point(15, 12);
+            this.lblTituloRoles.Location = new System.Drawing.Point(242, 513);
             this.lblTituloRoles.Name = "lblTituloRoles";
             this.lblTituloRoles.Size = new System.Drawing.Size(190, 20);
             this.lblTituloRoles.TabIndex = 0;
@@ -352,7 +330,7 @@
             this.lblEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblEstado.Location = new System.Drawing.Point(20, 365);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(55, 18);
+            this.lblEstado.Size = new System.Drawing.Size(53, 18);
             this.lblEstado.TabIndex = 13;
             this.lblEstado.Text = "Estado";
             // 
@@ -373,7 +351,7 @@
             this.lblRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblRol.Location = new System.Drawing.Point(20, 302);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(31, 18);
+            this.lblRol.Size = new System.Drawing.Size(30, 18);
             this.lblRol.TabIndex = 11;
             this.lblRol.Text = "Rol";
             // 
@@ -393,7 +371,7 @@
             this.lblContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblContrasena.Location = new System.Drawing.Point(20, 239);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(86, 18);
+            this.lblContrasena.Size = new System.Drawing.Size(84, 18);
             this.lblContrasena.TabIndex = 9;
             this.lblContrasena.Text = "Contraseña";
             // 
@@ -413,7 +391,7 @@
             this.lblSegundoApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblSegundoApellido.Location = new System.Drawing.Point(185, 177);
             this.lblSegundoApellido.Name = "lblSegundoApellido";
-            this.lblSegundoApellido.Size = new System.Drawing.Size(129, 18);
+            this.lblSegundoApellido.Size = new System.Drawing.Size(121, 18);
             this.lblSegundoApellido.TabIndex = 7;
             this.lblSegundoApellido.Text = "Segundo apellido";
             // 
@@ -433,7 +411,7 @@
             this.lblPrimerApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblPrimerApellido.Location = new System.Drawing.Point(20, 177);
             this.lblPrimerApellido.Name = "lblPrimerApellido";
-            this.lblPrimerApellido.Size = new System.Drawing.Size(112, 18);
+            this.lblPrimerApellido.Size = new System.Drawing.Size(109, 18);
             this.lblPrimerApellido.TabIndex = 5;
             this.lblPrimerApellido.Text = "Primer apellido";
             // 
@@ -453,7 +431,7 @@
             this.lblNombresReales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblNombresReales.Location = new System.Drawing.Point(20, 117);
             this.lblNombresReales.Name = "lblNombresReales";
-            this.lblNombresReales.Size = new System.Drawing.Size(116, 18);
+            this.lblNombresReales.Size = new System.Drawing.Size(114, 18);
             this.lblNombresReales.TabIndex = 3;
             this.lblNombresReales.Text = "Nombres reales";
             // 
@@ -473,7 +451,7 @@
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(58)))), ((int)(((byte)(35)))));
             this.lblNombreUsuario.Location = new System.Drawing.Point(20, 57);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(140, 18);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(134, 18);
             this.lblNombreUsuario.TabIndex = 1;
             this.lblNombreUsuario.Text = "Nombre de usuario";
             // 
@@ -725,16 +703,48 @@
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
             // 
+            // panelVentasTotales
+            // 
+            this.panelVentasTotales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(218)))), ((int)(((byte)(158)))));
+            this.panelVentasTotales.Controls.Add(this.lblTituloAdministrador);
+            this.panelVentasTotales.Controls.Add(this.lblDescripcionAdministrador);
+            this.panelVentasTotales.Location = new System.Drawing.Point(268, 545);
+            this.panelVentasTotales.Name = "panelVentasTotales";
+            this.panelVentasTotales.Size = new System.Drawing.Size(210, 89);
+            this.panelVentasTotales.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(221)))));
+            this.panel1.Controls.Add(this.lblTituloCajero);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(511, 544);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(210, 89);
+            this.panel1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Roboto", 8F);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(190, 45);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Puede realizar ventas y consultar productos";
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1178, 692);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblTituloRoles);
+            this.Controls.Add(this.panelVentasTotales);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.lblNota);
             this.Controls.Add(this.panelInformacionUsuario);
-            this.Controls.Add(this.panelRoles);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.btnNuevoUsuario);
             this.Controls.Add(this.txtBuscarNombre);
@@ -748,12 +758,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            this.panelRoles.ResumeLayout(false);
-            this.panelRoles.PerformLayout();
             this.panelInformacionUsuario.ResumeLayout(false);
             this.panelInformacionUsuario.PerformLayout();
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.panelVentasTotales.ResumeLayout(false);
+            this.panelVentasTotales.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -768,13 +780,10 @@
         private System.Windows.Forms.Button btnNuevoUsuario;
 
         private System.Windows.Forms.DataGridView dgvUsuarios;
-
-        private System.Windows.Forms.Panel panelRoles;
         private System.Windows.Forms.Label lblTituloRoles;
         private System.Windows.Forms.Label lblTituloAdministrador;
         private System.Windows.Forms.Label lblDescripcionAdministrador;
         private System.Windows.Forms.Label lblTituloCajero;
-        private System.Windows.Forms.Label lblDescripcionCajero;
 
         private System.Windows.Forms.Panel panelInformacionUsuario;
         private System.Windows.Forms.Label lblTituloInformacion;
@@ -812,5 +821,8 @@
         private System.Windows.Forms.Label lblSistema;
         private System.Windows.Forms.Label lblEduCafe;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Panel panelVentasTotales;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }
