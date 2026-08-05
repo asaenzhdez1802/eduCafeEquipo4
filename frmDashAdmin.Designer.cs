@@ -70,7 +70,6 @@
             this.lblSistema = new System.Windows.Forms.Label();
             this.lblEduCafe = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelVentas.SuspendLayout();
             this.panelProductos.SuspendLayout();
             this.panelInventario.SuspendLayout();
@@ -79,7 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBajoStock)).BeginInit();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBienvenida
@@ -615,22 +613,12 @@
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(267, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmDashAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1178, 692);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBajoStock);
             this.Controls.Add(this.panelAgotados);
@@ -654,7 +642,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBajoStock)).EndInit();
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -705,6 +692,5 @@
         private System.Windows.Forms.Label lblEduCafe;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Label lblCantidadVentas;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
